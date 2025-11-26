@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BrightByteSolution - Data Science Consulting, Analytics Services, Software Development, and Mobile App Development in Grand Rapids, Michigan">
-    <title>BrightByteSolution | Getting Work Done</title>
+    <title>B.B.S | Getting Work Done</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -51,12 +51,179 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Orbitron', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
+        /* Enhanced Logo Design */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            position: relative;
+        }
+
+        .logo-letter {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        .logo-letter-b1 {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .logo-letter-b2 {
+            animation: pulse-glow 2s ease-in-out infinite 0.3s;
+        }
+
+        .logo-letter-s {
+            animation: pulse-glow 2s ease-in-out infinite 0.6s;
+        }
+
+        .logo-dot {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #0ea5e9;
+            animation: blink-dot 1.5s ease-in-out infinite;
+        }
+
+        /* Circuit board pattern behind logo */
+        .logo-circuit {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .circuit-line {
+            stroke: #0ea5e9;
+            stroke-width: 2;
+            fill: none;
+            animation: circuit-flow 3s linear infinite;
+        }
+
+        @keyframes circuit-flow {
+            0% { stroke-dashoffset: 1000; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(139, 92, 246, 0.1));
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            margin-top: 4px;
+        }
+
+        .logo-badge-icon {
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        .logo-motto {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .dark .logo-motto {
+            color: #94a3b8;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
+                transform: scale(1);
+            }
+            50% { 
+                filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes blink-dot {
+            0%, 45%, 55%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
+            }
+            50% { 
+                transform: scale(1.2);
+                box-shadow: 0 0 0 6px rgba(14, 165, 233, 0);
+            }
+        }
+
+        /* Hero Logo - Larger version */
+        .hero-logo-main {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            justify-content: center;
+        }
+
+        .hero-logo-letter {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #bae6fd 50%, #ddd6fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 8px;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-logo-dot {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 8rem;
+            font-weight: 900;
+            color: #ffffff;
+            animation: blink-dot 1.5s ease-in-out infinite;
+        }
+
         /* Neural Network Animation */
         .neural-bg {
             position: absolute;
@@ -64,20 +231,6 @@
             height: 100%;
             overflow: hidden;
             z-index: 0;
-        }
-
-        .neuron {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.5); }
         }
 
         @keyframes fade-in-up {
@@ -140,39 +293,6 @@
         body {
             font-family: 'Inter', sans-serif;
             transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Custom Logo Styles */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-bbs {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -2px;
-            position: relative;
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        .logo-motto {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .dark .logo-motto {
-            color: #94a3b8;
         }
 
         /* Particle System */
@@ -253,6 +373,19 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        @media (max-width: 768px) {
+            .logo-letter {
+                font-size: 1.8rem;
+            }
+            .hero-logo-letter {
+                font-size: 4rem;
+                letter-spacing: 4px;
+            }
+            .hero-logo-dot {
+                font-size: 4rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -262,9 +395,25 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="#" class="logo-container">
-                    <div>
-                        <div class="logo-bbs">BBS</div>
-                        <div class="logo-motto">Getting Work Done</div>
+                    <div class="logo-wrapper">
+                        <div class="logo-main">
+                            <!-- Circuit board SVG background -->
+                            <svg class="logo-circuit" xmlns="http://www.w3.org/2000/svg">
+                                <path class="circuit-line" d="M10,50 L40,50 L40,20 L70,20" stroke-dasharray="5,5"/>
+                                <circle cx="40" cy="50" r="3" fill="#0ea5e9"/>
+                                <circle cx="40" cy="20" r="3" fill="#8b5cf6"/>
+                            </svg>
+                            
+                            <span class="logo-letter logo-letter-b1">B</span>
+                            <span class="logo-dot">.</span>
+                            <span class="logo-letter logo-letter-b2">B</span>
+                            <span class="logo-dot">.</span>
+                            <span class="logo-letter logo-letter-s">S</span>
+                        </div>
+                        <div class="logo-badge">
+                            <div class="logo-badge-icon"></div>
+                            <span class="logo-motto">Getting Work Done</span>
+                        </div>
                     </div>
                 </a>
                 
@@ -312,9 +461,15 @@
         <div class="absolute inset-0 bg-gradient-to-br from-primary-600/90 via-secondary-600/90 to-accent-600/90"></div>
         
         <div class="relative max-w-7xl mx-auto px-4 py-40 sm:px-6 lg:px-8 text-center z-10">
-            <div class="animate-fade-in-up">
-                <div class="logo-bbs text-8xl mb-4 inline-block">BBS</div>
-                <p class="text-white/80 text-xl mb-8 font-mono">// Getting Work Done</p>
+            <div class="animate-fade-in-up mb-8">
+                <div class="hero-logo-main">
+                    <span class="hero-logo-letter logo-letter-b1">B</span>
+                    <span class="hero-logo-dot">.</span>
+                    <span class="hero-logo-letter logo-letter-b2">B</span>
+                    <span class="hero-logo-dot">.</span>
+                    <span class="hero-logo-letter logo-letter-s">S</span>
+                </div>
+                <p class="text-white/90 text-xl mt-6 font-mono tracking-widest">// Getting Work Done</p>
             </div>
             
             <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up delay-100">
@@ -354,22 +509,22 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter font-mono">250+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3 counter font-display">250+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Data Science Projects</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-secondary-900/20 dark:to-accent-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter font-mono">180+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3 counter font-display">180+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Analytics Solutions</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter font-mono">320+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3 counter font-display">320+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Software Applications</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/20 dark:to-primary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter font-mono">150+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3 counter font-display">150+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Mobile Apps Delivered</div>
                 </div>
             </div>
@@ -389,14 +544,14 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Cards with enhanced styling -->
+                <!-- Service Cards -->
                 <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-primary-500">
                     <div class="h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center relative overflow-hidden">
                         <i data-feather="bar-chart-2" class="w-20 h-20 text-white animate-float"></i>
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-mono">Data Science</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Data Science</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Transform raw data into actionable insights with advanced analytics and machine learning expertise.
                         </p>
@@ -412,7 +567,7 @@
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-mono">Analytics</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Analytics</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Comprehensive business intelligence and predictive analytics from dashboards to complex models.
                         </p>
@@ -428,7 +583,7 @@
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-mono">Software Dev</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Software Dev</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Custom software solutions built with modern technologies for scalable, secure applications.
                         </p>
@@ -444,7 +599,7 @@
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-mono">Mobile Apps</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Mobile Apps</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Native and cross-platform mobile applications for exceptional user experiences on iOS and Android.
                         </p>
@@ -460,7 +615,7 @@
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-mono">Machine Learning</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Machine Learning</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Leverage AI and ML to automate processes, predict outcomes, and gain competitive advantages.
                         </p>
@@ -476,7 +631,7 @@
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-mono">Research Analytics</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Research Analytics</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Expert research analytics support using comprehensive data analysis tools and statistical consulting.
                         </p>
@@ -504,73 +659,73 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">📊</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">Python</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">Python</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">NumPy, Pandas</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">📈</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">R Studio</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">R Studio</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Statistical Analysis</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">🔢</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">SPSS</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">SPSS</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Advanced Stats</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">📉</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">SAS</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">SAS</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Enterprise</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">📊</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">Tableau</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">Tableau</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Visualization</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">📈</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">Power BI</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">Power BI</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Business Intel</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">🤖</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">TensorFlow</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">TensorFlow</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Deep Learning</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">🧠</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">PyTorch</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">PyTorch</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Neural Networks</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">🗄️</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">SQL</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">SQL</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Database</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">☁️</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">Azure ML</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">Azure ML</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Cloud ML</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">📊</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">Stata</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">Stata</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Econometrics</div>
                 </div>
 
                 <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
                     <div class="text-5xl mb-3 group-hover:animate-float">📉</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-mono">MATLAB</div>
+                    <div class="font-bold text-gray-900 dark:text-white font-display">MATLAB</div>
                     <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Computing</div>
                 </div>
             </div>
@@ -587,14 +742,19 @@
                         <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-secondary-400 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"></div>
                         <div class="relative rounded-3xl bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/30 dark:to-secondary-900/30 overflow-hidden shadow-2xl p-16 text-center glass-effect">
                             <i data-feather="award" class="w-40 h-40 mx-auto text-primary-600 dark:text-primary-400 mb-6 animate-float"></i>
-                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white font-mono">Excellence in Data</h3>
-                            <p class="text-primary-600 dark:text-primary-400 mt-2 font-mono">// Getting Work Done</p>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white font-display">Excellence in Data</h3>
+                            <div class="mt-4">
+                                <div class="hero-logo-main inline-flex">
+                                    <span class="text-4xl font-display gradient-text">B.B.S</span>
+                                </div>
+                                <p class="text-primary-600 dark:text-primary-400 mt-2 font-mono text-sm tracking-wider">Getting Work Done</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="lg:w-1/2">
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                        About <span class="gradient-text font-mono">BBS</span>
+                        About <span class="gradient-text font-display">B.B.S</span>
                     </h2>
                     <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                         BrightByteSolution L.L.C is a Michigan-based technology consulting firm specializing in data science, analytics, and software development. We're passionate about helping businesses unlock the full potential of their data through innovative solutions and expert guidance.
@@ -610,7 +770,7 @@
                                 </div>
                             </div>
                             <div class="ml-5">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white font-mono">Rapid Insights</h3>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white font-display">Rapid Insights</h3>
                                 <p class="text-gray-600 dark:text-gray-400 mt-1">
                                     Get from data to decisions faster with our streamlined processes and cutting-edge methodologies.
                                 </p>
@@ -623,7 +783,7 @@
                                 </div>
                             </div>
                             <div class="ml-5">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white font-mono">Proven Expertise</h3>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white font-display">Proven Expertise</h3>
                                 <p class="text-gray-600 dark:text-gray-400 mt-1">
                                     Years of experience delivering successful projects across multiple industries and domains.
                                 </p>
@@ -696,14 +856,14 @@
                         <textarea id="message" name="message" rows="4" placeholder="// Describe your needs, goals, or any questions..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition font-mono"></textarea>
                     </div>
                     
-                    <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-4 px-8 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg hover:shadow-2xl font-mono text-lg animate-glow">
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-4 px-8 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg hover:shadow-2xl font-display text-lg animate-glow">
                         Schedule Appointment →
                     </button>
                 </form>
                 
                 <div id="success-message" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-xl text-center font-mono">
                     ✓ Success! We'll contact you shortly to confirm.
-                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -723,7 +883,7 @@
             <div class="bg-white dark:bg-gray-700 rounded-3xl shadow-2xl overflow-hidden">
                 <div class="md:flex">
                     <div class="md:w-1/2 bg-gradient-to-br from-primary-600 to-secondary-600 p-12 text-white">
-                        <h3 class="text-3xl font-bold mb-8 font-mono">Contact Information</h3>
+                        <h3 class="text-3xl font-bold mb-8 font-display">Contact Information</h3>
                         <div class="space-y-8">
                             <div class="flex items-start group">
                                 <div class="flex-shrink-0 mt-1">
@@ -776,7 +936,7 @@
                                 <label for="contact-message" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Your Message</label>
                                 <textarea id="contact-message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-600 dark:text-white font-mono"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 px-6 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg font-mono">
+                            <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 px-6 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg font-display">
                                 Send Message →
                             </button>
                         </form>
@@ -791,8 +951,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
-                    <div class="logo-bbs text-4xl mb-4">BBS</div>
-                    <p class="text-gray-400 mb-4 font-mono text-sm">
+                    <div class="logo-main mb-4">
+                        <span class="logo-letter logo-letter-b1">B</span>
+                        <span class="logo-dot">.</span>
+                        <span class="logo-letter logo-letter-b2">B</span>
+                        <span class="logo-dot">.</span>
+                        <span class="logo-letter logo-letter-s">S</span>
+                    </div>
+                    <p class="text-gray-400 mb-4 font-mono text-sm tracking-wider">
                         // Getting Work Done
                     </p>
                     <p class="text-gray-400 mb-6">
@@ -812,7 +978,7 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-white font-bold mb-6 font-mono text-lg">Services</h3>
+                    <h3 class="text-white font-bold mb-6 font-display text-lg">Services</h3>
                     <ul class="space-y-3">
                         <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Data Science</a></li>
                         <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Analytics</a></li>
@@ -823,7 +989,7 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-white font-bold mb-6 font-mono text-lg">Company</h3>
+                    <h3 class="text-white font-bold mb-6 font-display text-lg">Company</h3>
                     <ul class="space-y-3">
                         <li><a href="#about" class="hover:text-primary-400 transition font-mono">→ About Us</a></li>
                         <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Services</a></li>
@@ -834,7 +1000,7 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-white font-bold mb-6 font-mono text-lg">Legal</h3>
+                    <h3 class="text-white font-bold mb-6 font-display text-lg">Legal</h3>
                     <ul class="space-y-3">
                         <li><a href="privacy-policy.html" class="hover:text-primary-400 transition font-mono">→ Privacy Policy</a></li>
                         <li><a href="terms-of-service.html" class="hover:text-primary-400 transition font-mono">→ Terms of Service</a></li>
@@ -919,7 +1085,6 @@
         }
         animate();
 
-        // Resize canvas on window resize
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
