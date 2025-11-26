@@ -1,0 +1,19 @@
+{
+  "name": "brightbytesolution-website",
+  "version": "1.0.0",
+  "description": "BrightByteSolution LLC - Data Science & Analytics Solutions Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "echo 'Open index.html in your browser'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "data-science",
+    "analytics",
+    "software-development",
+    "mobile-apps",
+    "machine-learning"
+  ],
+  "author": "BrightByteSolution LLC",
+  "license": "MIT"
+}
