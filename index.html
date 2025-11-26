@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BrightByteSolution - Data Science Consulting, Analytics Services, Software Development, and Mobile App Development in Grand Rapids, Michigan">
+    <meta name="keywords" content="data science, analytics, software development, mobile apps, machine learning, Grand Rapids, Michigan">
+    <title>BrightByteSolution - Data Science & Analytics Solutions</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">BrightByte<span style="color: var(--secondary)">Solution</span></div>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#appointment" onclick="closeMenu()">Book Appointment</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transform Data Into Intelligence</h1>
+            <p>Empowering businesses with cutting-edge data science, analytics, and innovative software solutions</p>
+            <div class="cta-buttons">
+                <a href="#appointment" class="btn btn-primary">Book Consultation</a>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p style="text-align: center; color: var(--gray); max-width: 700px; margin: 0 auto 3rem;">
+                We deliver comprehensive solutions tailored to your business needs, combining expertise in data science, analytics, and software development.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Science Consulting</h3>
+                    <p>Transform your raw data into actionable insights with our advanced analytics and machine learning expertise. We help you make data-driven decisions that drive business growth.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Analytics Services</h3>
+                    <p>Comprehensive business intelligence and predictive analytics solutions. From dashboards to complex statistical models, we uncover patterns that matter.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Software Development</h3>
+                    <p>Custom software solutions built with modern technologies. We develop scalable, secure applications that streamline your operations and enhance productivity.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile App Development</h3>
+                    <p>Native and cross-platform mobile applications designed for exceptional user experiences. Bring your ideas to life on iOS and Android platforms.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Machine Learning Solutions</h3>
+                    <p>Leverage AI and ML to automate processes, predict outcomes, and gain competitive advantages. From model development to deployment.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Data Strategy & Consulting</h3>
+                    <p>Strategic guidance on data architecture, governance, and management. We help you build a robust data foundation for long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment" id="appointment">
+        <div class="appointment-container">
+            <h2 class="section-title" style="color: white;">Book Your Appointment</h2>
+            <p style="text-align: center; margin-bottom: 2rem; opacity: 0.95;">
+                Ready to transform your business with data? Schedule a consultation with our experts today.
+            </p>
+            <div class="appointment-form">
+                <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service of Interest *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="data-science">Data Science Consulting</option>
+                            <option value="analytics">Analytics Services</option>
+                            <option value="software">Software Development</option>
+                            <option value="mobile">Mobile App Development</option>
+                            <option value="ml">Machine Learning Solutions</option>
+                            <option value="strategy">Data Strategy & Consulting</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell us about your project</label>
+                        <textarea id="message" name="message" placeholder="Describe your needs, goals, or any questions you have..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Schedule Appointment</button>
+                    <div class="success-message" id="successMessage">
+                        ✓ Appointment request submitted successfully! We'll contact you soon.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About BrightByteSolution</h2>
+            <div class="about-content">
+                <p>
+                    BrightByteSolution L.L.C is a Michigan-based technology consulting firm specializing in data science, analytics, and software development. We're passionate about helping businesses unlock the full potential of their data through innovative solutions and expert guidance.
+                </p>
+                <p>
+                    Our team combines deep technical expertise with business acumen to deliver solutions that not only solve today's challenges but also position your organization for tomorrow's opportunities. Whether you're a startup looking to build your first data pipeline or an enterprise seeking to optimize complex systems, we're here to help.
+                </p>
+                <p>
+                    <strong>Why Choose Us?</strong> We bring together cutting-edge technology, proven methodologies, and personalized service to create solutions that truly make a difference. Your success is our success.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>145 Gold Ave NW<br>Grand Rapids, MI 49504</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>info@brightbytesolution.com</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p>+1 (616) 555-DATA<br>Mon-Fri, 9AM-5PM EST</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 BrightByteSolution L.L.C. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Grand Rapids, Michigan | Data Science • Analytics • Software Development</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
