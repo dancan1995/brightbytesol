@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | BrightByteSolution</title>
+    <title>Privacy Policy | B.B.S</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -14,6 +20,11 @@
                     colors: {
                         primary: { 500: '#0ea5e9', 600: '#0284c7' },
                         secondary: { 500: '#8b5cf6', 600: '#7c3aed' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Orbitron', 'sans-serif'],
                     }
                 }
             }
@@ -21,7 +32,65 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        body { transition: background-color 0.3s ease, color 0.3s ease; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease; 
+        }
+
+        /* Logo Styles */
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            position: relative;
+        }
+
+        .logo-letter {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        .logo-dot {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #0ea5e9;
+            animation: blink-dot 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink-dot {
+            0%, 45%, 55%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .logo-motto {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .dark .logo-motto {
+            color: #94a3b8;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -29,41 +98,51 @@
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                    BrightByteSolution
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex flex-col">
+                    <div class="logo-main">
+                        <span class="logo-letter">B</span>
+                        <span class="logo-dot">.</span>
+                        <span class="logo-letter">B</span>
+                        <span class="logo-dot">.</span>
+                        <span class="logo-letter">S</span>
+                    </div>
+                    <span class="logo-motto">Getting Work Done</span>
                 </a>
-                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium transition">
-                    <i data-feather="arrow-left" class="w-5 h-5 inline mr-2"></i>Back to Home
+                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium transition flex items-center gap-2">
+                    <i data-feather="arrow-left" class="w-5 h-5"></i>
+                    <span class="font-mono">Back to Home</span>
                 </a>
             </div>
         </div>
     </nav>
 
     <!-- Content -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Privacy Policy</h1>
-        <p class="text-gray-600 dark:text-gray-400 mb-8">Last Updated: January 1, 2025</p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <h1 class="text-5xl font-bold mb-4">
+            <span class="gradient-text font-display">Privacy Policy</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-12 font-mono">// Last Updated: January 1, 2025</p>
 
-        <div class="prose dark:prose-invert max-w-none">
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. Introduction</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+        <div class="prose dark:prose-invert max-w-none space-y-12">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">1. Introduction</h2>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
                     Welcome to BrightByteSolution L.L.C ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website brightbytesolution.com and use our services.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. Information We Collect</h2>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Personal Information</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">We collect personal information that you voluntarily provide to us when you:</p>
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">2. Information We Collect</h2>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Personal Information</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">We collect personal information that you voluntarily provide to us when you:</p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                     <li>Book an appointment or consultation</li>
                     <li>Contact us through our contact form</li>
                     <li>Subscribe to our newsletter</li>
                     <li>Use our services</li>
                 </ul>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">This information may include:</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">This information may include:</p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                     <li>Name and contact information (email, phone number, address)</li>
                     <li>Company name and business information</li>
@@ -71,8 +150,8 @@
                     <li>Communication preferences</li>
                 </ul>
 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Automatically Collected Information</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">We automatically collect certain information when you visit our website:</p>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Automatically Collected Information</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">We automatically collect certain information when you visit our website:</p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                     <li>IP address and browser type</li>
                     <li>Device information and operating system</li>
@@ -82,9 +161,9 @@
                 </ul>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. How We Use Your Information</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">We use the information we collect to:</p>
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">3. How We Use Your Information</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">We use the information we collect to:</p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                     <li>Provide, operate, and maintain our services</li>
                     <li>Process your appointments and consultations</li>
@@ -97,9 +176,9 @@
                 </ul>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. Information Sharing and Disclosure</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">We do not sell, trade, or rent your personal information to third parties. We may share your information in the following circumstances:</p>
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">4. Information Sharing and Disclosure</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">We do not sell, trade, or rent your personal information to third parties. We may share your information in the following circumstances:</p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                     <li><strong>Service Providers:</strong> We may share information with third-party service providers who perform services on our behalf (e.g., hosting, analytics, email delivery)</li>
                     <li><strong>Legal Requirements:</strong> We may disclose information if required by law or in response to valid legal requests</li>
@@ -108,23 +187,23 @@
                 </ul>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. Data Security</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">5. Data Security</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">6. Data Retention</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">6. Data Retention</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When we no longer need your information, we will securely delete or anonymize it.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">7. Your Privacy Rights</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">Depending on your location, you may have the following rights:</p>
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">7. Your Privacy Rights</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">Depending on your location, you may have the following rights:</p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
                     <li><strong>Access:</strong> Request access to your personal information</li>
                     <li><strong>Correction:</strong> Request correction of inaccurate information</li>
@@ -134,46 +213,46 @@
                     <li><strong>Portability:</strong> Request transfer of your information to another service</li>
                     <li><strong>Withdraw Consent:</strong> Withdraw consent where processing is based on consent</li>
                 </ul>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     To exercise these rights, please contact us at dancun.juma@brightbytesolution.com
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">8. Cookies and Tracking Technologies</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">8. Cookies and Tracking Technologies</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     We use cookies and similar tracking technologies to track activity on our website and store certain information. You can instruct your browser to refuse all cookies or indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">9. Third-Party Links</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">9. Third-Party Links</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these third-party sites. We encourage you to read the privacy policies of any third-party sites you visit.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">10. Children's Privacy</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">10. Children's Privacy</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children under 18. If you become aware that a child has provided us with personal information, please contact us, and we will take steps to delete such information.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">11. Changes to This Privacy Policy</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">11. Changes to This Privacy Policy</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">12. Contact Us</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">12. Contact Us</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     If you have any questions about this Privacy Policy, please contact us:
                 </p>
-                <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                    <p class="text-gray-700 dark:text-gray-300 mb-2"><strong>BrightByteSolution L.L.C</strong></p>
+                <div class="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl border-2 border-primary-200 dark:border-primary-800">
+                    <p class="text-gray-900 dark:text-white font-bold text-lg mb-3 font-display">BrightByteSolution L.L.C</p>
                     <p class="text-gray-700 dark:text-gray-300 mb-2">145 Gold Ave NW, Grand Rapids, MI 49504</p>
                     <p class="text-gray-700 dark:text-gray-300 mb-2">Email: dancun.juma@brightbytesolution.com</p>
                     <p class="text-gray-700 dark:text-gray-300">Phone: (616) 240-7246</p>
@@ -181,18 +260,26 @@
             </section>
         </div>
 
-        <div class="mt-12 text-center">
-            <a href="index.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-lg hover:opacity-90 transition">
-                <i data-feather="arrow-left" class="w-5 h-5 mr-2"></i>
+        <div class="mt-16 text-center">
+            <a href="index.html" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold rounded-full hover:opacity-90 transition shadow-lg hover:shadow-xl font-display">
+                <i data-feather="arrow-left" class="w-5 h-5"></i>
                 Back to Home
             </a>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-8 mt-12">
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; <span id="current-year"></span> BrightByteSolution L.L.C. All rights reserved.</p>
+            <div class="logo-main justify-center mb-4">
+                <span class="logo-letter">B</span>
+                <span class="logo-dot">.</span>
+                <span class="logo-letter">B</span>
+                <span class="logo-dot">.</span>
+                <span class="logo-letter">S</span>
+            </div>
+            <p class="font-mono text-sm mb-4">// Getting Work Done</p>
+            <p>&copy; <span id="current-year"></span> BrightByteSolution L.L.C // All rights reserved</p>
         </div>
     </footer>
 

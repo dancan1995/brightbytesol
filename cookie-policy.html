@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Policy | BrightByteSolution</title>
+    <title>Cookie Policy | B.B.S</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -14,6 +20,11 @@
                     colors: {
                         primary: { 500: '#0ea5e9', 600: '#0284c7' },
                         secondary: { 500: '#8b5cf6', 600: '#7c3aed' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Orbitron', 'sans-serif'],
                     }
                 }
             }
@@ -21,7 +32,65 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        body { transition: background-color 0.3s ease, color 0.3s ease; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease; 
+        }
+
+        /* Logo Styles */
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            position: relative;
+        }
+
+        .logo-letter {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        .logo-dot {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #0ea5e9;
+            animation: blink-dot 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink-dot {
+            0%, 45%, 55%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .logo-motto {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .dark .logo-motto {
+            color: #94a3b8;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -29,33 +98,43 @@
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                    BrightByteSolution
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex flex-col">
+                    <div class="logo-main">
+                        <span class="logo-letter">B</span>
+                        <span class="logo-dot">.</span>
+                        <span class="logo-letter">B</span>
+                        <span class="logo-dot">.</span>
+                        <span class="logo-letter">S</span>
+                    </div>
+                    <span class="logo-motto">Getting Work Done</span>
                 </a>
-                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium transition">
-                    <i data-feather="arrow-left" class="w-5 h-5 inline mr-2"></i>Back to Home
+                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium transition flex items-center gap-2">
+                    <i data-feather="arrow-left" class="w-5 h-5"></i>
+                    <span class="font-mono">Back to Home</span>
                 </a>
             </div>
         </div>
     </nav>
 
     <!-- Content -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Cookie Policy</h1>
-        <p class="text-gray-600 dark:text-gray-400 mb-8">Last Updated: January 1, 2025</p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <h1 class="text-5xl font-bold mb-4">
+            <span class="gradient-text font-display">Cookie Policy</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-12 font-mono">// Last Updated: January 1, 2025</p>
 
-        <div class="prose dark:prose-invert max-w-none">
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. What Are Cookies?</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+        <div class="prose dark:prose-invert max-w-none space-y-12">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">1. What Are Cookies?</h2>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
                     Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. How We Use Cookies</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">2. How We Use Cookies</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     BrightByteSolution uses cookies to:
                 </p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
@@ -68,33 +147,33 @@
                 </ul>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. Types of Cookies We Use</h2>
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">3. Types of Cookies We Use</h2>
                 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Essential Cookies</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Essential Cookies</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                     These cookies are necessary for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.
                 </p>
 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Performance Cookies</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Performance Cookies</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                     These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. They help us improve the way our website works, such as ensuring that users find what they are looking for easily.
                 </p>
 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Functional Cookies</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Functional Cookies</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                     These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages. Examples include remembering your theme preference (light/dark mode).
                 </p>
 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Targeting/Advertising Cookies</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Targeting/Advertising Cookies</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     These cookies may be set through our site by our advertising partners. They may be used to build a profile of your interests and show you relevant advertisements on other sites. They work by uniquely identifying your browser and device.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. Third-Party Cookies</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">4. Third-Party Cookies</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     We may use third-party services that set cookies on your device, including:
                 </p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
@@ -102,14 +181,14 @@
                     <li><strong>Content Delivery Networks:</strong> To deliver website content efficiently</li>
                     <li><strong>Social Media Platforms:</strong> To enable social media features</li>
                 </ul>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
                     These third parties have their own privacy policies and cookie policies, which we encourage you to review.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. Cookie Duration</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">5. Cookie Duration</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     We use both session cookies and persistent cookies:
                 </p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
@@ -118,17 +197,17 @@
                 </ul>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">6. Managing Cookies</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">6. Managing Cookies</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences by:
                 </p>
                 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Browser Settings</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Browser Settings</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     Most web browsers allow you to control cookies through their settings. You can:
                 </p>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-6 space-y-2">
                     <li>Delete all cookies from your browser</li>
                     <li>Block all cookies</li>
                     <li>Allow all cookies</li>
@@ -136,36 +215,36 @@
                     <li>Clear cookies when you close your browser</li>
                 </ul>
 
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Browser-Specific Instructions</h3>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
-                    <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies and other site data</li>
-                    <li><strong>Firefox:</strong> Options → Privacy & Security → Cookies and Site Data</li>
-                    <li><strong>Safari:</strong> Preferences → Privacy → Cookies and website data</li>
-                    <li><strong>Microsoft Edge:</strong> Settings → Cookies and site permissions → Cookies and site data</li>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Browser-Specific Instructions</h3>
+                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2 font-mono text-sm">
+                    <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies</li>
+                    <li><strong>Firefox:</strong> Options → Privacy & Security → Cookies</li>
+                    <li><strong>Safari:</strong> Preferences → Privacy → Cookies</li>
+                    <li><strong>Microsoft Edge:</strong> Settings → Cookies and site permissions</li>
                 </ul>
 
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
                     Please note that blocking all cookies will impact your experience on our website and may prevent you from accessing certain features.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">7. Do Not Track</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">7. Do Not Track</h2>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
                     Some browsers have a "Do Not Track" feature that lets you tell websites that you do not want to have your online activities tracked. We respect Do Not Track signals and will not track, plant cookies, or use advertising when a Do Not Track mechanism is in place.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">8. Changes to This Cookie Policy</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">8. Changes to This Cookie Policy</h2>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
                     We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. We will notify you of any significant changes by posting the new Cookie Policy on this page and updating the "Last Updated" date.
                 </p>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">9. More Information</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">9. More Information</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     For more information about cookies and how they work, you can visit:
                 </p>
                 <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
@@ -174,13 +253,13 @@
                 </ul>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">10. Contact Us</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">10. Contact Us</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     If you have any questions about our use of cookies, please contact us:
                 </p>
-                <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                    <p class="text-gray-700 dark:text-gray-300 mb-2"><strong>BrightByteSolution L.L.C</strong></p>
+                <div class="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl border-2 border-primary-200 dark:border-primary-800">
+                    <p class="text-gray-900 dark:text-white font-bold text-lg mb-3 font-display">BrightByteSolution L.L.C</p>
                     <p class="text-gray-700 dark:text-gray-300 mb-2">145 Gold Ave NW, Grand Rapids, MI 49504</p>
                     <p class="text-gray-700 dark:text-gray-300 mb-2">Email: dancun.juma@brightbytesolution.com</p>
                     <p class="text-gray-700 dark:text-gray-300">Phone: (616) 240-7246</p>
@@ -188,18 +267,26 @@
             </section>
         </div>
 
-        <div class="mt-12 text-center">
-            <a href="index.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-lg hover:opacity-90 transition">
-                <i data-feather="arrow-left" class="w-5 h-5 mr-2"></i>
+        <div class="mt-16 text-center">
+            <a href="index.html" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold rounded-full hover:opacity-90 transition shadow-lg hover:shadow-xl font-display">
+                <i data-feather="arrow-left" class="w-5 h-5"></i>
                 Back to Home
             </a>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-8 mt-12">
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; <span id="current-year"></span> BrightByteSolution L.L.C. All rights reserved.</p>
+            <div class="logo-main justify-center mb-4">
+                <span class="logo-letter">B</span>
+                <span class="logo-dot">.</span>
+                <span class="logo-letter">B</span>
+                <span class="logo-dot">.</span>
+                <span class="logo-letter">S</span>
+            </div>
+            <p class="font-mono text-sm mb-4">// Getting Work Done</p>
+            <p>&copy; <span id="current-year"></span> BrightByteSolution L.L.C // All rights reserved</p>
         </div>
     </footer>
 
