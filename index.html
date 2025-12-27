@@ -126,49 +126,35 @@
             background: linear-gradient(to bottom, #0369a1, #a21caf);
         }
 
-        /* CEO Photo Placeholder */
-        .ceo-photo-placeholder {
+        /* CEO Photo Styling */
+        .ceo-photo-container {
             width: 200px;
             height: 200px;
             background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 3px;
             margin: 0 auto;
             position: relative;
+        }
+
+        .ceo-photo-inner {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 50%;
+            padding: 3px;
             overflow: hidden;
         }
 
-        .ceo-photo-placeholder img {
+        .dark .ceo-photo-inner {
+            background: #374151;
+        }
+
+        .ceo-photo-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .ceo-photo-placeholder::before {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            background: white;
             border-radius: 50%;
-            z-index: 0;
-        }
-
-        .ceo-photo-placeholder .photo-content {
-            position: relative;
-            z-index: 1;
-            width: calc(100% - 6px);
-            height: calc(100% - 6px);
-            border-radius: 50%;
-            background: #f3f4f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .dark .ceo-photo-placeholder .photo-content {
-            background: #374151;
         }
     </style>
 </head>
@@ -549,19 +535,9 @@
                     <div class="p-12">
                         <!-- CEO Photo -->
                         <div class="mb-8">
-                            <div class="ceo-photo-placeholder">
-                                <div class="photo-content">
-                                    <!-- TO ADD YOUR PHOTO: -->
-                                    <!-- 1. Save your professional headshot as "ceo-photo.jpg" -->
-                                    <!-- 2. Put it in the same folder as this index.html file -->
-                                    <!-- 3. Uncomment the line below (remove the <!-- and -->) -->
-                                    <!-- <img src="ceo-photo.png" alt="Dancun Juma - CEO"> -->
-                                    
-                                    <!-- Placeholder (DELETE THE SECTION BELOW after adding your photo) -->
-                                    <div class="text-center">
-                                        <i data-feather="user" class="w-20 h-20 text-gray-400 mx-auto mb-2"></i>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400 font-mono px-4">Add your photo:<br/>ceo-photo.png<br/><span class="text-[10px]">(See ADD-CEO-PHOTO-GUIDE.md)</span></p>
-                                    </div>
+                            <div class="ceo-photo-container">
+                                <div class="ceo-photo-inner">
+                                    <img src="images/ceo-photo.png" alt="Dancun Juma - CEO & Founder">
                                 </div>
                             </div>
                         </div>
@@ -717,13 +693,13 @@
             </div>
 
             <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12">
-                <form id="booking-form" action="https://formspree.io/f/mgvjvwyl" method="POST" class="space-y-6">
-                    <!-- Hidden field to identify form submissions -->
-                    <input type="hidden" name="_subject" value="🔔 New Booking Request - Bright Byte Solution">
+                <form action="https://formspree.io/f/mgvjvwyl" method="POST" id="booking-form" class="space-y-6">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="name" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Full Name *</label>
+                            <label for="name" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                                Full Name *
+                            </label>
                             <input 
                                 type="text" 
                                 id="name" 
@@ -733,7 +709,9 @@
                         </div>
                         
                         <div>
-                            <label for="email" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Email Address *</label>
+                            <label for="email" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                                Email Address *
+                            </label>
                             <input 
                                 type="email" 
                                 id="email" 
@@ -744,7 +722,9 @@
                     </div>
                     
                     <div>
-                        <label for="phone" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Phone Number *</label>
+                        <label for="phone" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                            Phone Number *
+                        </label>
                         <input 
                             type="tel" 
                             id="phone" 
@@ -755,7 +735,9 @@
                     </div>
                     
                     <div>
-                        <label for="service" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Service Package *</label>
+                        <label for="service" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                            Service Package *
+                        </label>
                         <select 
                             id="service" 
                             name="service" 
@@ -771,20 +753,24 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="date" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Preferred Date *</label>
+                            <label for="date" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                                Preferred Date *
+                            </label>
                             <input 
                                 type="date" 
                                 id="date" 
-                                name="preferred_date" 
+                                name="date" 
                                 required 
                                 class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
                         </div>
                         
                         <div>
-                            <label for="time" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Preferred Time (EST) *</label>
+                            <label for="time" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                                Preferred Time (EST) *
+                            </label>
                             <select 
                                 id="time" 
-                                name="preferred_time" 
+                                name="time" 
                                 required 
                                 class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
                                 <option value="">Select time...</option>
@@ -802,7 +788,9 @@
                     </div>
                     
                     <div>
-                        <label for="message" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Project Details</label>
+                        <label for="message" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+                            Project Details
+                        </label>
                         <textarea 
                             id="message" 
                             name="message" 
@@ -815,7 +803,7 @@
                         type="submit" 
                         class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-4 px-8 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg hover:shadow-2xl text-lg flex items-center justify-center gap-2">
                         <i data-feather="calendar" class="w-5 h-5"></i>
-                        <span>Schedule Appointment</span>
+                        <span>Send Booking Request</span>
                     </button>
 
                     <p class="text-center text-sm text-gray-600 dark:text-gray-400">
@@ -823,8 +811,12 @@
                     </p>
                 </form>
 
-                <div id="success-message" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-xl text-center font-semibold">
-                    ✓ Success! Your booking request has been sent. We'll contact you shortly to confirm.
+                <div id="success-message" class="hidden mt-6 p-6 bg-green-50 dark:bg-green-900/30 border-2 border-green-500 text-green-800 dark:text-green-200 rounded-xl text-center">
+                    <div class="flex items-center justify-center gap-3 mb-2">
+                        <i data-feather="check-circle" class="w-6 h-6"></i>
+                        <span class="text-xl font-bold">Success!</span>
+                    </div>
+                    <p>Your booking request has been sent. We'll contact you shortly to confirm your appointment.</p>
                 </div>
             </div>
         </div>
@@ -987,6 +979,9 @@
                     bookingForm.style.display = 'none';
                     // Show success message
                     successMessage.classList.remove('hidden');
+                    
+                    // Reinitialize feather icons for the success message
+                    feather.replace();
                     
                     // Scroll to success message
                     successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
