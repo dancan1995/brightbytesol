@@ -3,296 +3,451 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Policy | B.B.S</title>
+    <title>Cookie Policy - Bright Byte Solution</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: { 500: '#0ea5e9', 600: '#0284c7' },
-                        secondary: { 500: '#8b5cf6', 600: '#7c3aed' }
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            200: '#f5d0fe',
+                            300: '#f0abfc',
+                            400: '#e879f9',
+                            500: '#d946ef',
+                            600: '#c026d3',
+                            700: '#a21caf',
+                            800: '#86198f',
+                            900: '#701a75',
+                        },
+                        accent: {
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
-                        display: ['Orbitron', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
+        body { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease; 
-        }
-
-        /* Logo Styles */
-        .logo-main {
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            position: relative;
-        }
-
-        .logo-letter {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            display: inline-block;
-            letter-spacing: 2px;
-        }
-
-        .logo-dot {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: #0ea5e9;
-            animation: blink-dot 1.5s ease-in-out infinite;
-        }
-
-        @keyframes blink-dot {
-            0%, 45%, 55%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .logo-motto {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 4px;
-        }
-
-        .dark .logo-motto {
-            color: #94a3b8;
-        }
-
+        
         .gradient-text {
-            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
+            background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 50%, #06b6d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex flex-col">
-                    <div class="logo-main">
-                        <span class="logo-letter">B</span>
-                        <span class="logo-dot">.</span>
-                        <span class="logo-letter">B</span>
-                        <span class="logo-dot">.</span>
-                        <span class="logo-letter">S</span>
-                    </div>
-                    <span class="logo-motto">Getting Work Done</span>
-                </a>
-                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium transition flex items-center gap-2">
-                    <i data-feather="arrow-left" class="w-5 h-5"></i>
-                    <span class="font-mono">Back to Home</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Content -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <h1 class="text-5xl font-bold mb-4">
-            <span class="gradient-text font-display">Cookie Policy</span>
-        </h1>
-        <p class="text-gray-600 dark:text-gray-400 mb-12 font-mono">// Last Updated: January 1, 2025</p>
-
-        <div class="prose dark:prose-invert max-w-none space-y-12">
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">1. What Are Cookies?</h2>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">2. How We Use Cookies</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    BrightByteSolution uses cookies to:
-                </p>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
-                    <li>Remember your preferences and settings</li>
-                    <li>Understand how you use our website</li>
-                    <li>Improve your user experience</li>
-                    <li>Analyze website traffic and performance</li>
-                    <li>Provide personalized content</li>
-                    <li>Remember your login status</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">3. Types of Cookies We Use</h2>
-                
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Essential Cookies</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    These cookies are necessary for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.
-                </p>
-
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Performance Cookies</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. They help us improve the way our website works, such as ensuring that users find what they are looking for easily.
-                </p>
-
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Functional Cookies</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages. Examples include remembering your theme preference (light/dark mode).
-                </p>
-
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Targeting/Advertising Cookies</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    These cookies may be set through our site by our advertising partners. They may be used to build a profile of your interests and show you relevant advertisements on other sites. They work by uniquely identifying your browser and device.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">4. Third-Party Cookies</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    We may use third-party services that set cookies on your device, including:
-                </p>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
-                    <li><strong>Analytics Services:</strong> To understand how users interact with our website</li>
-                    <li><strong>Content Delivery Networks:</strong> To deliver website content efficiently</li>
-                    <li><strong>Social Media Platforms:</strong> To enable social media features</li>
-                </ul>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    These third parties have their own privacy policies and cookie policies, which we encourage you to review.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">5. Cookie Duration</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    We use both session cookies and persistent cookies:
-                </p>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
-                    <li><strong>Session Cookies:</strong> Temporary cookies that are deleted when you close your browser</li>
-                    <li><strong>Persistent Cookies:</strong> Remain on your device until they expire or you delete them</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">6. Managing Cookies</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences by:
-                </p>
-                
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Browser Settings</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    Most web browsers allow you to control cookies through their settings. You can:
-                </p>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-6 space-y-2">
-                    <li>Delete all cookies from your browser</li>
-                    <li>Block all cookies</li>
-                    <li>Allow all cookies</li>
-                    <li>Block third-party cookies</li>
-                    <li>Clear cookies when you close your browser</li>
-                </ul>
-
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 font-display">Browser-Specific Instructions</h3>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2 font-mono text-sm">
-                    <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies</li>
-                    <li><strong>Firefox:</strong> Options → Privacy & Security → Cookies</li>
-                    <li><strong>Safari:</strong> Preferences → Privacy → Cookies</li>
-                    <li><strong>Microsoft Edge:</strong> Settings → Cookies and site permissions</li>
-                </ul>
-
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Please note that blocking all cookies will impact your experience on our website and may prevent you from accessing certain features.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">7. Do Not Track</h2>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Some browsers have a "Do Not Track" feature that lets you tell websites that you do not want to have your online activities tracked. We respect Do Not Track signals and will not track, plant cookies, or use advertising when a Do Not Track mechanism is in place.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">8. Changes to This Cookie Policy</h2>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. We will notify you of any significant changes by posting the new Cookie Policy on this page and updating the "Last Updated" date.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">9. More Information</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    For more information about cookies and how they work, you can visit:
-                </p>
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
-                    <li>All About Cookies: www.allaboutcookies.org</li>
-                    <li>Network Advertising Initiative: www.networkadvertising.org</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">10. Contact Us</h2>
-                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    If you have any questions about our use of cookies, please contact us:
-                </p>
-                <div class="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl border-2 border-primary-200 dark:border-primary-800">
-                    <p class="text-gray-900 dark:text-white font-bold text-lg mb-3 font-display">BrightByteSolution L.L.C</p>
-                    <p class="text-gray-700 dark:text-gray-300 mb-2">145 Gold Ave NW, Grand Rapids, MI 49504</p>
-                    <p class="text-gray-700 dark:text-gray-300 mb-2">Email: admin@brightbytesolution.com</p>
-                    <p class="text-gray-700 dark:text-gray-300">Phone: (616) 240-7246</p>
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
+                <img src="logo.png" alt="Bright Byte Solution" class="h-10 w-auto">
+                <div>
+                    <div class="text-lg font-bold">Bright Byte Solution</div>
+                    <div class="text-xs text-primary-600 dark:text-primary-400">← Back to Home</div>
                 </div>
-            </section>
-        </div>
-
-        <div class="mt-16 text-center">
-            <a href="index.html" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold rounded-full hover:opacity-90 transition shadow-lg hover:shadow-xl font-display">
-                <i data-feather="arrow-left" class="w-5 h-5"></i>
-                Back to Home
             </a>
         </div>
-    </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+            
+            <h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                Cookie Policy
+            </h1>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">
+                Last Updated: December 27, 2024
+            </p>
+
+            <div class="space-y-8 text-gray-700 dark:text-gray-300 leading-relaxed">
+                
+                <!-- Introduction -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. What Are Cookies?</h2>
+                    <p>
+                        Cookies are small text files that are placed on your computer or mobile device when you visit our website <strong>www.brightbytesolution.com</strong>. They are widely used to make websites work more efficiently, provide a better user experience, and provide information to website owners.
+                    </p>
+                    <p class="mt-4">
+                        Cookies help us understand how you use our site, remember your preferences, and improve your overall experience. This Cookie Policy explains what cookies are, how we use them, and your choices regarding cookies.
+                    </p>
+                </section>
+
+                <!-- How We Use Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. How We Use Cookies</h2>
+                    <p>Bright Byte Solution L.L.C uses cookies to:</p>
+                    <ul class="list-disc ml-6 mt-3 space-y-2">
+                        <li>Keep you signed in to your account</li>
+                        <li>Remember your preferences and settings (such as dark/light mode)</li>
+                        <li>Understand how you use our website and which pages are most popular</li>
+                        <li>Improve your user experience and website performance</li>
+                        <li>Analyze website traffic and usage patterns</li>
+                        <li>Provide personalized content and recommendations</li>
+                        <li>Prevent fraud and enhance security</li>
+                        <li>Enable essential website functionality</li>
+                    </ul>
+                </section>
+
+                <!-- Types of Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. Types of Cookies We Use</h2>
+                    
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">3.1 Essential Cookies</h3>
+                    <p class="mb-4">
+                        These cookies are strictly necessary for the website to function properly. They enable basic functions like page navigation, access to secure areas, and form submissions. The website cannot function properly without these cookies.
+                    </p>
+                    <p class="text-sm bg-gray-100 dark:bg-gray-700 p-4 rounded-lg font-mono">
+                        <strong>Examples:</strong> Session management, authentication, security tokens, load balancing
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">3.2 Performance Cookies</h3>
+                    <p class="mb-4">
+                        These cookies collect information about how visitors use our website, such as which pages are visited most often and if users receive error messages. All information collected by these cookies is aggregated and therefore anonymous. We use this information to improve how our website works.
+                    </p>
+                    <p class="text-sm bg-gray-100 dark:bg-gray-700 p-4 rounded-lg font-mono">
+                        <strong>Examples:</strong> Google Analytics, page load times, error tracking, traffic sources
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">3.3 Functional Cookies</h3>
+                    <p class="mb-4">
+                        These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages. If you do not allow these cookies, some or all of these services may not function properly.
+                    </p>
+                    <p class="text-sm bg-gray-100 dark:bg-gray-700 p-4 rounded-lg font-mono">
+                        <strong>Examples:</strong> Theme preferences (dark/light mode), language selection, user preferences, remember me functionality
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">3.4 Targeting/Advertising Cookies</h3>
+                    <p class="mb-4">
+                        These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant advertisements on other sites. They do not store directly personal information but are based on uniquely identifying your browser and internet device.
+                    </p>
+                    <p class="text-sm bg-gray-100 dark:bg-gray-700 p-4 rounded-lg font-mono">
+                        <strong>Examples:</strong> Retargeting pixels, ad network cookies, social media advertising
+                    </p>
+                </section>
+
+                <!-- Cookie Duration -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. Cookie Duration</h2>
+                    <p class="mb-4">We use both session cookies and persistent cookies:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-6 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl">
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">Session Cookies</h4>
+                            <p class="text-sm">
+                                Temporary cookies that are deleted when you close your browser. They are used for essential functions like maintaining your session while navigating the site.
+                            </p>
+                        </div>
+                        
+                        <div class="p-6 bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-secondary-900/20 dark:to-accent-900/20 rounded-xl">
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">Persistent Cookies</h4>
+                            <p class="text-sm">
+                                Remain on your device for a set period (or until you delete them). They are used to remember your preferences and improve your experience across multiple visits.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Third-Party Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. Third-Party Cookies</h2>
+                    <p class="mb-4">
+                        We may use third-party services that set cookies on your device. These services help us provide better functionality and understand how our website is used. Third-party cookies we use include:
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-primary-500 pl-4">
+                            <p class="font-bold text-gray-900 dark:text-white mb-1">Google Analytics</p>
+                            <p class="text-sm mb-2">
+                                We use Google Analytics to understand how users interact with our website. Google Analytics uses cookies to collect information about website usage.
+                            </p>
+                            <a href="https://policies.google.com/privacy" target="_blank" class="text-primary-600 hover:underline text-sm">
+                                Google Privacy Policy →
+                            </a>
+                        </div>
+
+                        <div class="border-l-4 border-secondary-500 pl-4">
+                            <p class="font-bold text-gray-900 dark:text-white mb-1">Stripe</p>
+                            <p class="text-sm mb-2">
+                                Our payment processor uses cookies to prevent fraud and provide secure payment processing.
+                            </p>
+                            <a href="https://stripe.com/privacy" target="_blank" class="text-primary-600 hover:underline text-sm">
+                                Stripe Privacy Policy →
+                            </a>
+                        </div>
+
+                        <div class="border-l-4 border-accent-500 pl-4">
+                            <p class="font-bold text-gray-900 dark:text-white mb-1">Content Delivery Networks (CDNs)</p>
+                            <p class="text-sm mb-2">
+                                We use CDNs like Cloudflare to deliver website content efficiently and securely.
+                            </p>
+                            <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" class="text-primary-600 hover:underline text-sm">
+                                Cloudflare Privacy Policy →
+                            </a>
+                        </div>
+
+                        <div class="border-l-4 border-primary-500 pl-4">
+                            <p class="font-bold text-gray-900 dark:text-white mb-1">Formspree</p>
+                            <p class="text-sm mb-2">
+                                Our form submission service may use cookies to prevent spam and ensure reliable form delivery.
+                            </p>
+                            <a href="https://formspree.io/legal/privacy-policy" target="_blank" class="text-primary-600 hover:underline text-sm">
+                                Formspree Privacy Policy →
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="mt-4">
+                        These third parties have their own privacy and cookie policies, which we encourage you to review. We do not control these third-party cookies.
+                    </p>
+                </section>
+
+                <!-- Managing Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">6. Managing Your Cookie Preferences</h2>
+                    <p class="mb-4">
+                        You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences through various methods:
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">6.1 Browser Settings</h3>
+                    <p class="mb-4">
+                        Most web browsers allow you to control cookies through their settings. You can typically:
+                    </p>
+                    <ul class="list-disc ml-6 mb-4 space-y-2">
+                        <li>See what cookies you have and delete them individually</li>
+                        <li>Block third-party cookies</li>
+                        <li>Block cookies from particular sites</li>
+                        <li>Block all cookies</li>
+                        <li>Delete all cookies when you close your browser</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">6.2 Browser-Specific Instructions</h3>
+                    <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-xl space-y-2 font-mono text-sm">
+                        <p><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies and other site data</p>
+                        <p><strong>Mozilla Firefox:</strong> Options → Privacy & Security → Cookies and Site Data</p>
+                        <p><strong>Safari (macOS):</strong> Preferences → Privacy → Manage Website Data</p>
+                        <p><strong>Microsoft Edge:</strong> Settings → Cookies and site permissions → Manage and delete cookies</p>
+                        <p><strong>Safari (iOS):</strong> Settings → Safari → Block All Cookies</p>
+                        <p><strong>Chrome (Android):</strong> Settings → Site settings → Cookies</p>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 rounded">
+                        <p class="font-semibold text-gray-900 dark:text-white mb-2">⚠️ Important Note</p>
+                        <p class="text-sm">
+                            Blocking all cookies will impact your experience on our website and may prevent you from accessing certain features. Some features may not function properly without cookies enabled.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Do Not Track -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">7. Do Not Track Signals</h2>
+                    <p>
+                        Some browsers have a "Do Not Track" (DNT) feature that lets you tell websites that you do not want to have your online activities tracked. Currently, there is no industry standard for how companies should respond to DNT signals.
+                    </p>
+                    <p class="mt-4">
+                        We respect your privacy choices. When we detect a DNT signal from your browser, we will not use cookies for tracking or advertising purposes. However, essential cookies necessary for website functionality will still be used.
+                    </p>
+                </section>
+
+                <!-- Specific Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">8. Specific Cookies We Use</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full border border-gray-300 dark:border-gray-600 text-sm">
+                            <thead class="bg-gray-100 dark:bg-gray-700">
+                                <tr>
+                                    <th class="px-4 py-3 text-left font-semibold border-b border-gray-300 dark:border-gray-600">Cookie Name</th>
+                                    <th class="px-4 py-3 text-left font-semibold border-b border-gray-300 dark:border-gray-600">Purpose</th>
+                                    <th class="px-4 py-3 text-left font-semibold border-b border-gray-300 dark:border-gray-600">Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                    <td class="px-4 py-3 font-mono">color-theme</td>
+                                    <td class="px-4 py-3">Remembers your theme preference (dark/light mode)</td>
+                                    <td class="px-4 py-3">Persistent (1 year)</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                    <td class="px-4 py-3 font-mono">session_id</td>
+                                    <td class="px-4 py-3">Maintains your session while browsing</td>
+                                    <td class="px-4 py-3">Session</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                    <td class="px-4 py-3 font-mono">_ga</td>
+                                    <td class="px-4 py-3">Google Analytics - distinguishes users</td>
+                                    <td class="px-4 py-3">2 years</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                    <td class="px-4 py-3 font-mono">_gid</td>
+                                    <td class="px-4 py-3">Google Analytics - distinguishes users</td>
+                                    <td class="px-4 py-3">24 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono">_gat</td>
+                                    <td class="px-4 py-3">Google Analytics - throttles request rate</td>
+                                    <td class="px-4 py-3">1 minute</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Your Rights -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">9. Your Rights</h2>
+                    <p class="mb-4">You have the following rights regarding cookies:</p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li><strong>Right to Access:</strong> You can see which cookies are stored on your device</li>
+                        <li><strong>Right to Delete:</strong> You can delete cookies from your device at any time</li>
+                        <li><strong>Right to Refuse:</strong> You can refuse to accept cookies (though this may limit functionality)</li>
+                        <li><strong>Right to Withdraw Consent:</strong> Where we rely on consent, you can withdraw it at any time</li>
+                    </ul>
+                </section>
+
+                <!-- Updates -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">10. Changes to This Cookie Policy</h2>
+                    <p>
+                        We may update this Cookie Policy from time to time to reflect changes in technology, legislation, our business practices, or for other operational reasons. We will notify you of any significant changes by:
+                    </p>
+                    <ul class="list-disc ml-6 mt-3 space-y-2">
+                        <li>Posting the new Cookie Policy on this page</li>
+                        <li>Updating the "Last Updated" date at the top of this policy</li>
+                        <li>Sending you an email notification (for material changes)</li>
+                    </ul>
+                    <p class="mt-4">
+                        We encourage you to review this Cookie Policy periodically to stay informed about how we use cookies.
+                    </p>
+                </section>
+
+                <!-- More Information -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">11. More Information About Cookies</h2>
+                    <p class="mb-4">
+                        For more information about cookies and how they work, you can visit these independent resources:
+                    </p>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="https://www.allaboutcookies.org" target="_blank" class="text-primary-600 hover:underline flex items-center gap-2">
+                                <i data-feather="external-link" class="w-4 h-4"></i>
+                                All About Cookies - www.allaboutcookies.org
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.networkadvertising.org" target="_blank" class="text-primary-600 hover:underline flex items-center gap-2">
+                                <i data-feather="external-link" class="w-4 h-4"></i>
+                                Network Advertising Initiative - www.networkadvertising.org
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youronlinechoices.com" target="_blank" class="text-primary-600 hover:underline flex items-center gap-2">
+                                <i data-feather="external-link" class="w-4 h-4"></i>
+                                Your Online Choices - www.youronlinechoices.com
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Contact -->
+                <section>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">12. Contact Us</h2>
+                    <p class="mb-4">
+                        If you have any questions about our use of cookies or this Cookie Policy, please contact us:
+                    </p>
+                    <div class="p-6 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl border-2 border-primary-200 dark:border-primary-700">
+                        <p class="font-semibold text-gray-900 dark:text-white text-lg mb-3">Bright Byte Solution L.L.C</p>
+                        <div class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <p class="flex items-center gap-2">
+                                <i data-feather="map-pin" class="w-4 h-4 text-primary-600"></i>
+                                145 Gold Ave NW, Grand Rapids, MI 49504, United States
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-feather="mail" class="w-4 h-4 text-primary-600"></i>
+                                <a href="mailto:admin@brightbytesolution.com" class="text-primary-600 hover:underline">admin@brightbytesolution.com</a>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-feather="phone" class="w-4 h-4 text-primary-600"></i>
+                                <a href="tel:+16162407246" class="text-primary-600 hover:underline">(616) 240-7246</a>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-feather="clock" class="w-4 h-4 text-primary-600"></i>
+                                Monday-Friday, 9:00 AM - 5:00 PM EST
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Consent -->
+                <section class="mt-12 p-6 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl border-l-4 border-primary-600">
+                    <p class="font-semibold text-gray-900 dark:text-white mb-2">Your Consent</p>
+                    <p>
+                        By using our website, you consent to our use of cookies in accordance with this Cookie Policy. If you do not agree to our use of cookies, you should adjust your browser settings accordingly or refrain from using our website.
+                    </p>
+                </section>
+
+            </div>
+        </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="logo-main justify-center mb-4">
-                <span class="logo-letter">B</span>
-                <span class="logo-dot">.</span>
-                <span class="logo-letter">B</span>
-                <span class="logo-dot">.</span>
-                <span class="logo-letter">S</span>
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>&copy; 2024 Bright Byte Solution L.L.C. All rights reserved.</p>
+            <div class="mt-4 space-x-6">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="privacy-policy.html" class="hover:text-white transition">Privacy Policy</a>
+                <a href="terms-of-service.html" class="hover:text-white transition">Terms of Service</a>
+                <a href="cookie-policy.html" class="hover:text-white transition">Cookie Policy</a>
             </div>
-            <p class="font-mono text-sm mb-4">// Getting Work Done</p>
-            <p>&copy; <span id="current-year"></span> BrightByteSolution L.L.C // All rights reserved</p>
         </div>
     </footer>
 
     <script>
         feather.replace();
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Theme management
+        const html = document.documentElement;
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
     </script>
 </body>
 </html>

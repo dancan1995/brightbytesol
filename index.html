@@ -11,7 +11,6 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://js.stripe.com/v3/"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,6 +125,51 @@
         .dark ::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, #0369a1, #a21caf);
         }
+
+        /* CEO Photo Placeholder */
+        .ceo-photo-placeholder {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ceo-photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ceo-photo-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: white;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .ceo-photo-placeholder .photo-content {
+            position: relative;
+            z-index: 1;
+            width: calc(100% - 6px);
+            height: calc(100% - 6px);
+            border-radius: 50%;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dark .ceo-photo-placeholder .photo-content {
+            background: #374151;
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -134,7 +178,7 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#" class="flex items-center gap-4">
+                <a href="#home" class="flex items-center gap-4">
                     <img src="logo.png" alt="Bright Byte Solution" class="h-12 w-auto">
                     <div class="hidden sm:block">
                         <div class="text-xl font-bold text-gray-900 dark:text-white">Bright Byte Solution</div>
@@ -181,33 +225,30 @@
     <section id="home" class="relative overflow-hidden pt-20 min-h-screen flex items-center">
         <div class="absolute inset-0 bg-gradient-to-br from-primary-600/90 via-secondary-600/90 to-accent-600/90"></div>
         
-        <div class="relative max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8 z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
+        <div class="relative max-w-7xl mx-auto px-4 py-32 sm:px-6 lg:px-8 z-10 w-full">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Content -->
                 <div class="text-white animate-fade-in-up">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                        GET HELP WITH <span class="text-secondary-200">DATA ANALYTICS, SOFTWARE & MOBILE APPS</span> FROM EXPERTS.
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        GET HELP WITH<br/>
+                        <span class="text-secondary-200">DATA ANALYTICS,<br/>SOFTWARE &<br/>MOBILE APPS</span><br/>
+                        FROM EXPERTS.
                     </h1>
-                    <p class="text-xl md:text-2xl text-primary-100 mb-4 leading-relaxed">
+                    <p class="text-xl md:text-2xl text-primary-100 mb-4 leading-relaxed max-w-3xl mx-auto">
                         Learn how to analyze data efficiently and create insights that work.
                     </p>
-                    <p class="text-lg text-primary-100 mb-8 leading-relaxed">
-                        Consult with best experts for <strong>Data Science</strong>, <strong>Analytics</strong>, <strong>Software Development</strong>, <strong>Mobile Apps</strong>, <strong>Machine Learning</strong>, and <strong>Research Support</strong> to apply skills in action.
+                    <p class="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
+                        Consult with best experts for <strong>Data Science, Analytics, Software Development, Mobile Apps, Machine Learning</strong>, and <strong>Research Support</strong> to apply skills in action.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#services" class="px-8 py-4 bg-white text-primary-700 font-semibold rounded-full hover:bg-gray-100 transition duration-300 shadow-2xl text-center">
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#services" class="px-10 py-4 bg-white text-primary-700 font-bold rounded-full hover:bg-gray-100 transition duration-300 shadow-2xl text-center text-lg">
                             LEARNING NOW
                         </a>
-                        <a href="#appointment" class="px-8 py-4 glass-effect text-white font-semibold rounded-full hover:bg-white/10 transition duration-300 flex items-center justify-center gap-2">
-                            <i data-feather="calendar" class="w-5 h-5"></i>
+                        <a href="#appointment" class="px-10 py-4 glass-effect text-white font-bold rounded-full hover:bg-white/10 transition duration-300 flex items-center justify-center gap-3 text-lg">
+                            <i data-feather="calendar" class="w-6 h-6"></i>
                             BOOK NOW
                         </a>
                     </div>
-                </div>
-
-                <!-- Right Illustration -->
-                <div class="hidden lg:block animate-float">
-                    <img src="hero-image.png" alt="Data Analytics Workspace" class="w-full h-auto drop-shadow-2xl">
                 </div>
             </div>
         </div>
@@ -227,22 +268,22 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter">250+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3">250+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Data Science Projects</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-secondary-900/20 dark:to-accent-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter">180+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3">180+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Analytics Solutions</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter">320+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3">320+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Software Applications</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/20 dark:to-primary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter">150+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3">150+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Mobile Apps Delivered</div>
                 </div>
             </div>
@@ -375,7 +416,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Starter Package -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500 transition">
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Starter</h3>
                         <div class="text-5xl font-bold gradient-text mb-2">$1,500</div>
@@ -403,7 +444,7 @@
                             <span class="text-gray-700 dark:text-gray-300">Email Support</span>
                         </li>
                     </ul>
-                    <a href="#appointment" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition text-center">
+                    <a href="#appointment" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 transition text-center">
                         Get Started
                     </a>
                 </div>
@@ -450,7 +491,7 @@
                 </div>
 
                 <!-- Enterprise Package -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary-500 transition">
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
                         <div class="text-5xl font-bold gradient-text mb-2">Custom</div>
@@ -482,7 +523,7 @@
                             <span class="text-gray-700 dark:text-gray-300">Team Training Included</span>
                         </li>
                     </ul>
-                    <a href="#contact" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition text-center">
+                    <a href="#contact" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-secondary-600 hover:text-white dark:hover:bg-secondary-600 transition text-center">
                         Contact Sales
                     </a>
                 </div>
@@ -490,7 +531,7 @@
         </div>
     </section>
 
-    <!-- Team/Management Section -->
+    <!-- Team/Management Section with CEO Photo -->
     <section id="team" class="py-24 bg-gray-100 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -498,63 +539,82 @@
                     Our <span class="gradient-text">Leadership</span>
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Meet the visionaries behind Bright Byte Solution
+                    // Meet the visionary behind Bright Byte Solution
                 </p>
             </div>
 
             <div class="max-w-4xl mx-auto">
                 <!-- CEO Card -->
                 <div class="bg-white dark:bg-gray-700 rounded-3xl shadow-2xl overflow-hidden">
-                    <div class="md:flex">
-                        <div class="md:w-1/3 bg-gradient-to-br from-primary-600 to-secondary-600 p-12 flex items-center justify-center">
-                            <div class="w-48 h-48 bg-white/20 rounded-full flex items-center justify-center">
-                                <i data-feather="user" class="w-24 h-24 text-white"></i>
+                    <div class="p-12">
+                        <!-- CEO Photo -->
+                        <div class="mb-8">
+                            <div class="ceo-photo-placeholder">
+                                <div class="photo-content">
+                                    <!-- TO ADD YOUR PHOTO: -->
+                                    <!-- 1. Save your professional headshot as "ceo-photo.jpg" -->
+                                    <!-- 2. Put it in the same folder as this index.html file -->
+                                    <!-- 3. Uncomment the line below (remove the <!-- and -->) -->
+                                    <!-- <img src="ceo-photo.jpg" alt="Dancun Juma - CEO"> -->
+                                    
+                                    <!-- Placeholder (DELETE THE SECTION BELOW after adding your photo) -->
+                                    <div class="text-center">
+                                        <i data-feather="user" class="w-20 h-20 text-gray-400 mx-auto mb-2"></i>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400 font-mono px-4">Add your photo:<br/>ceo-photo.jpg<br/><span class="text-[10px]">(See ADD-CEO-PHOTO-GUIDE.md)</span></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="md:w-2/3 p-12">
-                            <div class="mb-4">
-                                <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 rounded-full text-sm font-semibold mb-3">
-                                    CEO & Founder
-                                </span>
-                                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Dancun Juma</h3>
-                                <p class="text-gray-600 dark:text-gray-400 font-mono text-sm">Master of Science in Data Science & Analytics</p>
+
+                        <div class="text-center mb-6">
+                            <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 rounded-full text-sm font-semibold mb-3">
+                                CEO & Founder
+                            </span>
+                            <h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Dancun Juma</h3>
+                            <p class="text-gray-600 dark:text-gray-400 font-mono text-sm">Master of Science in Data Science & Analytics</p>
+                            <p class="text-gray-600 dark:text-gray-400 font-mono text-sm">Grand Valley State University</p>
+                        </div>
+
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-center max-w-3xl mx-auto text-lg">
+                            Dancun founded Bright Byte Solution L.L.C with a vision to bridge the gap between complex data challenges and actionable business insights. With extensive experience in data science, analytics, and software development, Dancun leads our mission in delivering innovative solutions that drive measurable results for clients worldwide.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl">
+                                <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                    <i data-feather="award" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <p class="text-2xl font-bold text-gray-900 dark:text-white">250+</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Projects Delivered</p>
                             </div>
-                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                                Dancun founded Bright Byte Solution L.L.C with a vision to bridge the gap between complex data challenges and actionable business insights. With extensive experience in data science, analytics, and software development, Dancun leads our team in delivering innovative solutions that drive measurable results for our clients.
-                            </p>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
-                                        <i data-feather="award" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-semibold text-gray-900 dark:text-white">250+ Projects</p>
-                                        <p class="text-xs text-gray-600 dark:text-gray-400">Delivered</p>
-                                    </div>
+                            <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-secondary-900/20 dark:to-accent-900/20 rounded-xl">
+                                <div class="w-12 h-12 bg-secondary-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                    <i data-feather="users" class="w-6 h-6 text-white"></i>
                                 </div>
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-secondary-100 dark:bg-secondary-900/30 rounded-lg flex items-center justify-center">
-                                        <i data-feather="users" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-semibold text-gray-900 dark:text-white">100+ Clients</p>
-                                        <p class="text-xs text-gray-600 dark:text-gray-400">Worldwide</p>
-                                    </div>
-                                </div>
+                                <p class="text-2xl font-bold text-gray-900 dark:text-white">100+</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Clients Worldwide</p>
                             </div>
-                            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-600">
-                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Connect with Dancun:</p>
-                                <div class="flex gap-3">
-                                    <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-gray-600 rounded-lg flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition">
-                                        <i data-feather="linkedin" class="w-5 h-5 text-gray-700 dark:text-gray-300"></i>
-                                    </a>
-                                    <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-gray-600 rounded-lg flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition">
-                                        <i data-feather="mail" class="w-5 h-5 text-gray-700 dark:text-gray-300"></i>
-                                    </a>
-                                    <a href="#" class="w-10 h-10 bg-gray-100 dark:bg-gray-600 rounded-lg flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition">
-                                        <i data-feather="twitter" class="w-5 h-5 text-gray-700 dark:text-gray-300"></i>
-                                    </a>
+                            <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-xl">
+                                <div class="w-12 h-12 bg-accent-600 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                    <i data-feather="globe" class="w-6 h-6 text-white"></i>
                                 </div>
+                                <p class="text-2xl font-bold text-gray-900 dark:text-white">5+</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Years Experience</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-gray-200 dark:border-gray-600">
+                            <p class="text-center text-sm text-gray-600 dark:text-gray-400 mb-4">Connect with Dancun:</p>
+                            <div class="flex justify-center gap-4">
+                                <a href="https://linkedin.com/in/dancunjuma" target="_blank" class="w-12 h-12 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition group">
+                                    <i data-feather="linkedin" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600"></i>
+                                </a>
+                                <a href="mailto:admin@brightbytesolution.com" class="w-12 h-12 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition group">
+                                    <i data-feather="mail" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600"></i>
+                                </a>
+                                <a href="https://twitter.com/brightbytesol" target="_blank" class="w-12 h-12 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition group">
+                                    <i data-feather="twitter" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -565,7 +625,7 @@
                     <i data-feather="trending-up" class="w-12 h-12 mx-auto text-primary-600 dark:text-primary-400 mb-4"></i>
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">We're Growing!</h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        Bright Byte Solution is actively expanding. Join us on our journey to transform data into business value.
+                        Bright Byte Solution is actively expanding our team. Join us on our journey to transform data into business value.
                     </p>
                 </div>
             </div>
@@ -590,39 +650,39 @@
                 <div>
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Technology Partners</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
                             <div class="text-center">
-                                <div class="text-4xl mb-2">🔷</div>
+                                <div class="text-4xl mb-2">☁️</div>
                                 <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Microsoft Azure</p>
                             </div>
                         </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
                             <div class="text-center">
-                                <div class="text-4xl mb-2">🟠</div>
+                                <div class="text-4xl mb-2">☁️</div>
                                 <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">AWS</p>
                             </div>
                         </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
                             <div class="text-center">
-                                <div class="text-4xl mb-2">🔵</div>
+                                <div class="text-4xl mb-2">☁️</div>
                                 <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Google Cloud</p>
                             </div>
                         </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
                             <div class="text-center">
                                 <div class="text-4xl mb-2">💳</div>
                                 <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Stripe</p>
                             </div>
                         </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
                             <div class="text-center">
                                 <div class="text-4xl mb-2">📊</div>
                                 <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Tableau</p>
                             </div>
                         </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
                             <div class="text-center">
-                                <div class="text-4xl mb-2">⚡</div>
+                                <div class="text-4xl mb-2">🤖</div>
                                 <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">TensorFlow</p>
                             </div>
                         </div>
@@ -724,7 +784,7 @@
                     </p>
                 </form>
 
-                <div id="success-message" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-xl text-center">
+                <div id="success-message" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-xl text-center font-semibold">
                     ✓ Success! We'll contact you shortly to confirm.
                 </div>
             </div>
@@ -744,24 +804,24 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center">
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition">
                     <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <i data-feather="mail" class="w-8 h-8 text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email</h3>
-                    <p class="text-gray-600 dark:text-gray-300">admin@brightbytesolution.com</p>
+                    <a href="mailto:admin@brightbytesolution.com" class="text-primary-600 dark:text-primary-400 hover:underline">admin@brightbytesolution.com</a>
                 </div>
 
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center">
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition">
                     <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <i data-feather="phone" class="w-8 h-8 text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Phone</h3>
-                    <p class="text-gray-600 dark:text-gray-300">(616) 240-7246</p>
+                    <a href="tel:+16162407246" class="text-primary-600 dark:text-primary-400 hover:underline">(616) 240-7246</a>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Mon-Fri, 9AM-5PM EST</p>
                 </div>
 
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center">
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition">
                     <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <i data-feather="map-pin" class="w-8 h-8 text-white"></i>
                     </div>
@@ -783,13 +843,13 @@
                         Empowering businesses through data analytics, software development, and innovative solutions.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
+                        <a href="https://twitter.com/brightbytesol" target="_blank" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
                             <i data-feather="twitter" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
+                        <a href="https://linkedin.com/company/brightbytesolution" target="_blank" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
                             <i data-feather="linkedin" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
+                        <a href="https://github.com/brightbytesolution" target="_blank" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
                             <i data-feather="github" class="w-5 h-5"></i>
                         </a>
                     </div>
@@ -799,7 +859,7 @@
                     <h3 class="text-white font-bold mb-6 text-lg">Services</h3>
                     <ul class="space-y-3">
                         <li><a href="#services" class="hover:text-primary-400 transition">Data Analytics</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition">Software Dev</a></li>
+                        <li><a href="#services" class="hover:text-primary-400 transition">Software Development</a></li>
                         <li><a href="#services" class="hover:text-primary-400 transition">Mobile Apps</a></li>
                         <li><a href="#services" class="hover:text-primary-400 transition">Machine Learning</a></li>
                     </ul>
@@ -808,15 +868,16 @@
                 <div>
                     <h3 class="text-white font-bold mb-6 text-lg">Legal</h3>
                     <ul class="space-y-3">
-                        <li><a href="privacy-policy.html" class="hover:text-primary-400 transition">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-primary-400 transition">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-primary-400 transition">Cookie Policy</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-primary-400 transition" target="_blank">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-primary-400 transition" target="_blank">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-primary-400 transition" target="_blank">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p>&copy; <span id="current-year"></span> Bright Byte Solution L.L.C. All rights reserved.</p>
+                <p class="text-sm text-gray-500 mt-2">Grand Rapids, Michigan | Empowering businesses through data</p>
             </div>
         </div>
     </footer>
@@ -859,6 +920,14 @@
             feather.replace();
         });
 
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
         // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('date').setAttribute('min', today);
@@ -868,11 +937,13 @@
         const successMessage = document.getElementById('success-message');
 
         bookingForm.addEventListener('submit', function(e) {
-            // Form will submit to Formspree
-            // Show success message after a delay
+            // Form submits to Formspree normally
+            // Show success message after delay
             setTimeout(() => {
                 successMessage.classList.remove('hidden');
-                bookingForm.reset();
+                setTimeout(() => {
+                    bookingForm.reset();
+                }, 500);
             }, 1000);
         });
 
@@ -886,8 +957,6 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
                 }
             });
         });
