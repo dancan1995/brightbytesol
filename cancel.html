@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Cancelled | Bright Byte Solution</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 500: '#0ea5e9', 600: '#0284c7' },
+                        secondary: { 500: '#d946ef', 600: '#c026d3' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center p-4">
+    
+    <div class="max-w-2xl w-full">
+        <div class="text-center mb-8">
+            <img src="logo.png" alt="Bright Byte Solution" class="h-20 mx-auto mb-6">
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-12 text-center">
+            <!-- Cancel Icon -->
+            <div class="w-24 h-24 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-feather="x-circle" class="w-16 h-16 text-orange-600 dark:text-orange-400"></i>
+            </div>
+
+            <!-- Cancel Message -->
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Booking Cancelled
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                Your payment was cancelled. No charges were made.
+            </p>
+
+            <!-- Reassurance -->
+            <div class="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">What Would You Like To Do?</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    Your appointment slot is still available. You can complete your booking anytime, or reach out to us directly if you have questions.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-xl">
+                        <i data-feather="calendar" class="w-8 h-8 text-primary-500 mb-2"></i>
+                        <p class="font-semibold text-gray-900 dark:text-white text-sm">Try Again</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-xs">Complete your booking</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-xl">
+                        <i data-feather="mail" class="w-8 h-8 text-secondary-500 mb-2"></i>
+                        <p class="font-semibold text-gray-900 dark:text-white text-sm">Email Us</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-xs">Ask questions first</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-xl">
+                        <i data-feather="phone" class="w-8 h-8 text-green-500 mb-2"></i>
+                        <p class="font-semibold text-gray-900 dark:text-white text-sm">Call Us</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-xs">Speak with us directly</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="bg-gray-100 dark:bg-gray-700 rounded-xl p-6 mb-8">
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Have questions or concerns?</p>
+                <p class="font-semibold text-gray-900 dark:text-white mb-3">We're here to help!</p>
+                <div class="space-y-2">
+                    <p class="text-primary-600 dark:text-primary-400 flex items-center justify-center gap-2">
+                        <i data-feather="mail" class="w-4 h-4"></i>
+                        admin@brightbytesolution.com
+                    </p>
+                    <p class="text-primary-600 dark:text-primary-400 flex items-center justify-center gap-2">
+                        <i data-feather="phone" class="w-4 h-4"></i>
+                        (616) 240-7246
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Mon-Fri, 9AM-5PM EST</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#appointment" class="px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-full hover:opacity-90 transition shadow-lg flex items-center justify-center gap-2">
+                    <i data-feather="refresh-cw" class="w-5 h-5"></i>
+                    Try Booking Again
+                </a>
+                <a href="index.html" class="px-8 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition flex items-center justify-center gap-2">
+                    <i data-feather="home" class="w-5 h-5"></i>
+                    Back to Home
+                </a>
+            </div>
+
+            <!-- Additional Help -->
+            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    <strong>Payment issues?</strong> Common solutions:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-left text-sm">
+                    <div class="flex items-start gap-2">
+                        <i data-feather="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-gray-600 dark:text-gray-400">Check card details are correct</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i data-feather="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-gray-600 dark:text-gray-400">Ensure sufficient funds</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i data-feather="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-gray-600 dark:text-gray-400">Contact your bank if declined</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i data-feather="check" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-gray-600 dark:text-gray-400">Try a different payment method</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

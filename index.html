@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BrightByteSolution - Data Science Consulting, Analytics Services, Software Development, and Mobile App Development in Grand Rapids, Michigan">
-    <title>B.B.S | Getting Work Done</title>
+    <title>Bright Byte Solution | Data Analytics • Software • Mobile Apps</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -27,16 +37,16 @@
                             900: '#0c4a6e',
                         },
                         secondary: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            200: '#ddd6fe',
-                            300: '#c4b5fd',
-                            400: '#a78bfa',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                            800: '#5b21b6',
-                            900: '#4c1d95',
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            200: '#f5d0fe',
+                            300: '#f0abfc',
+                            400: '#e879f9',
+                            500: '#d946ef',
+                            600: '#c026d3',
+                            700: '#a21caf',
+                            800: '#86198f',
+                            900: '#701a75',
                         },
                         accent: {
                             500: '#06b6d4',
@@ -44,188 +54,23 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-                        mono: ['Consolas', 'Monaco', 'Courier New', 'Courier', 'monospace'],
-                        display: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Enhanced Logo Design */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 16px;
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease; 
         }
 
-        .logo-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .logo-main {
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            position: relative;
-        }
-
-        .logo-letter {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            display: inline-block;
-            letter-spacing: 2px;
-        }
-
-        .logo-letter-b1 {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        .logo-letter-b2 {
-            animation: pulse-glow 2s ease-in-out infinite 0.3s;
-        }
-
-        .logo-letter-s {
-            animation: pulse-glow 2s ease-in-out infinite 0.6s;
-        }
-
-        .logo-dot {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #0ea5e9;
-            animation: blink-dot 1.5s ease-in-out infinite;
-        }
-
-        /* Circuit board pattern behind logo */
-        .logo-circuit {
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            top: -10%;
-            left: -10%;
-            opacity: 0.1;
-            pointer-events: none;
-        }
-
-        .circuit-line {
-            stroke: #0ea5e9;
-            stroke-width: 2;
-            fill: none;
-            animation: circuit-flow 3s linear infinite;
-        }
-
-        @keyframes circuit-flow {
-            0% { stroke-dashoffset: 1000; }
-            100% { stroke-dashoffset: 0; }
-        }
-
-        .logo-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(139, 92, 246, 0.1));
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(14, 165, 233, 0.3);
-            margin-top: 4px;
-        }
-
-        .logo-badge-icon {
-            width: 12px;
-            height: 12px;
-            background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
-            border-radius: 50%;
-            animation: pulse-dot 2s ease-in-out infinite;
-        }
-
-        .logo-motto {
-            font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .dark .logo-motto {
-            color: #94a3b8;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { 
-                filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
-                transform: scale(1);
-            }
-            50% { 
-                filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
-                transform: scale(1.05);
-            }
-        }
-
-        @keyframes blink-dot {
-            0%, 45%, 55%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { 
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
-            }
-            50% { 
-                transform: scale(1.2);
-                box-shadow: 0 0 0 6px rgba(14, 165, 233, 0);
-            }
-        }
-
-        /* Hero Logo - Larger version */
-        .hero-logo-main {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            position: relative;
-            justify-content: center;
-        }
-
-        .hero-logo-letter {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            font-size: 8rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ffffff 0%, #bae6fd 50%, #ddd6fe 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            display: inline-block;
-            letter-spacing: 8px;
-            text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
-        }
-
-        .hero-logo-dot {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            font-size: 8rem;
-            font-weight: 900;
-            color: #ffffff;
-            animation: blink-dot 1.5s ease-in-out infinite;
-        }
-
-        /* Neural Network Animation */
-        .neural-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         @keyframes fade-in-up {
@@ -239,97 +84,25 @@
             }
         }
 
-        @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(14, 165, 233, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.8); }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
         }
 
         .animate-fade-in-up {
             animation: fade-in-up 0.8s ease-out forwards;
         }
 
-        .animate-blob {
-            animation: blob 7s infinite;
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-glow {
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .animation-delay-2000 { animation-delay: 2s; }
-
-        .counter {
-            animation: fade-in-up 1s ease-out;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Particle System */
-        .particle {
-            position: absolute;
-            background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: particle-float 4s infinite;
-        }
-
-        @keyframes particle-float {
-            0%, 100% {
-                transform: translateY(0) translateX(0) scale(1);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) translateX(50px) scale(0);
-                opacity: 0;
-            }
-        }
-
-        /* Matrix Rain Effect */
-        .matrix-column {
-            position: absolute;
-            top: 0;
-            font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
-            font-size: 14px;
-            color: #0ea5e9;
-            opacity: 0.3;
-            animation: matrix-rain 10s linear infinite;
-        }
-
-        @keyframes matrix-rain {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100vh); }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Custom Scrollbar */
@@ -342,7 +115,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #0ea5e9, #8b5cf6);
+            background: linear-gradient(to bottom, #0ea5e9, #d946ef);
             border-radius: 10px;
         }
 
@@ -351,35 +124,7 @@
         }
 
         .dark ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #0369a1, #6d28d9);
-        }
-
-        /* Gradient Text */
-        .gradient-text {
-            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Glass Effect */
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .logo-letter {
-                font-size: 1.8rem;
-            }
-            .hero-logo-letter {
-                font-size: 4rem;
-                letter-spacing: 4px;
-            }
-            .hero-logo-dot {
-                font-size: 4rem;
-            }
+            background: linear-gradient(to bottom, #0369a1, #a21caf);
         }
     </style>
 </head>
@@ -389,26 +134,11 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#" class="logo-container">
-                    <div class="logo-wrapper">
-                        <div class="logo-main">
-                            <!-- Circuit board SVG background -->
-                            <svg class="logo-circuit" xmlns="http://www.w3.org/2000/svg">
-                                <path class="circuit-line" d="M10,50 L40,50 L40,20 L70,20" stroke-dasharray="5,5"/>
-                                <circle cx="40" cy="50" r="3" fill="#0ea5e9"/>
-                                <circle cx="40" cy="20" r="3" fill="#8b5cf6"/>
-                            </svg>
-                            
-                            <span class="logo-letter logo-letter-b1">B</span>
-                            <span class="logo-dot">.</span>
-                            <span class="logo-letter logo-letter-b2">B</span>
-                            <span class="logo-dot">.</span>
-                            <span class="logo-letter logo-letter-s">S</span>
-                        </div>
-                        <div class="logo-badge">
-                            <div class="logo-badge-icon"></div>
-                            <span class="logo-motto">Getting Work Done</span>
-                        </div>
+                <a href="#" class="flex items-center gap-4">
+                    <img src="logo.png" alt="Bright Byte Solution" class="h-12 w-auto">
+                    <div class="hidden sm:block">
+                        <div class="text-xl font-bold text-gray-900 dark:text-white">Bright Byte Solution</div>
+                        <div class="text-xs text-primary-600 dark:text-primary-400 font-mono">Data Analytics • Software • Mobile Apps</div>
                     </div>
                 </a>
                 
@@ -419,10 +149,10 @@
                 <div id="nav-links" class="hidden md:flex items-center gap-8">
                     <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Home</a>
                     <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Services</a>
-                    <a href="#stats" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Impact</a>
-                    <a href="#tools" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Tools</a>
+                    <a href="#pricing" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Pricing</a>
                     <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">About</a>
-                    <a href="#appointment" class="px-6 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-full hover:shadow-lg transition animate-glow">
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Contact</a>
+                    <a href="#appointment" class="px-6 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-full hover:shadow-lg transition">
                         Book Now
                     </a>
                     <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
@@ -436,90 +166,78 @@
                 <div class="flex flex-col gap-4">
                     <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Home</a>
                     <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Services</a>
-                    <a href="#stats" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Impact</a>
-                    <a href="#tools" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Tools</a>
+                    <a href="#pricing" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Pricing</a>
                     <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">About</a>
-                    <a href="#appointment" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Book Now</a>
                     <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Contact</a>
+                    <a href="#appointment" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Book Now</a>
                 </div>
             </div>
         </div>
     </nav>
     
-    <!-- Hero Section with Neural Network -->
-    <section id="home" class="relative overflow-hidden pt-20">
-        <!-- Neural Network Background -->
-        <div class="neural-bg">
-            <canvas id="neural-canvas" class="absolute inset-0 w-full h-full"></canvas>
-        </div>
-        
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden pt-20 min-h-screen flex items-center">
         <div class="absolute inset-0 bg-gradient-to-br from-primary-600/90 via-secondary-600/90 to-accent-600/90"></div>
         
-        <div class="relative max-w-7xl mx-auto px-4 py-40 sm:px-6 lg:px-8 text-center z-10">
-            <div class="animate-fade-in-up mb-8">
-                <div class="hero-logo-main">
-                    <span class="hero-logo-letter logo-letter-b1">B</span>
-                    <span class="hero-logo-dot">.</span>
-                    <span class="hero-logo-letter logo-letter-b2">B</span>
-                    <span class="hero-logo-dot">.</span>
-                    <span class="hero-logo-letter logo-letter-s">S</span>
+        <div class="relative max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8 z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-white animate-fade-in-up">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        GET HELP WITH <span class="text-secondary-200">DATA ANALYTICS</span> FROM EXPERTS.
+                    </h1>
+                    <p class="text-xl md:text-2xl text-primary-100 mb-8 leading-relaxed">
+                        Learn how to analyze data efficiently and create insights that work. Consult with best experts to apply skills in action.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#services" class="px-8 py-4 bg-white text-primary-700 font-semibold rounded-full hover:bg-gray-100 transition duration-300 shadow-2xl text-center">
+                            LEARNING NOW
+                        </a>
+                        <a href="#appointment" class="px-8 py-4 glass-effect text-white font-semibold rounded-full hover:bg-white/10 transition duration-300 flex items-center justify-center gap-2">
+                            <i data-feather="play-circle" class="w-5 h-5"></i>
+                            BOOK NOW
+                        </a>
+                    </div>
                 </div>
-                <p class="text-white/90 text-xl mt-6 font-mono tracking-widest">// Getting Work Done</p>
+
+                <!-- Right Illustration -->
+                <div class="hidden lg:block animate-float">
+                    <img src="/mnt/user-data/uploads/1766845427749_image.png" alt="Data Analytics Workspace" class="w-full h-auto drop-shadow-2xl">
+                </div>
             </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up delay-100">
-                Transform Data Into <span class="text-secondary-200 animate-float inline-block">Intelligence</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200">
-                Empowering businesses with cutting-edge data science, analytics, and innovative software solutions
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-300">
-                <a href="#appointment" class="px-8 py-4 bg-white text-primary-700 font-semibold rounded-full hover:bg-gray-100 transition duration-300 shadow-2xl hover:shadow-3xl animate-glow">
-                    Book Free Consultation
-                </a>
-                <a href="#services" class="px-8 py-4 glass-effect text-white font-semibold rounded-full hover:bg-white/10 transition duration-300">
-                    Explore Services →
-                </a>
-            </div>
-            
-            <!-- Floating particles -->
-            <div id="particles-container"></div>
         </div>
     </section>
 
-    <!-- Stats Section with Animated Numbers -->
-    <section id="stats" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
-        <!-- Matrix Rain Effect -->
-        <div class="absolute inset-0 opacity-10" id="matrix-container"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-20">
+    <!-- Stats Section -->
+    <section id="stats" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                     Our <span class="gradient-text">Impact</span>
                 </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-mono">
+                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
                     // Trusted by businesses across industries
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter font-display">250+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3 counter">250+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Data Science Projects</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-secondary-900/20 dark:to-accent-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter font-display">180+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3 counter">180+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Analytics Solutions</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter font-display">320+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3 counter">320+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Software Applications</div>
                 </div>
 
                 <div class="text-center p-8 bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/20 dark:to-primary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
-                    <div class="text-6xl font-bold gradient-text mb-3 counter font-display">150+</div>
+                    <div class="text-6xl font-bold gradient-text mb-3 counter">150+</div>
                     <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Mobile Apps Delivered</div>
                 </div>
             </div>
@@ -533,105 +251,104 @@
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                     Our <span class="gradient-text">Expert</span> Services
                 </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-mono">
+                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
                     // Comprehensive solutions tailored to your needs
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Cards -->
+                <!-- Data Analytics -->
                 <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-primary-500">
                     <div class="h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center relative overflow-hidden">
                         <i data-feather="bar-chart-2" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Data Science</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Data Analytics</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Transform raw data into actionable insights with advanced analytics and machine learning expertise.
+                            Transform raw data into actionable insights with advanced analytics and visualization techniques.
                         </p>
                         <div class="text-sm gradient-text font-bold font-mono">
-                            → 250+ Projects Completed
+                            → From $1,500/project
                         </div>
                     </div>
                 </div>
 
+                <!-- Software Development -->
                 <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-secondary-500">
                     <div class="h-48 bg-gradient-to-br from-secondary-500 to-primary-500 flex items-center justify-center relative overflow-hidden">
-                        <i data-feather="activity" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Analytics</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Comprehensive business intelligence and predictive analytics from dashboards to complex models.
-                        </p>
-                        <div class="text-sm gradient-text font-bold font-mono">
-                            → 180+ Solutions Delivered
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-accent-500">
-                    <div class="h-48 bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center relative overflow-hidden">
                         <i data-feather="code" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Software Dev</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Software Development</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Custom software solutions built with modern technologies for scalable, secure applications.
                         </p>
                         <div class="text-sm gradient-text font-bold font-mono">
-                            → 320+ Applications Built
+                            → From $3,000/project
                         </div>
                     </div>
                 </div>
 
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-secondary-500">
-                    <div class="h-48 bg-gradient-to-br from-secondary-500 to-primary-500 flex items-center justify-center relative overflow-hidden">
+                <!-- Mobile Apps -->
+                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-accent-500">
+                    <div class="h-48 bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center relative overflow-hidden">
                         <i data-feather="smartphone" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Mobile Apps</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Mobile Apps</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Native and cross-platform mobile applications for exceptional user experiences on iOS and Android.
                         </p>
                         <div class="text-sm gradient-text font-bold font-mono">
-                            → 150+ Apps Launched
+                            → From $5,000/project
                         </div>
                     </div>
                 </div>
 
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-primary-500">
-                    <div class="h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center relative overflow-hidden">
+                <!-- Machine Learning -->
+                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-secondary-500">
+                    <div class="h-48 bg-gradient-to-br from-secondary-500 to-primary-500 flex items-center justify-center relative overflow-hidden">
                         <i data-feather="cpu" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Machine Learning</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Machine Learning</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Leverage AI and ML to automate processes, predict outcomes, and gain competitive advantages.
                         </p>
                         <div class="text-sm gradient-text font-bold font-mono">
-                            → 200+ ML Models Deployed
+                            → From $4,000/project
                         </div>
                     </div>
                 </div>
 
+                <!-- Data Science Consulting -->
+                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-primary-500">
+                    <div class="h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center relative overflow-hidden">
+                        <i data-feather="trending-up" class="w-20 h-20 text-white animate-float"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Data Science Consulting</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Expert guidance on data strategy, model development, and implementation best practices.
+                        </p>
+                        <div class="text-sm gradient-text font-bold font-mono">
+                            → From $200/hour
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Analytics -->
                 <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-accent-500">
                     <div class="h-48 bg-gradient-to-br from-secondary-500 to-accent-500 flex items-center justify-center relative overflow-hidden">
                         <i data-feather="database" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 font-display">Research Analytics</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Research Analytics</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Expert research analytics support using comprehensive data analysis tools and statistical consulting.
+                            Comprehensive data analysis support for academic and clinical research projects.
                         </p>
                         <div class="text-sm gradient-text font-bold font-mono">
-                            → 100+ Research Projects
+                            → From $1,200/project
                         </div>
                     </div>
                 </div>
@@ -639,225 +356,265 @@
         </div>
     </section>
 
-    <!-- Tools Section -->
-    <section id="tools" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Our <span class="gradient-text">Technology</span> Stack
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-mono">
-                    // Industry-leading tools for data analysis
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">📊</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">Python</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">NumPy, Pandas</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">📈</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">R Studio</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Statistical Analysis</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">🔢</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">SPSS</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Advanced Stats</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">📉</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">SAS</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Enterprise</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">📊</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">Tableau</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Visualization</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">📈</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">Power BI</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Business Intel</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">🤖</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">TensorFlow</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Deep Learning</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">🧠</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">PyTorch</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Neural Networks</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">🗄️</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">SQL</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Database</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">☁️</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">Azure ML</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Cloud ML</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">📊</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">Stata</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Econometrics</div>
-                </div>
-
-                <div class="group bg-gradient-to-br from-secondary-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-md hover:shadow-2xl transition text-center transform hover:-translate-y-2">
-                    <div class="text-5xl mb-3 group-hover:animate-float">📉</div>
-                    <div class="font-bold text-gray-900 dark:text-white font-display">MATLAB</div>
-                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Computing</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-gray-100 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:flex lg:items-center lg:justify-between lg:gap-16">
-                <div class="lg:w-1/2 mb-12 lg:mb-0">
-                    <div class="relative">
-                        <div class="absolute -top-6 -left-6 w-40 h-40 bg-primary-400 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
-                        <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-secondary-400 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"></div>
-                        <div class="relative rounded-3xl bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/30 dark:to-secondary-900/30 overflow-hidden shadow-2xl p-16 text-center glass-effect">
-                            <i data-feather="award" class="w-40 h-40 mx-auto text-primary-600 dark:text-primary-400 mb-6 animate-float"></i>
-                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white font-display">Excellence in Data</h3>
-                            <div class="mt-4">
-                                <div class="hero-logo-main inline-flex">
-                                    <span class="text-4xl font-display gradient-text">B.B.S</span>
-                                </div>
-                                <p class="text-primary-600 dark:text-primary-400 mt-2 font-mono text-sm tracking-wider">Getting Work Done</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                        About <span class="gradient-text font-display">B.B.S</span>
-                    </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                        BrightByteSolution L.L.C is a Michigan-based technology consulting firm specializing in data science, analytics, and software development. We're passionate about helping businesses unlock the full potential of their data through innovative solutions and expert guidance.
-                    </p>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                        Our team combines deep technical expertise with business acumen to deliver solutions that not only solve today's challenges but also position your organization for tomorrow's opportunities.
-                    </p>
-                    <div class="space-y-6">
-                        <div class="flex items-start group">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 text-white group-hover:animate-float">
-                                    <i data-feather="zap" class="w-5 h-5"></i>
-                                </div>
-                            </div>
-                            <div class="ml-5">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white font-display">Rapid Insights</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mt-1">
-                                    Get from data to decisions faster with our streamlined processes and cutting-edge methodologies.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-start group">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-secondary-500 to-accent-500 text-white group-hover:animate-float">
-                                    <i data-feather="shield" class="w-5 h-5"></i>
-                                </div>
-                            </div>
-                            <div class="ml-5">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white font-display">Proven Expertise</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mt-1">
-                                    Years of experience delivering successful projects across multiple industries and domains.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Appointment Section -->
-    <section id="appointment" class="py-24 bg-white dark:bg-gray-900">
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Schedule a <span class="gradient-text">Consultation</span>
+                    Transparent <span class="gradient-text">Pricing</span>
                 </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-mono">
-                    // Ready to transform your business with data?
+                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
+                    // Choose the package that fits your needs
                 </p>
             </div>
 
-            <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 border border-gray-100 dark:border-gray-700">
-                <form id="appointment-form" action="https://formspree.io/f/mgvjvwyl" method="POST" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Package -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-700">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Starter</h3>
+                        <div class="text-5xl font-bold gradient-text mb-2">$1,500</div>
+                        <p class="text-gray-600 dark:text-gray-400">Per Project</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Basic Data Analysis</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Up to 3 Dashboards</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">2 Week Delivery</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">1 Revision Round</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Email Support</span>
+                        </li>
+                    </ul>
+                    <button onclick="bookConsultation('starter', 1500)" class="w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Professional Package -->
+                <div class="bg-gradient-to-br from-primary-600 to-secondary-600 rounded-2xl shadow-2xl p-8 transform scale-105 relative">
+                    <div class="absolute top-0 right-8 -translate-y-1/2">
+                        <span class="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">POPULAR</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
+                        <div class="text-5xl font-bold text-white mb-2">$3,500</div>
+                        <p class="text-primary-100">Per Project</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">Advanced Analytics</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">Unlimited Dashboards</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">1 Week Delivery</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">3 Revision Rounds</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">Priority Support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+                            <span class="text-white">ML Model Development</span>
+                        </li>
+                    </ul>
+                    <button onclick="bookConsultation('professional', 3500)" class="w-full px-6 py-3 bg-white text-primary-700 font-semibold rounded-full hover:bg-gray-100 transition shadow-lg">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Enterprise Package -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-700">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
+                        <div class="text-5xl font-bold gradient-text mb-2">Custom</div>
+                        <p class="text-gray-600 dark:text-gray-400">Contact Us</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Full-Stack Solutions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Custom Development</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Flexible Timeline</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Unlimited Revisions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">24/7 Dedicated Support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Team Training Included</span>
+                        </li>
+                    </ul>
+                    <button onclick="bookConsultation('enterprise', 0)" class="w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section with Stripe -->
+    <section id="appointment" class="py-24 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Book Your <span class="gradient-text">Consultation</span>
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
+                    // Secure payment via Stripe • Instant calendar invite
+                </p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12">
+                <form id="booking-form" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="name" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Full Name *</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition font-mono">
+                            <label for="name" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
                         </div>
                         
                         <div>
-                            <label for="email" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Email Address *</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition font-mono">
+                            <label for="email" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
                         </div>
                     </div>
                     
                     <div>
-                        <label for="phone" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition font-mono">
+                        <label for="phone" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
                     </div>
                     
                     <div>
-                        <label for="service" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Service Needed *</label>
-                        <select id="service" name="service" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition font-mono">
-                            <option value="" disabled selected>// Select a service</option>
-                            <option value="data-science">Data Science Consulting</option>
-                            <option value="analytics">Analytics Services</option>
-                            <option value="software">Software Development</option>
-                            <option value="mobile">Mobile App Development</option>
-                            <option value="ml">Machine Learning Solutions</option>
-                            <option value="research">Research & Analytics Support</option>
+                        <label for="service" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Service Package *</label>
+                        <select id="service" name="service" required onchange="updatePrice()" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
+                            <option value="">Select a package...</option>
+                            <option value="consultation" data-price="150">Initial Consultation - $150</option>
+                            <option value="starter" data-price="1500">Starter Package - $1,500</option>
+                            <option value="professional" data-price="3500">Professional Package - $3,500</option>
+                            <option value="enterprise" data-price="0">Enterprise (Custom Quote)</option>
                         </select>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="date" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Preferred Date *</label>
-                            <input type="date" id="date" name="date" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition font-mono">
+                            <label for="date" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
                         </div>
                         
                         <div>
-                            <label for="time" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Preferred Time *</label>
-                            <input type="time" id="time" name="time" required min="09:00" max="17:00" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition font-mono">
+                            <label for="time" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Preferred Time (EST) *</label>
+                            <select id="time" name="time" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
+                                <option value="">Select time...</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
                         </div>
                     </div>
                     
                     <div>
-                        <label for="message" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Tell us about your project</label>
-                        <textarea id="message" name="message" rows="4" placeholder="// Describe your needs, goals, or any questions..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition font-mono"></textarea>
+                        <label for="message" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Project Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project, goals, and any specific requirements..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition"></textarea>
+                    </div>
+
+                    <div id="price-display" class="hidden bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/30 dark:to-secondary-900/30 p-6 rounded-xl border-2 border-primary-200 dark:border-primary-700">
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-semibold text-gray-900 dark:text-white">Total Amount:</span>
+                            <span id="price-amount" class="text-3xl font-bold gradient-text">$0</span>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                            <i data-feather="shield" class="w-4 h-4 inline"></i> Secure payment processing via Stripe
+                        </p>
                     </div>
                     
-                    <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-4 px-8 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg hover:shadow-2xl font-display text-lg animate-glow">
-                        Schedule Appointment →
+                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-4 px-8 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg hover:shadow-2xl text-lg flex items-center justify-center gap-2">
+                        <i data-feather="calendar" class="w-5 h-5"></i>
+                        <span>Proceed to Payment</span>
                     </button>
+
+                    <p class="text-center text-sm text-gray-600 dark:text-gray-400">
+                        Your appointment will be automatically added to our calendar after payment.
+                    </p>
                 </form>
-                
-                <div id="success-message" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-xl text-center font-mono">
-                    ✓ Success! We'll contact you shortly to confirm.
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="logo.png" alt="Bright Byte Solution" class="w-full max-w-md mx-auto drop-shadow-2xl">
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                        About <span class="gradient-text">Bright Byte Solution</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Bright Byte Solution L.L.C is a Michigan-based technology consulting firm specializing in data analytics, software development, and mobile app development. We transform complex data challenges into clear, actionable insights that drive business growth.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        Our team combines deep technical expertise with industry knowledge to deliver solutions that not only meet your current needs but scale with your business. From data visualization to machine learning models, we're your partner in digital transformation.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="award" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Expert Team</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Certified professionals</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="zap" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Fast Delivery</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">On-time projects</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -870,72 +627,36 @@
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                     Get In <span class="gradient-text">Touch</span>
                 </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-mono">
-                    // Ready to make your data work for you?
+                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
+                    // We're here to help
                 </p>
             </div>
 
-            <div class="bg-white dark:bg-gray-700 rounded-3xl shadow-2xl overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 bg-gradient-to-br from-primary-600 to-secondary-600 p-12 text-white">
-                        <h3 class="text-3xl font-bold mb-8 font-display">Contact Information</h3>
-                        <div class="space-y-8">
-                            <div class="flex items-start group">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:animate-float">
-                                        <i data-feather="mail" class="w-6 h-6"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-primary-100 text-sm font-mono">Email</p>
-                                    <p class="font-bold text-lg mt-1">admin@brightbytesolution.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start group">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:animate-float">
-                                        <i data-feather="phone" class="w-6 h-6"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-primary-100 text-sm font-mono">Phone</p>
-                                    <p class="font-bold text-lg mt-1">(616) 240-7246</p>
-                                    <p class="text-sm text-primary-100 mt-1">Mon-Fri, 9AM-5PM EST</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start group">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:animate-float">
-                                        <i data-feather="map-pin" class="w-6 h-6"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-primary-100 text-sm font-mono">Office</p>
-                                    <p class="font-bold text-lg mt-1">145 Gold Ave NW</p>
-                                    <p class="text-primary-100">Grand Rapids, MI 49504</p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="mail" class="w-8 h-8 text-white"></i>
                     </div>
-                    <div class="md:w-1/2 p-12">
-                        <form id="contact-form" action="https://formspree.io/f/mgvjvwyl" method="POST" class="space-y-6">
-                            <div>
-                                <label for="contact-name" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Full Name</label>
-                                <input type="text" id="contact-name" name="name" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-600 dark:text-white font-mono">
-                            </div>
-                            <div>
-                                <label for="contact-email" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Email Address</label>
-                                <input type="email" id="contact-email" name="email" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-600 dark:text-white font-mono">
-                            </div>
-                            <div>
-                                <label for="contact-message" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 font-mono">Your Message</label>
-                                <textarea id="contact-message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-600 dark:text-white font-mono"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 px-6 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg font-display">
-                                Send Message →
-                            </button>
-                        </form>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email</h3>
+                    <p class="text-gray-600 dark:text-gray-300">admin@brightbytesolution.com</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="phone" class="w-8 h-8 text-white"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Phone</h3>
+                    <p class="text-gray-600 dark:text-gray-300">(616) 240-7246</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Mon-Fri, 9AM-5PM EST</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="map-pin" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Office</h3>
+                    <p class="text-gray-600 dark:text-gray-300">145 Gold Ave NW</p>
+                    <p class="text-gray-600 dark:text-gray-300">Grand Rapids, MI 49504</p>
                 </div>
             </div>
         </div>
@@ -945,68 +666,47 @@
     <footer class="bg-gray-900 text-gray-300 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="logo-main mb-4">
-                        <span class="logo-letter logo-letter-b1">B</span>
-                        <span class="logo-dot">.</span>
-                        <span class="logo-letter logo-letter-b2">B</span>
-                        <span class="logo-dot">.</span>
-                        <span class="logo-letter logo-letter-s">S</span>
-                    </div>
-                    <p class="text-gray-400 mb-4 font-mono text-sm tracking-wider">
-                        // Getting Work Done
-                    </p>
+                <div class="md:col-span-2">
+                    <img src="logo.png" alt="Bright Byte Solution" class="h-16 w-auto mb-4">
                     <p class="text-gray-400 mb-6">
-                        Empowering businesses through data science, analytics, and innovative software solutions.
+                        Empowering businesses through data analytics, software development, and innovative solutions.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition group">
-                            <i data-feather="twitter" class="w-5 h-5 group-hover:animate-float"></i>
+                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition group">
-                            <i data-feather="linkedin" class="w-5 h-5 group-hover:animate-float"></i>
+                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition group">
-                            <i data-feather="github" class="w-5 h-5 group-hover:animate-float"></i>
+                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
+                            <i data-feather="github" class="w-5 h-5"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 class="text-white font-bold mb-6 font-display text-lg">Services</h3>
+                    <h3 class="text-white font-bold mb-6 text-lg">Services</h3>
                     <ul class="space-y-3">
-                        <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Data Science</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Analytics</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Software Dev</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Mobile Apps</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Research</a></li>
+                        <li><a href="#services" class="hover:text-primary-400 transition">Data Analytics</a></li>
+                        <li><a href="#services" class="hover:text-primary-400 transition">Software Dev</a></li>
+                        <li><a href="#services" class="hover:text-primary-400 transition">Mobile Apps</a></li>
+                        <li><a href="#services" class="hover:text-primary-400 transition">Machine Learning</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-white font-bold mb-6 font-display text-lg">Company</h3>
+                    <h3 class="text-white font-bold mb-6 text-lg">Company</h3>
                     <ul class="space-y-3">
-                        <li><a href="#about" class="hover:text-primary-400 transition font-mono">→ About Us</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition font-mono">→ Services</a></li>
-                        <li><a href="#tools" class="hover:text-primary-400 transition font-mono">→ Tech Stack</a></li>
-                        <li><a href="#appointment" class="hover:text-primary-400 transition font-mono">→ Book Now</a></li>
-                        <li><a href="#contact" class="hover:text-primary-400 transition font-mono">→ Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-white font-bold mb-6 font-display text-lg">Legal</h3>
-                    <ul class="space-y-3">
-                        <li><a href="privacy-policy.html" class="hover:text-primary-400 transition font-mono">→ Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-primary-400 transition font-mono">→ Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-primary-400 transition font-mono">→ Cookie Policy</a></li>
+                        <li><a href="#about" class="hover:text-primary-400 transition">About Us</a></li>
+                        <li><a href="#pricing" class="hover:text-primary-400 transition">Pricing</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-primary-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-primary-400 transition">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p class="font-mono">&copy; <span id="current-year"></span> BrightByteSolution L.L.C // All rights reserved</p>
-                <p class="mt-2 text-sm">Grand Rapids, Michigan | Data Science • Analytics • Software Development</p>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p>&copy; <span id="current-year"></span> Bright Byte Solution L.L.C. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1017,114 +717,6 @@
 
         // Auto-update copyright year
         document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Neural Network Canvas Animation
-        const canvas = document.getElementById('neural-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        class Node {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-                ctx.fill();
-            }
-        }
-
-        const nodes = [];
-        for (let i = 0; i < 50; i++) {
-            nodes.push(new Node(Math.random() * canvas.width, Math.random() * canvas.height));
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            nodes.forEach(node => {
-                node.update();
-                node.draw();
-
-                nodes.forEach(otherNode => {
-                    const dx = node.x - otherNode.x;
-                    const dy = node.y - otherNode.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < 150) {
-                        ctx.beginPath();
-                        ctx.moveTo(node.x, node.y);
-                        ctx.lineTo(otherNode.x, otherNode.y);
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 * (1 - distance / 150)})`;
-                        ctx.lineWidth = 1;
-                        ctx.stroke();
-                    }
-                });
-            });
-
-            requestAnimationFrame(animate);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles-container');
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.width = Math.random() * 6 + 2 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.bottom = '-10px';
-                container.appendChild(particle);
-
-                setTimeout(() => particle.remove(), 4000);
-            }, 300);
-        }
-        createParticles();
-
-        // Matrix Rain Effect
-        function createMatrixRain() {
-            const container = document.getElementById('matrix-container');
-            const chars = '01';
-            
-            for (let i = 0; i < 20; i++) {
-                setTimeout(() => {
-                    const column = document.createElement('div');
-                    column.className = 'matrix-column';
-                    column.style.left = Math.random() * 100 + '%';
-                    column.style.animationDelay = Math.random() * 2 + 's';
-                    column.style.animationDuration = (Math.random() * 5 + 5) + 's';
-                    
-                    let text = '';
-                    for (let j = 0; j < 20; j++) {
-                        text += chars[Math.floor(Math.random() * chars.length)] + '<br>';
-                    }
-                    column.innerHTML = text;
-                    container.appendChild(column);
-                }, i * 100);
-            }
-        }
-        createMatrixRain();
 
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
@@ -1157,12 +749,117 @@
             feather.replace();
         });
 
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+
+        // Update price display
+        function updatePrice() {
+            const serviceSelect = document.getElementById('service');
+            const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+            const price = selectedOption.dataset.price;
+            const priceDisplay = document.getElementById('price-display');
+            const priceAmount = document.getElementById('price-amount');
+
+            if (price && price > 0) {
+                priceAmount.textContent = '$' + parseInt(price).toLocaleString();
+                priceDisplay.classList.remove('hidden');
+            } else if (selectedOption.value === 'enterprise') {
+                priceAmount.textContent = 'Custom Quote';
+                priceDisplay.classList.remove('hidden');
+            } else {
+                priceDisplay.classList.add('hidden');
+            }
+            feather.replace();
+        }
+
+        // Booking with Stripe Integration
+        const bookingForm = document.getElementById('booking-form');
+        
+        // REPLACE THIS WITH YOUR ACTUAL STRIPE PUBLISHABLE KEY
+        const stripe = Stripe('pk_test_YOUR_STRIPE_PUBLISHABLE_KEY');
+
+        bookingForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const message = document.getElementById('message').value;
+            const serviceSelect = document.getElementById('service');
+            const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+            const price = parseInt(selectedOption.dataset.price || 0);
+
+            // For enterprise or custom quotes, handle differently
+            if (service === 'enterprise' || price === 0) {
+                // Send to email instead of processing payment
+                await sendBookingEmail({
+                    name, email, phone, service, date, time, message
+                });
+                alert('Thank you! We\'ll contact you shortly with a custom quote.');
+                bookingForm.reset();
+                return;
+            }
+
+            // Process payment with Stripe
+            try {
+                // Call your backend to create a checkout session
+                const response = await fetch('/api/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        phone,
+                        service,
+                        date,
+                        time,
+                        message,
+                        amount: price * 100, // Stripe uses cents
+                    }),
+                });
+
+                const session = await response.json();
+
+                // Redirect to Stripe Checkout
+                const result = await stripe.redirectToCheckout({
+                    sessionId: session.id,
+                });
+
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again or contact us directly.');
+            }
         });
+
+        // Helper function to send booking details
+        async function sendBookingEmail(bookingData) {
+            // This would typically be handled by your backend
+            console.log('Booking data:', bookingData);
+            // You can integrate with Formspree or your own backend here
+        }
+
+        // Quick booking from pricing section
+        function bookConsultation(packageType, price) {
+            const serviceSelect = document.getElementById('service');
+            if (packageType === 'starter') {
+                serviceSelect.value = 'starter';
+            } else if (packageType === 'professional') {
+                serviceSelect.value = 'professional';
+            } else if (packageType === 'enterprise') {
+                serviceSelect.value = 'enterprise';
+            }
+            updatePrice();
+            document.getElementById('appointment').scrollIntoView({ behavior: 'smooth' });
+        }
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1174,13 +871,11 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
                 }
             });
         });
-
-        // Set minimum date to today
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('date').setAttribute('min', today);
 
         // Navbar scroll effect
         const navbar = document.querySelector('nav');
@@ -1191,44 +886,6 @@
                 navbar.classList.remove('shadow-lg');
             }
         });
-
-        // Counter animation
-        function animateCounter(element, target, duration) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target + '+';
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start) + '+';
-                }
-            }, 16);
-        }
-
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.counter');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.textContent);
-                        animateCounter(counter, target, 2000);
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        const statsSection = document.getElementById('stats');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
     </script>
 </body>
 </html>

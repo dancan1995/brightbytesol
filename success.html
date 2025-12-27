@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed! | Bright Byte Solution</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 500: '#0ea5e9', 600: '#0284c7' },
+                        secondary: { 500: '#d946ef', 600: '#c026d3' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center p-4">
+    
+    <div class="max-w-2xl w-full">
+        <div class="text-center mb-8">
+            <img src="logo.png" alt="Bright Byte Solution" class="h-20 mx-auto mb-6">
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-12 text-center">
+            <!-- Success Icon -->
+            <div class="w-24 h-24 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-feather="check-circle" class="w-16 h-16 text-green-600 dark:text-green-400"></i>
+            </div>
+
+            <!-- Success Message -->
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Payment Successful!
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                Your consultation has been booked successfully.
+            </p>
+
+            <!-- Details -->
+            <div class="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">What's Next?</h2>
+                <div class="text-left space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-white">Check Your Email</p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">A confirmation email has been sent with all the details.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-white">Calendar Invitation</p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">You'll receive a calendar invitation from admin@brightbytesolution.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-white">Meeting Link</p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">A Teams meeting link will be included in the calendar invite.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="bg-gray-100 dark:bg-gray-700 rounded-xl p-6 mb-8">
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Need to reschedule or have questions?</p>
+                <p class="font-semibold text-gray-900 dark:text-white">Contact us:</p>
+                <p class="text-primary-600 dark:text-primary-400">admin@brightbytesolution.com</p>
+                <p class="text-primary-600 dark:text-primary-400">(616) 240-7246</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html" class="px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-full hover:opacity-90 transition shadow-lg">
+                    Back to Home
+                </a>
+                <button onclick="window.print()" class="px-8 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition flex items-center justify-center gap-2">
+                    <i data-feather="printer" class="w-5 h-5"></i>
+                    Print Confirmation
+                </button>
+            </div>
+        </div>
+
+        <!-- Session Info (for reference) -->
+        <div id="session-info" class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400"></div>
+    </div>
+
+    <script>
+        feather.replace();
+
+        // Get session ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        
+        if (sessionId) {
+            document.getElementById('session-info').textContent = `Reference ID: ${sessionId.substring(0, 20)}...`;
+        }
+    </script>
+</body>
+</html>
