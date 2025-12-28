@@ -149,37 +149,6 @@
             background: linear-gradient(to bottom, #0369a1, #a21caf);
         }
 
-        /* CEO Photo Styling */
-        .ceo-photo-container {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
-            border-radius: 50%;
-            padding: 3px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .ceo-photo-inner {
-            width: 100%;
-            height: 100%;
-            background: white;
-            border-radius: 50%;
-            padding: 3px;
-            overflow: hidden;
-        }
-
-        .dark .ceo-photo-inner {
-            background: #374151;
-        }
-
-        .ceo-photo-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
         /* Form Styling */
         .form-select, .form-input {
             font-family: 'Calibri', Arial, sans-serif;
@@ -207,9 +176,8 @@
                 <div id="nav-links" class="hidden md:flex items-center gap-8">
                     <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Home</a>
                     <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Services</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Projects</a>
                     <a href="#pricing" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Pricing</a>
-                    <a href="#team" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Team</a>
-                    <a href="#partners" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Partners</a>
                     <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Contact</a>
                     <a href="#appointment" class="px-6 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-full hover:shadow-lg transition">
                         Book Now
@@ -225,9 +193,8 @@
                 <div class="flex flex-col gap-4">
                     <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Home</a>
                     <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Services</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Projects</a>
                     <a href="#pricing" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Pricing</a>
-                    <a href="#team" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Team</a>
-                    <a href="#partners" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Partners</a>
                     <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Contact</a>
                     <a href="#appointment" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Book Now</a>
                 </div>
@@ -235,7 +202,7 @@
         </div>
     </nav>
     
-    <!-- Hero Section - REDUCED SIZE -->
+    <!-- Hero Section -->
     <section id="home" class="relative overflow-hidden pt-20 flex items-center" style="min-height: 75vh;">
         <div class="absolute inset-0 bg-gradient-to-br from-primary-600/90 via-secondary-600/90 to-accent-600/90"></div>
         
@@ -413,8 +380,112 @@
         </div>
     </section>
 
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Featured <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
+                    // Innovative solutions we're building
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- MedEye-T Project -->
+                <div class="group bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 border-2 border-primary-200 dark:border-primary-900">
+                    <div class="p-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-4 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl">
+                                <i data-feather="activity" class="w-10 h-10 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-bold text-gray-900 dark:text-white">MedEye-T</h3>
+                                <p class="text-primary-600 dark:text-primary-400 font-semibold">Healthcare Mobile Application</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-lg">
+                            Advanced medication adherence monitoring platform built with React Native and Firebase. Features video-based medication intake verification, real-time provider dashboards, and intelligent patient monitoring systems.
+                        </p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-3">
+                                <i data-feather="check-circle" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Video Upload & Playback System</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-feather="check-circle" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Provider Approval Workflows</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-feather="check-circle" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Real-time Patient Monitoring</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-feather="check-circle" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Firebase Cloud Integration</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold">React Native</span>
+                            <span class="px-4 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-full text-sm font-semibold">Firebase</span>
+                            <span class="px-4 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full text-sm font-semibold">Healthcare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GVSU Research Projects -->
+                <div class="group bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 border-2 border-secondary-200 dark:border-secondary-900">
+                    <div class="p-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-4 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-2xl">
+                                <i data-feather="book-open" class="w-10 h-10 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-bold text-gray-900 dark:text-white">GVSU Research</h3>
+                                <p class="text-secondary-600 dark:text-secondary-400 font-semibold">Health Analytics Collaboration</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-lg">
+                            Collaborative research initiatives with Grand Valley State University focusing on healthcare analytics, predictive modeling, and clinical data science. Developing cutting-edge solutions for health informatics challenges.
+                        </p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-3">
+                                <i data-feather="check-circle" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Stroke Prediction Models (78% Accuracy)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-feather="check-circle" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Balance Assessment Applications</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-feather="check-circle" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Computer Adaptive Testing Algorithms</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-feather="check-circle" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Clinical Research Analytics</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-full text-sm font-semibold">Machine Learning</span>
+                            <span class="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold">R / Python</span>
+                            <span class="px-4 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full text-sm font-semibold">Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-white dark:bg-gray-900">
+    <section id="pricing" class="py-24 bg-gray-100 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -427,7 +498,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Starter Package -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500 transition">
+                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-600 hover:border-primary-500 transition">
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Starter</h3>
                         <div class="text-5xl font-bold gradient-text mb-2">$1,500</div>
@@ -455,7 +526,7 @@
                             <span class="text-gray-700 dark:text-gray-300">Email Support</span>
                         </li>
                     </ul>
-                    <a href="#appointment" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 transition text-center">
+                    <a href="#appointment" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 transition text-center">
                         Get Started
                     </a>
                 </div>
@@ -502,7 +573,7 @@
                 </div>
 
                 <!-- Enterprise Package -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-700 hover:border-secondary-500 transition">
+                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-600 hover:border-secondary-500 transition">
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
                         <div class="text-5xl font-bold gradient-text mb-2">Custom</div>
@@ -534,7 +605,7 @@
                             <span class="text-gray-700 dark:text-gray-300">Dedicated Team</span>
                         </li>
                     </ul>
-                    <a href="#contact" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-secondary-600 hover:text-white dark:hover:bg-secondary-600 transition text-center">
+                    <a href="#contact" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-secondary-600 hover:text-white dark:hover:bg-secondary-600 transition text-center">
                         Contact Sales
                     </a>
                 </div>
@@ -542,78 +613,8 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="py-24 bg-gray-100 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Meet Our <span class="gradient-text">Team</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Expert professionals dedicated to your success
-                </p>
-            </div>
-
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-2xl overflow-hidden">
-                    <div class="p-12">
-                        <div class="ceo-photo-container mx-auto mb-6">
-                            <div class="ceo-photo-inner">
-                                <img src="ceo-photo.jpg" alt="CEO" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Sulaiman Karrish</h3>
-                            <p class="text-primary-600 dark:text-primary-400 font-semibold mb-4">CEO & Founder</p>
-                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                                Machine Learning Research Assistant at Mary Free Bed Rehabilitation Hospital and Professional Science Master's candidate in Data Science & Analytics at Grand Valley State University. Specialized in healthcare analytics, predictive modeling, and mobile application development.
-                            </p>
-                            <div class="flex justify-center gap-4">
-                                <a href="#" class="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition">
-                                    <i data-feather="linkedin" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                                </a>
-                                <a href="#" class="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition">
-                                    <i data-feather="mail" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section id="partners" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Our <span class="gradient-text">Partners</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Collaborating with industry leaders
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="flex items-center justify-center p-8 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition">
-                    <div class="text-gray-400 dark:text-gray-600 font-bold text-xl">Partner Logo</div>
-                </div>
-                <div class="flex items-center justify-center p-8 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition">
-                    <div class="text-gray-400 dark:text-gray-600 font-bold text-xl">Partner Logo</div>
-                </div>
-                <div class="flex items-center justify-center p-8 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition">
-                    <div class="text-gray-400 dark:text-gray-600 font-bold text-xl">Partner Logo</div>
-                </div>
-                <div class="flex items-center justify-center p-8 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition">
-                    <div class="text-gray-400 dark:text-gray-600 font-bold text-xl">Partner Logo</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gray-100 dark:bg-gray-800">
+    <section id="contact" class="py-24 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -643,7 +644,7 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email</h3>
-                            <p class="text-gray-600 dark:text-gray-300">contact@brightbytesolution.com</p>
+                            <a href="mailto:admin@brightbytesolution.com" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">admin@brightbytesolution.com</a>
                         </div>
                     </div>
 
@@ -653,27 +654,27 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Phone</h3>
-                            <p class="text-gray-600 dark:text-gray-300">+1 (616) 555-0100</p>
+                            <a href="tel:+16162407246" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">(616) 240-7246</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl p-8">
                     <form class="space-y-6">
                         <div>
                             <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Name</label>
-                            <input type="text" class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Your name">
+                            <input type="text" class="form-input w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Enter your name">
                         </div>
 
                         <div>
                             <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Email</label>
-                            <input type="email" class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="your@email.com">
+                            <input type="email" class="form-input w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Enter your email address">
                         </div>
 
                         <div>
                             <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Message</label>
-                            <textarea rows="4" class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Tell us about your project..."></textarea>
+                            <textarea rows="4" class="form-input w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Tell us about your project..."></textarea>
                         </div>
 
                         <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold rounded-full hover:shadow-lg transition">
@@ -685,8 +686,8 @@
         </div>
     </section>
 
-    <!-- Appointment/Booking Section with International Country Codes -->
-    <section id="appointment" class="py-24 bg-white dark:bg-gray-900">
+    <!-- Appointment/Booking Section -->
+    <section id="appointment" class="py-24 bg-gray-100 dark:bg-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -697,29 +698,29 @@
                 </p>
             </div>
 
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 md:p-12">
+            <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-2xl p-8 md:p-12">
                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">First Name *</label>
-                            <input type="text" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="John">
+                            <input type="text" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Enter your first name">
                         </div>
 
                         <div>
                             <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Last Name *</label>
-                            <input type="text" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Doe">
+                            <input type="text" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Enter your last name">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Email Address *</label>
-                        <input type="email" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="john.doe@example.com">
+                        <input type="email" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Enter your email address">
                     </div>
 
                     <div>
                         <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Phone Number *</label>
                         <div class="flex gap-3">
-                            <select class="form-select w-1/3 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white">
+                            <select class="form-select w-1/3 px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white">
                                 <option value="+1">🇺🇸 +1 (USA)</option>
                                 <option value="+44">🇬🇧 +44 (UK)</option>
                                 <option value="+91">🇮🇳 +91 (India)</option>
@@ -831,13 +832,13 @@
                                 <option value="+593">🇪🇨 +593 (Ecuador)</option>
                                 <option value="+1">🇨🇦 +1 (Canada)</option>
                             </select>
-                            <input type="tel" required class="form-input flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="123-456-7890">
+                            <input type="tel" required class="form-input flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Enter your phone number">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Service Interested In *</label>
-                        <select required class="form-select w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white">
+                        <select required class="form-select w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white">
                             <option value="">Select a service</option>
                             <option value="data-analytics">Data Analytics</option>
                             <option value="software-development">Software Development</option>
@@ -851,12 +852,12 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Preferred Date *</label>
-                            <input type="date" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white">
+                            <input type="date" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white">
                         </div>
 
                         <div>
                             <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Preferred Time *</label>
-                            <select required class="form-select w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white">
+                            <select required class="form-select w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white">
                                 <option value="">Select time</option>
                                 <option value="09:00">9:00 AM</option>
                                 <option value="10:00">10:00 AM</option>
@@ -873,7 +874,7 @@
 
                     <div>
                         <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Project Details</label>
-                        <textarea rows="5" class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Tell us about your project requirements, timeline, and goals..."></textarea>
+                        <textarea rows="5" class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white" placeholder="Tell us about your project requirements, timeline, and goals..."></textarea>
                     </div>
 
                     <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold rounded-full hover:shadow-2xl transition transform hover:scale-105">
@@ -909,7 +910,7 @@
                         <a href="#" class="p-3 bg-gray-800 rounded-full hover:bg-primary-600 transition">
                             <i data-feather="github" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="p-3 bg-gray-800 rounded-full hover:bg-primary-600 transition">
+                        <a href="mailto:admin@brightbytesolution.com" class="p-3 bg-gray-800 rounded-full hover:bg-primary-600 transition">
                             <i data-feather="mail" class="w-5 h-5"></i>
                         </a>
                     </div>
@@ -920,8 +921,8 @@
                     <ul class="space-y-3">
                         <li><a href="#home" class="text-gray-400 hover:text-primary-400 transition">Home</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-primary-400 transition">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-primary-400 transition">Projects</a></li>
                         <li><a href="#pricing" class="text-gray-400 hover:text-primary-400 transition">Pricing</a></li>
-                        <li><a href="#team" class="text-gray-400 hover:text-primary-400 transition">Team</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-primary-400 transition">Contact</a></li>
                     </ul>
                 </div>
@@ -1023,517 +1024,6 @@
                 nav.classList.add('shadow-lg');
             } else {
                 nav.classList.remove('shadow-lg');
-            }
-        });
-    </script>
-</body>
-</html>>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Team Training Included</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-secondary-600 hover:text-white dark:hover:bg-secondary-600 transition text-center">
-                        Contact Sales
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team/Management Section with CEO Photo -->
-    <section id="team" class="py-24 bg-gray-100 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Our <span class="gradient-text">Leadership</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Meet the visionary behind Bright Byte Solution
-                </p>
-            </div>
-
-            <div class="max-w-4xl mx-auto">
-                <!-- CEO Card -->
-                <div class="bg-white dark:bg-gray-700 rounded-3xl shadow-2xl overflow-hidden">
-                    <div class="p-12">
-                        <!-- CEO Photo -->
-                        <div class="mb-8">
-                            <div class="ceo-photo-container">
-                                <div class="ceo-photo-inner">
-                                    <img src="images/ceo-photo.png" alt="Dancun Juma - CEO & Founder">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center mb-6">
-                            <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 rounded-full text-sm font-semibold mb-3">
-                                CEO & Founder
-                            </span>
-                            <h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Dancun Juma</h3>
-                            <p class="text-gray-600 dark:text-gray-400 font-mono text-sm">Master of Science in Data Science & Analytics</p>
-                            <p class="text-gray-600 dark:text-gray-400 font-mono text-sm">Grand Valley State University</p>
-                        </div>
-
-                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-center max-w-3xl mx-auto text-lg">
-                            Dancun founded Bright Byte Solution L.L.C with a vision to bridge the gap between complex data challenges and actionable business insights. With extensive experience in data science, analytics, and software development, Dancun leads our mission in delivering innovative solutions that drive measurable results for clients worldwide.
-                        </p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                            <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl">
-                                <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                    <i data-feather="award" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <p class="text-2xl font-bold text-gray-900 dark:text-white">250+</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Projects Delivered</p>
-                            </div>
-                            <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-secondary-900/20 dark:to-accent-900/20 rounded-xl">
-                                <div class="w-12 h-12 bg-secondary-600 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                    <i data-feather="users" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <p class="text-2xl font-bold text-gray-900 dark:text-white">100+</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Clients Worldwide</p>
-                            </div>
-                            <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-xl">
-                                <div class="w-12 h-12 bg-accent-600 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                    <i data-feather="globe" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <p class="text-2xl font-bold text-gray-900 dark:text-white">5+</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Years Experience</p>
-                            </div>
-                        </div>
-
-                        <div class="pt-6 border-t border-gray-200 dark:border-gray-600">
-                            <p class="text-center text-sm text-gray-600 dark:text-gray-400 mb-4">Connect with Dancun:</p>
-                            <div class="flex justify-center gap-4">
-                                <a href="https://www.linkedin.com/in/dancun-juma-366403102/" target="_blank" class="w-12 h-12 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition group">
-                                    <i data-feather="linkedin" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600"></i>
-                                </a>
-                                <a href="mailto:admin@brightbytesolution.com" class="w-12 h-12 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition group">
-                                    <i data-feather="mail" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600"></i>
-                                </a>
-                                <a href="https://twitter.com/brightbytesol" target="_blank" class="w-12 h-12 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center hover:bg-primary-100 dark:hover:bg-primary-900/30 transition group">
-                                    <i data-feather="twitter" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Growing Team Message -->
-                <div class="mt-12 text-center p-8 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl">
-                    <i data-feather="trending-up" class="w-12 h-12 mx-auto text-primary-600 dark:text-primary-400 mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">We're Growing!</h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        Bright Byte Solution is actively expanding our team. Join us on our journey to transform data into business value.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section id="partners" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Our <span class="gradient-text">Partners</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Trusted collaborators and technology partners
-                </p>
-            </div>
-
-            <!-- Partner Categories -->
-            <div class="space-y-12">
-                <!-- Technology Partners -->
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Technology Partners</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">☁️</div>
-                                <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Microsoft Azure</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">☁️</div>
-                                <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">AWS</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">☁️</div>
-                                <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Google Cloud</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">💳</div>
-                                <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Stripe</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">📊</div>
-                                <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Tableau</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl flex items-center justify-center hover:shadow-lg transition hover:scale-105">
-                            <div class="text-center">
-                                <div class="text-4xl mb-2">🤖</div>
-                                <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">TensorFlow</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Become a Partner -->
-                <div class="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-3xl p-12 text-center text-white">
-                    <i data-feather="handshake" class="w-16 h-16 mx-auto mb-6"></i>
-                    <h3 class="text-3xl font-bold mb-4">Become a Partner</h3>
-                    <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-                        We're always looking for strategic partnerships to deliver exceptional value to our clients. Let's collaborate!
-                    </p>
-                    <a href="#contact" class="inline-block px-8 py-4 bg-white text-primary-700 font-semibold rounded-full hover:bg-gray-100 transition shadow-lg">
-                        Partner With Us
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Appointment Booking Section with Formspree -->
-    <section id="appointment" class="py-24 bg-gray-100 dark:bg-gray-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Book Your <span class="gradient-text">Consultation</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Let's discuss your project
-                </p>
-            </div>
-
-            <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12">
-                <form action="https://formspree.io/f/mgvjvwyl" method="POST" id="booking-form" class="space-y-6">
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                                Full Name *
-                            </label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                required 
-                                class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                                Email Address *
-                            </label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                required 
-                                class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label for="phone" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                            Phone Number *
-                        </label>
-                        <input 
-                            type="tel" 
-                            id="phone" 
-                            name="phone" 
-                            required 
-                            placeholder="+1 (555) 123-4567" 
-                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
-                    </div>
-                    
-                    <div>
-                        <label for="service" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                            Service Package *
-                        </label>
-                        <select 
-                            id="service" 
-                            name="service" 
-                            required 
-                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
-                            <option value="">Select a package...</option>
-                            <option value="Initial Consultation - $150">Initial Consultation - $150</option>
-                            <option value="Starter Package - $1,500">Starter Package - $1,500</option>
-                            <option value="Professional Package - $3,500">Professional Package - $3,500</option>
-                            <option value="Enterprise Package - Custom Quote">Enterprise Package - Custom Quote</option>
-                        </select>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="date" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                                Preferred Date *
-                            </label>
-                            <input 
-                                type="date" 
-                                id="date" 
-                                name="date" 
-                                required 
-                                class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
-                        </div>
-                        
-                        <div>
-                            <label for="time" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                                Preferred Time (EST) *
-                            </label>
-                            <select 
-                                id="time" 
-                                name="time" 
-                                required 
-                                class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition">
-                                <option value="">Select time...</option>
-                                <option value="09:00 AM">9:00 AM</option>
-                                <option value="10:00 AM">10:00 AM</option>
-                                <option value="11:00 AM">11:00 AM</option>
-                                <option value="12:00 PM">12:00 PM</option>
-                                <option value="01:00 PM">1:00 PM</option>
-                                <option value="02:00 PM">2:00 PM</option>
-                                <option value="03:00 PM">3:00 PM</option>
-                                <option value="04:00 PM">4:00 PM</option>
-                                <option value="05:00 PM">5:00 PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label for="message" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
-                            Project Details
-                        </label>
-                        <textarea 
-                            id="message" 
-                            name="message" 
-                            rows="4" 
-                            placeholder="Tell us about your project, goals, and any specific requirements..." 
-                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition"></textarea>
-                    </div>
-                    
-                    <button 
-                        type="submit" 
-                        class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-4 px-8 rounded-xl font-bold hover:opacity-90 transition duration-300 shadow-lg hover:shadow-2xl text-lg flex items-center justify-center gap-2">
-                        <i data-feather="calendar" class="w-5 h-5"></i>
-                        <span>Send Booking Request</span>
-                    </button>
-
-                    <p class="text-center text-sm text-gray-600 dark:text-gray-400">
-                        We'll contact you within 24 hours to confirm your appointment.
-                    </p>
-                </form>
-
-                <div id="success-message" class="hidden mt-6 p-6 bg-green-50 dark:bg-green-900/30 border-2 border-green-500 text-green-800 dark:text-green-200 rounded-xl text-center">
-                    <div class="flex items-center justify-center gap-3 mb-2">
-                        <i data-feather="check-circle" class="w-6 h-6"></i>
-                        <span class="text-xl font-bold">Success!</span>
-                    </div>
-                    <p>Your booking request has been sent. We'll contact you shortly to confirm your appointment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Get In <span class="gradient-text">Touch</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // We're here to help
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="mail" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email</h3>
-                    <a href="mailto:admin@brightbytesolution.com" class="text-primary-600 dark:text-primary-400 hover:underline">admin@brightbytesolution.com</a>
-                </div>
-
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="phone" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Phone</h3>
-                    <a href="tel:+16162407246" class="text-primary-600 dark:text-primary-400 hover:underline">(616) 240-7246</a>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Mon-Fri, 9AM-5PM EST</p>
-                </div>
-
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="map-pin" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Office</h3>
-                    <p class="text-gray-600 dark:text-gray-300">145 Gold Ave NW</p>
-                    <p class="text-gray-600 dark:text-gray-300">Grand Rapids, MI 49504</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                    <img src="logo.png" alt="Bright Byte Solution" class="h-16 w-auto mb-4">
-                    <p class="text-gray-400 mb-6">
-                        Empowering businesses through data analytics, software development, and innovative solutions.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="https://twitter.com/brightbytesol" target="_blank" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
-                            <i data-feather="twitter" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://linkedin.com/company/brightbytesolution" target="_blank" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
-                            <i data-feather="linkedin" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://github.com/dancan1995" target="_blank" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-secondary-600 transition">
-                            <i data-feather="github" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-white font-bold mb-6 text-lg">Services</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#services" class="hover:text-primary-400 transition">Data Analytics</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition">Software Development</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition">Mobile Apps</a></li>
-                        <li><a href="#services" class="hover:text-primary-400 transition">Machine Learning</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-white font-bold mb-6 text-lg">Legal</h3>
-                    <ul class="space-y-3">
-                        <li><a href="privacy-policy.html" class="hover:text-primary-400 transition" target="_blank">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-primary-400 transition" target="_blank">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-primary-400 transition" target="_blank">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p>&copy; <span id="current-year"></span> Bright Byte Solution L.L.C. All rights reserved.</p>
-                <p class="text-sm text-gray-500 mt-2">Grand Rapids, Michigan | Empowering businesses through data</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize Feather Icons
-        feather.replace();
-
-        // Auto-update copyright year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-
-        if (localStorage.getItem('color-theme') === 'dark' || 
-            (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        } else {
-            html.classList.remove('dark');
-        }
-
-        themeToggle.addEventListener('click', function() {
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
-            feather.replace();
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            feather.replace();
-        });
-
-        // Close mobile menu when clicking a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Set minimum date to today
-        const today = new Date().toISOString().split('T')[0];
-        const dateInput = document.getElementById('date');
-        if (dateInput) {
-            dateInput.setAttribute('min', today);
-        }
-
-        // Form submission handling
-        const bookingForm = document.getElementById('booking-form');
-        const successMessage = document.getElementById('success-message');
-
-        if (bookingForm) {
-            bookingForm.addEventListener('submit', function(e) {
-                // Let the form submit normally to Formspree
-                // Just show success message after a brief delay
-                setTimeout(() => {
-                    // Hide the form
-                    bookingForm.style.display = 'none';
-                    // Show success message
-                    successMessage.classList.remove('hidden');
-                    
-                    // Reinitialize feather icons for the success message
-                    feather.replace();
-                    
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
-            });
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar scroll effect
-        const navbar = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 50) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
             }
         });
     </script>
