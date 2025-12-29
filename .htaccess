@@ -1,3 +1,6 @@
+# TEST - Remove after testing
+ErrorDocument 404 "HTACCESS IS WORKING!"
+
 RewriteEngine On
 
 # Remove .html extension from URLs
