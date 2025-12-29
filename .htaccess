@@ -13,14 +13,10 @@ RewriteRule (.*)\.html$ /$1 [R=301,L]
 # Set index.html as default directory index
 DirectoryIndex index.html
 
-# Remove trailing slash (optional but recommended)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)/$ /$1 [R=301,L]
-
-# Force HTTPS (optional but recommended for security)
+# Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Force www or non-www (choose one - this forces non-www)
+# Force non-www
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
