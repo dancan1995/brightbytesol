@@ -1,136 +1,392 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BrightByteSolution - Data Science Consulting, Analytics Services, Software Development, and Mobile App Development in Grand Rapids, Michigan">
-    <title>Bright Byte Solution | Data Analytics • Software • Mobile Apps</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        secondary: {
-                            50: '#fdf4ff',
-                            100: '#fae8ff',
-                            200: '#f5d0fe',
-                            300: '#f0abfc',
-                            400: '#e879f9',
-                            500: '#d946ef',
-                            600: '#c026d3',
-                            700: '#a21caf',
-                            800: '#86198f',
-                            900: '#701a75',
-                        },
-                        accent: {
-                            500: '#06b6d4',
-                            600: '#0891b2',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Calibri', 'Arial', 'sans-serif'],
-                        mono: ['Consolas', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Bright Byte Solutions - Software Development & IT Solutions</title>
     <style>
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Calibri', Arial, sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease; 
-            overflow-x: hidden;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Animated Background Particles */
-        .particles-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        .cta-button {
+            background: #00d4ff;
+            color: #1a3a52;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #00b8cc;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,212,255,0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #00d4ff;
+            color: #1a3a52;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #00b8cc;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,212,255,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1a3a52;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a3a52;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(44,90,160,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1a3a52;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: #1a3a52;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
             overflow: hidden;
-            z-index: 1;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
         }
 
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float-particle 20s infinite;
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        @keyframes float-particle {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.3;
-            }
-            90% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translate(100px, -1000px) scale(0.5);
-                opacity: 0;
-            }
+        .portfolio-image {
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
 
-        /* Animated Gradient Ribbons */
-        .ribbon {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, 
-                transparent,
-                rgba(14, 165, 233, 0.5),
-                rgba(217, 70, 239, 0.5),
-                rgba(6, 182, 212, 0.5),
-                transparent
-            );
-            animation: ribbon-flow 8s linear infinite;
+        .portfolio-content {
+            padding: 1.5rem;
         }
 
-        @keyframes ribbon-flow {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(200%);
-            }
+        .portfolio-content h3 {
+            color: #1a3a52;
+            margin-bottom: 0.5rem;
         }
 
-        /* Floating Icons Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-20px) rotate(5deg); }
-            50% { transform: translateY(-10px) rotate(-5deg); }
-            75% { transform: translateY(-15px) rotate(3deg); }
+        .portfolio-content p {
+            color: #666;
+            font-size: 0.9rem;
         }
 
-        @keyframes fade-in-up {
+        /* Contact Section */
+        .contact {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            color: #1a3a52;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item h4 {
+            color: #1a3a52;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1a3a52;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2c5aa0;
+            box-shadow: 0 0 0 3px rgba(44,90,160,0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a3a52;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -138,1612 +394,255 @@
             }
         }
 
-        @keyframes slide-in-left {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
-        @keyframes pulse-glow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            50% {
-                box-shadow: 0 0 40px rgba(217, 70, 239, 0.7);
-            }
-        }
 
-        /* Data Stream Animation */
-        @keyframes data-stream {
-            0% {
-                transform: translateY(-100%);
-                opacity: 0;
+            .hero-buttons {
+                flex-direction: column;
             }
-            10%, 90% {
-                opacity: 1;
+
+            .about {
+                grid-template-columns: 1fr;
             }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
             }
         }
 
-        .data-stream {
-            position: absolute;
-            width: 2px;
-            height: 100px;
-            background: linear-gradient(to bottom, 
-                transparent,
-                rgba(14, 165, 233, 0.8),
-                transparent
-            );
-            animation: data-stream 4s linear infinite;
-        }
-
-        /* Neural Network Lines */
-        @keyframes neural-pulse {
-            0%, 100% {
-                opacity: 0.2;
-                stroke-width: 1;
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 0.5rem;
+                font-size: 0.9rem;
             }
-            50% {
-                opacity: 0.8;
-                stroke-width: 2;
+
+            .logo {
+                font-size: 1.3rem;
             }
-        }
 
-        .neural-line {
-            animation: neural-pulse 3s ease-in-out infinite;
-        }
-
-        /* Glowing Orbs */
-        @keyframes orbit {
-            0% {
-                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            .hero {
+                padding: 4rem 1rem;
             }
-            100% {
-                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+
+            .hero h1 {
+                font-size: 1.8rem;
             }
-        }
 
-        .orbit-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-        }
-
-        .orbit {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.8), transparent);
-            animation: orbit 15s linear infinite;
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-        }
-
-        /* Matrix Rain Effect */
-        @keyframes matrix-fall {
-            0% {
-                transform: translateY(-100%);
-                opacity: 1;
+            .hero p {
+                font-size: 1rem;
             }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-
-        .matrix-char {
-            position: absolute;
-            color: rgba(14, 165, 233, 0.5);
-            font-family: 'Consolas', monospace;
-            font-size: 14px;
-            animation: matrix-fall 5s linear infinite;
-        }
-
-        /* Animated Border Gradient */
-        @keyframes border-gradient {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .animate-border {
-            background: linear-gradient(90deg, #0ea5e9, #d946ef, #06b6d4, #0ea5e9);
-            background-size: 300% 300%;
-            animation: border-gradient 3s ease infinite;
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-fade-in-up {
-            animation: fade-in-up 0.8s ease-out forwards;
-        }
-
-        .animate-slide-in-left {
-            animation: slide-in-left 0.8s ease-out forwards;
-        }
-
-        .animate-pulse-glow {
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Rotating Gradient Background */
-        @keyframes gradient-rotate {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .gradient-animate {
-            background: linear-gradient(-45deg, #0ea5e9, #d946ef, #06b6d4, #0369a1);
-            background-size: 400% 400%;
-            animation: gradient-rotate 15s ease infinite;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #0ea5e9, #d946ef);
-            border-radius: 10px;
-        }
-
-        .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-
-        .dark ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #0369a1, #a21caf);
-        }
-
-        /* CEO Photo Styling */
-        .ceo-photo-container {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
-            border-radius: 50%;
-            padding: 3px;
-            margin: 0 auto;
-            position: relative;
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        .ceo-photo-inner {
-            width: 100%;
-            height: 100%;
-            background: white;
-            border-radius: 50%;
-            padding: 3px;
-            overflow: hidden;
-        }
-
-        .dark .ceo-photo-inner {
-            background: #374151;
-        }
-
-        .ceo-photo-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        /* Form Styling */
-        .form-select, .form-input {
-            font-family: 'Calibri', Arial, sans-serif;
-        }
-
-        /* Hover Card Effect */
-        .hover-card {
-            transition: all 0.3s ease;
-        }
-
-        .hover-card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        /* Typewriter Effect */
-        @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid;
-            white-space: nowrap;
-            animation: typewriter 4s steps(40) 1s 1 normal both,
-                       blink 1s steps(1) infinite;
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="/" class="flex items-center gap-4">
-                    <img src="images/logo.png" alt="Bright Byte Solution" class="h-16 w-auto">
-                </a>
-                
-                <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300">
-                    <i data-feather="menu" class="w-6 h-6"></i>
-                </button>
-                
-                <div id="nav-links" class="hidden md:flex items-center gap-8">
-                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Home</a>
-                    <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Services</a>
-                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Projects</a>
-                    <a href="#tools" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Tools</a>
-                    <a href="#leadership" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Leadership</a>
-                    <a href="#pricing" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Pricing</a>
-                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Contact</a>
-                    <a href="#appointment" class="px-6 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-full hover:shadow-lg transition animate-pulse-glow">
-                        Book Now
-                    </a>
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-                        <i data-feather="moon" class="w-5 h-5 text-gray-700 dark:text-gray-300"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col gap-4">
-                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Home</a>
-                    <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Services</a>
-                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Projects</a>
-                    <a href="#tools" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Tools</a>
-                    <a href="#leadership" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Leadership</a>
-                    <a href="#pricing" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Pricing</a>
-                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Contact</a>
-                    <a href="#appointment" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 font-medium">Book Now</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Hero Section with Advanced Animations -->
-    <section id="home" class="relative overflow-hidden pt-20 flex items-center" style="min-height: 75vh;">
-        <div class="absolute inset-0 gradient-animate"></div>
-        
-        <!-- Animated Particles -->
-        <div class="particles-container" id="particles"></div>
-        
-        <!-- Data Streams -->
-        <div class="absolute inset-0 overflow-hidden opacity-30">
-            <div class="data-stream" style="left: 10%; animation-delay: 0s;"></div>
-            <div class="data-stream" style="left: 30%; animation-delay: 1s;"></div>
-            <div class="data-stream" style="left: 50%; animation-delay: 2s;"></div>
-            <div class="data-stream" style="left: 70%; animation-delay: 1.5s;"></div>
-            <div class="data-stream" style="left: 90%; animation-delay: 0.5s;"></div>
-        </div>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">💡 Bright Byte Solutions</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="cta-button">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- Floating Ribbons -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="ribbon" style="top: 20%; animation-delay: 0s;"></div>
-            <div class="ribbon" style="top: 40%; animation-delay: 2s;"></div>
-            <div class="ribbon" style="top: 60%; animation-delay: 4s;"></div>
-            <div class="ribbon" style="top: 80%; animation-delay: 6s;"></div>
-        </div>
-
-        <!-- Matrix Characters -->
-        <div class="absolute inset-0 overflow-hidden opacity-20" id="matrix"></div>
-
-        <!-- Orbiting Elements -->
-        <div class="orbit-container">
-            <div class="orbit" style="animation-delay: 0s;"></div>
-            <div class="orbit" style="animation-delay: 5s;"></div>
-            <div class="orbit" style="animation-delay: 10s;"></div>
-        </div>
-        
-        <div class="relative max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8 z-10 w-full">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="text-white animate-fade-in-up">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        Transform Data Into
-                        <span class="text-secondary-200"> Actionable Insights</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
-                        Expert consulting in <strong>Data Science</strong>, <strong>Analytics</strong>, <strong>Software Development</strong>, and <strong>Mobile Applications</strong>. 
-                        We turn complex challenges into elegant solutions.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#services" class="px-8 py-3 bg-white text-primary-700 font-bold rounded-full hover:bg-gray-100 transition duration-300 shadow-2xl text-center animate-pulse-glow">
-                            EXPLORE SERVICES
-                        </a>
-                        <a href="#appointment" class="px-8 py-3 glass-effect text-white font-bold rounded-full hover:bg-white/10 transition duration-300 flex items-center justify-center gap-3">
-                            <i data-feather="calendar" class="w-5 h-5"></i>
-                            BOOK CONSULTATION
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
-        <!-- Background Animation -->
-        <div class="absolute inset-0 opacity-5">
-            <svg class="w-full h-full">
-                <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#d946ef;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <circle cx="10%" cy="20%" r="50" fill="url(#grad1)" class="animate-float">
-                    <animate attributeName="r" values="50;70;50" dur="4s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="90%" cy="80%" r="80" fill="url(#grad1)" class="animate-float" style="animation-delay: 2s;">
-                    <animate attributeName="r" values="80;100;80" dur="5s" repeatCount="indefinite"/>
-                </circle>
-            </svg>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Our <span class="gradient-text">Impact</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Trusted by businesses across industries
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 animate-slide-in-left hover-card" style="animation-delay: 0.1s;">
-                    <div class="text-6xl font-bold gradient-text mb-3">50+</div>
-                    <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Data Science Projects</div>
-                </div>
-
-                <div class="text-center p-8 bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-secondary-900/20 dark:to-accent-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 animate-slide-in-left hover-card" style="animation-delay: 0.2s;">
-                    <div class="text-6xl font-bold gradient-text mb-3">150+</div>
-                    <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Analytics Solutions</div>
-                </div>
-
-                <div class="text-center p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 animate-slide-in-left hover-card" style="animation-delay: 0.3s;">
-                    <div class="text-6xl font-bold gradient-text mb-3">3+</div>
-                    <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Software Applications</div>
-                </div>
-
-                <div class="text-center p-8 bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/20 dark:to-primary-900/20 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 animate-slide-in-left hover-card" style="animation-delay: 0.4s;">
-                    <div class="text-6xl font-bold gradient-text mb-3">5+</div>
-                    <div class="text-gray-700 dark:text-gray-300 font-semibold text-lg">Mobile Apps Delivered</div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Innovative IT Solutions for Your Business</h1>
+            <p>Transform your business with cutting-edge software development and IT consulting services</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Start Your Project</a>
+                <a href="#services" class="btn-secondary">Learn More</a>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
-        <!-- Animated Grid Background -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="grid grid-cols-8 grid-rows-8 w-full h-full">
-                <div class="border border-primary-500 animate-pulse" style="animation-delay: 0.1s;"></div>
-                <div class="border border-secondary-500 animate-pulse" style="animation-delay: 0.2s;"></div>
-                <div class="border border-accent-500 animate-pulse" style="animation-delay: 0.3s;"></div>
-                <div class="border border-primary-500 animate-pulse" style="animation-delay: 0.4s;"></div>
-                <div class="border border-secondary-500 animate-pulse" style="animation-delay: 0.5s;"></div>
-                <div class="border border-accent-500 animate-pulse" style="animation-delay: 0.6s;"></div>
-                <div class="border border-primary-500 animate-pulse" style="animation-delay: 0.7s;"></div>
-                <div class="border border-secondary-500 animate-pulse" style="animation-delay: 0.8s;"></div>
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🖥️</div>
+                <h3>Web Development</h3>
+                <p>Custom web applications built with modern technologies. Responsive, fast, and scalable solutions for your business needs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Mobile Development</h3>
+                <p>Native and cross-platform mobile applications that engage users and drive business growth across iOS and Android.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>Cloud Solutions</h3>
+                <p>Secure, scalable cloud infrastructure and migration services to modernize your IT operations and reduce costs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔒</div>
+                <h3>Cybersecurity</h3>
+                <p>Comprehensive security solutions to protect your business from threats, vulnerabilities, and data breaches.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Data Analytics</h3>
+                <p>Transform raw data into actionable insights with advanced analytics and business intelligence solutions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>IT Consulting</h3>
+                <p>Strategic technology consulting to align your IT infrastructure with business goals and drive digital transformation.</p>
             </div>
         </div>
+    </section>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Our <span class="gradient-text">Expert</span> Services
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Comprehensive solutions tailored to your needs
-                </p>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>About Bright Byte Solutions</h2>
+            <p>With over a decade of experience in the technology industry, we've helped hundreds of businesses digitally transform and achieve their goals.</p>
+            <p>Our team of expert developers, engineers, and consultants is dedicated to delivering innovative, high-quality solutions that drive real business value.</p>
+            <p>We combine technical expertise with strategic thinking to solve complex problems and create lasting impact for our clients.</p>
+            <a href="#contact" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Work With Us</a>
+        </div>
+        <div class="about-image">
+            <div style="text-align: center;">
+                <p style="font-size: 4rem; margin: 0;">🚀</p>
+                <p>Innovative Solutions</p>
             </div>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Data Analytics -->
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-primary-500 hover-card">
-                    <div class="h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center relative overflow-hidden">
-                        <i data-feather="bar-chart-2" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Data Analytics</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Transform raw data into actionable insights with advanced analytics and visualization techniques.
-                        </p>
-                        <div class="text-sm gradient-text font-bold font-mono">
-                            → From $1,500/project
-                        </div>
-                    </div>
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Recent Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-image">E-Commerce Platform</div>
+                <div class="portfolio-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Built a scalable e-commerce solution for a retail client, increasing online sales by 150%.</p>
                 </div>
-
-                <!-- Software Development -->
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-secondary-500 hover-card">
-                    <div class="h-48 bg-gradient-to-br from-secondary-500 to-primary-500 flex items-center justify-center relative overflow-hidden">
-                        <i data-feather="code" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Software Development</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Custom software solutions built with modern technologies for scalable, secure applications.
-                        </p>
-                        <div class="text-sm gradient-text font-bold font-mono">
-                            → From $3,000/project
-                        </div>
-                    </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Finance Dashboard</div>
+                <div class="portfolio-content">
+                    <h3>Finance Dashboard</h3>
+                    <p>Developed an analytics dashboard for financial tracking and reporting with real-time data.</p>
                 </div>
-
-                <!-- Mobile Apps -->
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-accent-500 hover-card">
-                    <div class="h-48 bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center relative overflow-hidden">
-                        <i data-feather="smartphone" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Mobile Apps</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Native and cross-platform mobile applications for exceptional user experiences on iOS and Android.
-                        </p>
-                        <div class="text-sm gradient-text font-bold font-mono">
-                            → From $5,000/project
-                        </div>
-                    </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Mobile App</div>
+                <div class="portfolio-content">
+                    <h3>Healthcare Mobile App</h3>
+                    <p>Created a mobile app for patient management and telemedicine, serving 10,000+ users.</p>
                 </div>
-
-                <!-- Machine Learning -->
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-secondary-500 hover-card">
-                    <div class="h-48 bg-gradient-to-br from-secondary-500 to-primary-500 flex items-center justify-center relative overflow-hidden">
-                        <i data-feather="cpu" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Machine Learning</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Leverage AI and ML to automate processes, predict outcomes, and gain competitive advantages.
-                        </p>
-                        <div class="text-sm gradient-text font-bold font-mono">
-                            → From $4,000/project
-                        </div>
-                    </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Cloud Migration</div>
+                <div class="portfolio-content">
+                    <h3>Cloud Migration</h3>
+                    <p>Successfully migrated enterprise infrastructure to cloud, reducing operational costs by 40%.</p>
                 </div>
-
-                <!-- Data Science Consulting -->
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-primary-500 hover-card">
-                    <div class="h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center relative overflow-hidden">
-                        <i data-feather="trending-up" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Data Science Consulting</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Expert guidance on data strategy, model development, and implementation best practices.
-                        </p>
-                        <div class="text-sm gradient-text font-bold font-mono">
-                            → From $200/hour
-                        </div>
-                    </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">AI Integration</div>
+                <div class="portfolio-content">
+                    <h3>AI-Powered Analytics</h3>
+                    <p>Implemented machine learning solutions for predictive analytics and business intelligence.</p>
                 </div>
-
-                <!-- Research Analytics -->
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-transparent hover:border-accent-500 hover-card">
-                    <div class="h-48 bg-gradient-to-br from-secondary-500 to-accent-500 flex items-center justify-center relative overflow-hidden">
-                        <i data-feather="database" class="w-20 h-20 text-white animate-float"></i>
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Research Analytics</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Comprehensive data analysis support for academic and clinical research projects.
-                        </p>
-                        <div class="text-sm gradient-text font-bold font-mono">
-                            → From $1,200/project
-                        </div>
-                    </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Custom Software</div>
+                <div class="portfolio-content">
+                    <h3>Enterprise Solution</h3>
+                    <p>Developed custom ERP system improving business processes and efficiency by 60%.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Featured <span class="gradient-text">Projects</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Innovative solutions we're building
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <!-- MedEye-T Project -->
-                <div class="group bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 border-2 border-primary-200 dark:border-primary-900 hover-card">
-                    <div class="p-10">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="p-4 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl animate-pulse-glow">
-                                <i data-feather="activity" class="w-10 h-10 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-3xl font-bold text-gray-900 dark:text-white">MedEye-T</h3>
-                                <p class="text-primary-600 dark:text-primary-400 font-semibold">Healthcare Mobile Application</p>
-                            </div>
-                        </div>
-                        
-                        <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-lg">
-                            Advanced medication adherence monitoring platform built with React Native and Firebase. Features video-based medication intake verification, real-time provider dashboards, and intelligent patient monitoring systems.
-                        </p>
-                        
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-3">
-                                <i data-feather="check-circle" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Video Upload & Playback System</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-feather="check-circle" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Provider Approval Workflows</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-feather="check-circle" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Real-time Patient Monitoring</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-feather="check-circle" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Firebase Cloud Integration</span>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold">React Native</span>
-                            <span class="px-4 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-full text-sm font-semibold">Firebase</span>
-                            <span class="px-4 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full text-sm font-semibold">Healthcare</span>
-                        </div>
-                    </div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <h4>📍 Address</h4>
+                    <p>123 Tech Street<br>Innovation City, IC 12345</p>
                 </div>
-
-                <!-- GVSU Research Projects -->
-                <div class="group bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 border-2 border-secondary-200 dark:border-secondary-900 hover-card">
-                    <div class="p-10">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="p-4 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-2xl animate-pulse-glow">
-                                <i data-feather="book-open" class="w-10 h-10 text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Research Analytics</h3>
-                                <p class="text-secondary-600 dark:text-secondary-400 font-semibold">Health Analytics Collaboration</p>
-                            </div>
-                        </div>
-                        
-                        <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-lg">
-                            Collaborative research initiatives focusing on healthcare analytics, predictive modeling, and clinical data science. Developing cutting-edge solutions for health informatics challenges.
-                        </p>
-                        
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-3">
-                                <i data-feather="check-circle" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Stroke Prediction Models (78% Accuracy)</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-feather="check-circle" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Balance Assessment Applications</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-feather="check-circle" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Computer Adaptive Testing Algorithms</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-feather="check-circle" class="w-5 h-5 text-secondary-600 dark:text-secondary-400"></i>
-                                <span class="text-gray-700 dark:text-gray-300">Clinical Research Analytics</span>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-4 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-full text-sm font-semibold">Machine Learning</span>
-                            <span class="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold">R / Python</span>
-                            <span class="px-4 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full text-sm font-semibold">Research</span>
-                        </div>
-                    </div>
+                <div class="contact-item">
+                    <h4>📞 Phone</h4>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <h4>✉️ Email</h4>
+                    <p>info@brightbytesolution.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>🕐 Hours</h4>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Tools & Technologies Section -->
-    <section id="tools" class="py-24 bg-gray-100 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Tools & <span class="gradient-text">Technologies</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Cutting-edge technologies we work with
-                </p>
-            </div>
-
-            <div class="space-y-12">
-                <!-- Data Analytics Tools -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 hover-card">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i data-feather="bar-chart" class="w-8 h-8 text-primary-600 dark:text-primary-400 animate-float"></i>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Data Analytics & Visualization</h3>
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">R Studio</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Python (Pandas, NumPy)</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">SQL (MySQL, PostgreSQL)</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Tableau</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Power BI</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Microsoft Excel</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">SPSS</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">SAS</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Plotly</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Matplotlib</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Seaborn</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">ggplot2</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Apache Spark</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Looker</span>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
-
-                <!-- Machine Learning & AI -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 hover-card">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i data-feather="cpu" class="w-8 h-8 text-secondary-600 dark:text-secondary-400 animate-float"></i>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Machine Learning & AI</h3>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
                     </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">TensorFlow</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">PyTorch</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">Scikit-learn</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">Keras</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">XGBoost</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">Random Forest</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">OpenCV</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">NLTK</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">spaCy</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">Hugging Face</span>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
                     </div>
-                </div>
-
-                <!-- Mobile Development -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 hover-card">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i data-feather="smartphone" class="w-8 h-8 text-accent-600 dark:text-accent-400 animate-float"></i>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Mobile App Development</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">React Native</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Expo</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Swift (iOS)</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Kotlin (Android)</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Flutter</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Firebase</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Redux</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Async Storage</span>
-                    </div>
-                </div>
-
-                <!-- Web Development -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 hover-card">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i data-feather="globe" class="w-8 h-8 text-primary-600 dark:text-primary-400 animate-float"></i>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Web Development</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">React.js</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Next.js</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Vue.js</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Node.js</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Express.js</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Django</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Flask</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">HTML5/CSS3</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">JavaScript/TypeScript</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Tailwind CSS</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Bootstrap</span>
-                        <span class="px-5 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg font-semibold hover:scale-110 transition">Webpack</span>
-                    </div>
-                </div>
-
-                <!-- Database & Backend -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 hover-card">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i data-feather="database" class="w-8 h-8 text-secondary-600 dark:text-secondary-400 animate-float"></i>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Databases & Backend</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">Firebase</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">MongoDB</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">PostgreSQL</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">MySQL</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">Redis</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">SQLite</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">GraphQL</span>
-                        <span class="px-5 py-2 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-lg font-semibold hover:scale-110 transition">REST APIs</span>
-                    </div>
-                </div>
-
-                <!-- Cloud & DevOps -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 hover-card">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i data-feather="cloud" class="w-8 h-8 text-accent-600 dark:text-accent-400 animate-float"></i>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Cloud & DevOps</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">AWS (EC2, S3, Lambda)</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Google Cloud Platform</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Microsoft Azure</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Docker</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Kubernetes</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Git/GitHub</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">CI/CD Pipelines</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Vercel</span>
-                        <span class="px-5 py-2 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-lg font-semibold hover:scale-110 transition">Netlify</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Section (CEO) - EXACT FORMAT -->
-    <section id="leadership" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Our <span class="gradient-text">Leadership</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Driven by expertise and innovation
-                </p>
-            </div>
-
-            <div class="max-w-4xl mx-auto">
-                <!-- CEO Card -->
-                <div class="bg-white dark:bg-gray-700 rounded-3xl shadow-2xl overflow-hidden hover-card">
-                    <div class="p-12">
-                        <!-- CEO Photo -->
-                        <div class="mb-8">
-                            <div class="ceo-photo-container">
-                                <div class="ceo-photo-inner">
-                                    <img src="images/ceo-photo.png" alt="Dancun Juma - CEO & Founder">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center mb-6">
-                            <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 rounded-full text-sm font-semibold mb-3">
-                                CEO & Founder
-                            </span>
-                            <h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Dancun Juma</h3>
-                            <p class="text-gray-600 dark:text-gray-400 font-mono text-sm">Master of Science in Data Science & Analytics</p>
-                            <p class="text-gray-600 dark:text-gray-400 font-mono text-sm">Grand Valley State University</p>
-                        </div>
-
-                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 text-center max-w-3xl mx-auto text-lg">
-                            Dancun founded Bright Byte Solution L.L.C with a vision to bridge the gap between complex data challenges and actionable business insights. With extensive experience in data science, analytics, and software development, Dancun leads our mission in delivering innovative solutions that drive measurable results for clients worldwide.
-                        </p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                            <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl hover-card">
-                                <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-3 animate-pulse-glow">
-                                    <i data-feather="award" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <p class="text-2xl font-bold text-gray-900 dark:text-white">250+</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Projects Delivered</p>
-                            </div>
-                            <div class="text-center p-6 bg-gradient-to-br from-secondary-50 to-accent-50 dark:from-secondary-900/20 dark:to-accent-900/20 rounded-xl hover-card">
-                                <div class="w-12 h-12 bg-secondary-600 rounded-lg flex items-center justify-center mx-auto mb-3 animate-pulse-glow">
-                                    <i data-feather="users" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <p class="text-2xl font-bold text-gray-900 dark:text-white">100+</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Clients Worldwide</p>
-                            </div>
-                            <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-xl hover-card">
-                                <div class="w-12 h-12 bg-accent-600 rounded-lg flex items-center justify-center mx-auto mb-3 animate-pulse-glow">
-                                    <i data-feather="globe" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <p class="text-2xl font-bold text-gray-900 dark:text-white">5+</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Years Experience</p>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-center gap-4">
-                            <a href="#" class="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition hover:scale-110">
-                                <i data-feather="linkedin" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                            </a>
-                            <a href="mailto:admin@brightbytesolution.com" class="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition hover:scale-110">
-                                <i data-feather="mail" class="w-5 h-5 text-primary-600 dark:text-primary-400"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-gray-100 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Transparent <span class="gradient-text">Pricing</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Choose the package that fits your needs
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Starter Package -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-600 hover:border-primary-500 transition hover-card">
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Starter</h3>
-                        <div class="text-5xl font-bold gradient-text mb-2">$1,500</div>
-                        <p class="text-gray-600 dark:text-gray-400">Per Project</p>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Basic Data Analysis</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Up to 3 Dashboards</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">2 Week Delivery</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">1 Revision Round</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Email Support</span>
-                        </li>
-                    </ul>
-                    <a href="#appointment" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 transition text-center">
-                        Get Started
-                    </a>
-                </div>
-
-                <!-- Professional Package -->
-                <div class="bg-gradient-to-br from-primary-600 to-secondary-600 rounded-2xl shadow-2xl p-8 transform scale-105 relative hover-card">
-                    <div class="absolute top-0 right-8 -translate-y-1/2">
-                        <span class="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold animate-pulse">POPULAR</span>
-                    </div>
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
-                        <div class="text-5xl font-bold text-white mb-2">$3,500</div>
-                        <p class="text-primary-100">Per Project</p>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
-                            <span class="text-white">Advanced Analytics</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
-                            <span class="text-white">Unlimited Dashboards</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
-                            <span class="text-white">1 Week Delivery</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
-                            <span class="text-white">3 Revision Rounds</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
-                            <span class="text-white">Priority Support</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
-                            <span class="text-white">ML Model Development</span>
-                        </li>
-                    </ul>
-                    <a href="#appointment" class="block w-full px-6 py-3 bg-white text-primary-700 font-semibold rounded-full hover:bg-gray-100 transition shadow-lg text-center">
-                        Get Started
-                    </a>
-                </div>
-
-                <!-- Enterprise Package -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 border-2 border-gray-200 dark:border-gray-600 hover:border-secondary-500 transition hover-card">
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
-                        <div class="text-5xl font-bold gradient-text mb-2">Custom</div>
-                        <p class="text-gray-600 dark:text-gray-400">Contact Us</p>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Full-Stack Solutions</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Custom Development</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Flexible Timeline</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Unlimited Revisions</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">24/7 Dedicated Support</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-feather="check-circle" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Dedicated Team</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-secondary-600 hover:text-white dark:hover:bg-secondary-600 transition text-center">
-                        Contact Sales
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section with Formspree -->
-    <section id="contact" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Get In <span class="gradient-text">Touch</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Let's discuss your next project
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <!-- Contact Info -->
-                <div class="space-y-8">
-                    <div class="flex items-start gap-4 hover-card">
-                        <div class="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
-                            <i data-feather="map-pin" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Location</h3>
-                            <p class="text-gray-600 dark:text-gray-300">Grand Rapids, Michigan, USA</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 hover-card">
-                        <div class="p-3 bg-secondary-100 dark:bg-secondary-900/30 rounded-lg">
-                            <i data-feather="mail" class="w-6 h-6 text-secondary-600 dark:text-secondary-400"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email</h3>
-                            <a href="mailto:admin@brightbytesolution.com" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">admin@brightbytesolution.com</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 hover-card">
-                        <div class="p-3 bg-accent-100 dark:bg-accent-900/30 rounded-lg">
-                            <i data-feather="phone" class="w-6 h-6 text-accent-600 dark:text-accent-400"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Phone</h3>
-                            <a href="tel:+16162407246" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">(616) 240-7246</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form with Formspree -->
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover-card">
-                    <form action="https://formspree.io/f/xangyrbb" method="POST" class="space-y-6">
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Name</label>
-                            <input type="text" name="name" required class="form-input w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Enter your name">
-                        </div>
-
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Email</label>
-                            <input type="email" name="email" required class="form-input w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Enter your email address">
-                        </div>
-
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Message</label>
-                            <textarea rows="4" name="message" required class="form-input w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Tell us about your project..."></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold rounded-full hover:shadow-lg transition transform hover:scale-105">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Appointment/Booking Section with Formspree, Prices & Terms -->
-    <section id="appointment" class="py-24 bg-gray-100 dark:bg-gray-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Book Your <span class="gradient-text">Consultation</span>
-                </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-mono">
-                    // Schedule a meeting with our experts
-                </p>
-            </div>
-
-            <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-2xl p-8 md:p-12 hover-card">
-                <form action="https://formspree.io/f/xangyrbb" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">First Name *</label>
-                            <input type="text" name="firstName" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Enter your first name">
-                        </div>
-
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Last Name *</label>
-                            <input type="text" name="lastName" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Enter your last name">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Email Address *</label>
-                        <input type="email" name="email" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Enter your email address">
-                    </div>
-
-                    <div>
-                        <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Phone Number *</label>
-                        <div class="flex gap-3">
-                            <select name="countryCode" class="form-select w-1/3 px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition">
-    <option value="+93">🇦🇫 +93 (Afghanistan)</option>
-    <option value="+355">🇦🇱 +355 (Albania)</option>
-    <option value="+213">🇩🇿 +213 (Algeria)</option>
-    <option value="+1-684">🇦🇸 +1-684 (American Samoa)</option>
-    <option value="+376">🇦🇩 +376 (Andorra)</option>
-    <option value="+244">🇦🇴 +244 (Angola)</option>
-    <option value="+1-264">🇦🇮 +1-264 (Anguilla)</option>
-    <option value="+672">🇦🇶 +672 (Antarctica)</option>
-    <option value="+1-268">🇦🇬 +1-268 (Antigua and Barbuda)</option>
-    <option value="+54">🇦🇷 +54 (Argentina)</option>
-    <option value="+374">🇦🇲 +374 (Armenia)</option>
-    <option value="+297">🇦🇼 +297 (Aruba)</option>
-    <option value="+61">🇦🇺 +61 (Australia)</option>
-    <option value="+43">🇦🇹 +43 (Austria)</option>
-    <option value="+994">🇦🇿 +994 (Azerbaijan)</option>
-    <option value="+1-242">🇧🇸 +1-242 (Bahamas)</option>
-    <option value="+973">🇧🇭 +973 (Bahrain)</option>
-    <option value="+880">🇧🇩 +880 (Bangladesh)</option>
-    <option value="+1-246">🇧🇧 +1-246 (Barbados)</option>
-    <option value="+375">🇧🇾 +375 (Belarus)</option>
-    <option value="+32">🇧🇪 +32 (Belgium)</option>
-    <option value="+501">🇧🇿 +501 (Belize)</option>
-    <option value="+229">🇧🇯 +229 (Benin)</option>
-    <option value="+1-441">🇧🇲 +1-441 (Bermuda)</option>
-    <option value="+975">🇧🇹 +975 (Bhutan)</option>
-    <option value="+591">🇧🇴 +591 (Bolivia)</option>
-    <option value="+387">🇧🇦 +387 (Bosnia and Herzegovina)</option>
-    <option value="+267">🇧🇼 +267 (Botswana)</option>
-    <option value="+55">🇧🇷 +55 (Brazil)</option>
-    <option value="+246">🇮🇴 +246 (British Indian Ocean Territory)</option>
-    <option value="+1-284">🇻🇬 +1-284 (British Virgin Islands)</option>
-    <option value="+673">🇧🇳 +673 (Brunei)</option>
-    <option value="+359">🇧🇬 +359 (Bulgaria)</option>
-    <option value="+226">🇧🇫 +226 (Burkina Faso)</option>
-    <option value="+257">🇧🇮 +257 (Burundi)</option>
-    <option value="+855">🇰🇭 +855 (Cambodia)</option>
-    <option value="+237">🇨🇲 +237 (Cameroon)</option>
-    <option value="+1" selected>🇨🇦 +1 (Canada)</option>
-    <option value="+238">🇨🇻 +238 (Cape Verde)</option>
-    <option value="+1-345">🇰🇾 +1-345 (Cayman Islands)</option>
-    <option value="+236">🇨🇫 +236 (Central African Republic)</option>
-    <option value="+235">🇹🇩 +235 (Chad)</option>
-    <option value="+56">🇨🇱 +56 (Chile)</option>
-    <option value="+86">🇨🇳 +86 (China)</option>
-    <option value="+61">🇨🇽 +61 (Christmas Island)</option>
-    <option value="+61">🇨🇨 +61 (Cocos Islands)</option>
-    <option value="+57">🇨🇴 +57 (Colombia)</option>
-    <option value="+269">🇰🇲 +269 (Comoros)</option>
-    <option value="+682">🇨🇰 +682 (Cook Islands)</option>
-    <option value="+506">🇨🇷 +506 (Costa Rica)</option>
-    <option value="+385">🇭🇷 +385 (Croatia)</option>
-    <option value="+53">🇨🇺 +53 (Cuba)</option>
-    <option value="+599">🇨🇼 +599 (Curacao)</option>
-    <option value="+357">🇨🇾 +357 (Cyprus)</option>
-    <option value="+420">🇨🇿 +420 (Czech Republic)</option>
-    <option value="+243">🇨🇩 +243 (Democratic Republic of the Congo)</option>
-    <option value="+45">🇩🇰 +45 (Denmark)</option>
-    <option value="+253">🇩🇯 +253 (Djibouti)</option>
-    <option value="+1-767">🇩🇲 +1-767 (Dominica)</option>
-    <option value="+1-809">🇩🇴 +1-809 (Dominican Republic)</option>
-    <option value="+670">🇹🇱 +670 (East Timor)</option>
-    <option value="+593">🇪🇨 +593 (Ecuador)</option>
-    <option value="+20">🇪🇬 +20 (Egypt)</option>
-    <option value="+503">🇸🇻 +503 (El Salvador)</option>
-    <option value="+240">🇬🇶 +240 (Equatorial Guinea)</option>
-    <option value="+291">🇪🇷 +291 (Eritrea)</option>
-    <option value="+372">🇪🇪 +372 (Estonia)</option>
-    <option value="+251">🇪🇹 +251 (Ethiopia)</option>
-    <option value="+500">🇫🇰 +500 (Falkland Islands)</option>
-    <option value="+298">🇫🇴 +298 (Faroe Islands)</option>
-    <option value="+679">🇫🇯 +679 (Fiji)</option>
-    <option value="+358">🇫🇮 +358 (Finland)</option>
-    <option value="+33">🇫🇷 +33 (France)</option>
-    <option value="+689">🇵🇫 +689 (French Polynesia)</option>
-    <option value="+241">🇬🇦 +241 (Gabon)</option>
-    <option value="+220">🇬🇲 +220 (Gambia)</option>
-    <option value="+995">🇬🇪 +995 (Georgia)</option>
-    <option value="+49">🇩🇪 +49 (Germany)</option>
-    <option value="+233">🇬🇭 +233 (Ghana)</option>
-    <option value="+350">🇬🇮 +350 (Gibraltar)</option>
-    <option value="+30">🇬🇷 +30 (Greece)</option>
-    <option value="+299">🇬🇱 +299 (Greenland)</option>
-    <option value="+1-473">🇬🇩 +1-473 (Grenada)</option>
-    <option value="+1-671">🇬🇺 +1-671 (Guam)</option>
-    <option value="+502">🇬🇹 +502 (Guatemala)</option>
-    <option value="+44-1481">🇬🇬 +44-1481 (Guernsey)</option>
-    <option value="+224">🇬🇳 +224 (Guinea)</option>
-    <option value="+245">🇬🇼 +245 (Guinea-Bissau)</option>
-    <option value="+592">🇬🇾 +592 (Guyana)</option>
-    <option value="+509">🇭🇹 +509 (Haiti)</option>
-    <option value="+504">🇭🇳 +504 (Honduras)</option>
-    <option value="+852">🇭🇰 +852 (Hong Kong)</option>
-    <option value="+36">🇭🇺 +36 (Hungary)</option>
-    <option value="+354">🇮🇸 +354 (Iceland)</option>
-    <option value="+91">🇮🇳 +91 (India)</option>
-    <option value="+62">🇮🇩 +62 (Indonesia)</option>
-    <option value="+98">🇮🇷 +98 (Iran)</option>
-    <option value="+964">🇮🇶 +964 (Iraq)</option>
-    <option value="+353">🇮🇪 +353 (Ireland)</option>
-    <option value="+44-1624">🇮🇲 +44-1624 (Isle of Man)</option>
-    <option value="+972">🇮🇱 +972 (Israel)</option>
-    <option value="+39">🇮🇹 +39 (Italy)</option>
-    <option value="+225">🇨🇮 +225 (Ivory Coast)</option>
-    <option value="+1-876">🇯🇲 +1-876 (Jamaica)</option>
-    <option value="+81">🇯🇵 +81 (Japan)</option>
-    <option value="+44-1534">🇯🇪 +44-1534 (Jersey)</option>
-    <option value="+962">🇯🇴 +962 (Jordan)</option>
-    <option value="+7">🇰🇿 +7 (Kazakhstan)</option>
-    <option value="+254">🇰🇪 +254 (Kenya)</option>
-    <option value="+686">🇰🇮 +686 (Kiribati)</option>
-    <option value="+383">🇽🇰 +383 (Kosovo)</option>
-    <option value="+965">🇰🇼 +965 (Kuwait)</option>
-    <option value="+996">🇰🇬 +996 (Kyrgyzstan)</option>
-    <option value="+856">🇱🇦 +856 (Laos)</option>
-    <option value="+371">🇱🇻 +371 (Latvia)</option>
-    <option value="+961">🇱🇧 +961 (Lebanon)</option>
-    <option value="+266">🇱🇸 +266 (Lesotho)</option>
-    <option value="+231">🇱🇷 +231 (Liberia)</option>
-    <option value="+218">🇱🇾 +218 (Libya)</option>
-    <option value="+423">🇱🇮 +423 (Liechtenstein)</option>
-    <option value="+370">🇱🇹 +370 (Lithuania)</option>
-    <option value="+352">🇱🇺 +352 (Luxembourg)</option>
-    <option value="+853">🇲🇴 +853 (Macao)</option>
-    <option value="+389">🇲🇰 +389 (North Macedonia)</option>
-    <option value="+261">🇲🇬 +261 (Madagascar)</option>
-    <option value="+265">🇲🇼 +265 (Malawi)</option>
-    <option value="+60">🇲🇾 +60 (Malaysia)</option>
-    <option value="+960">🇲🇻 +960 (Maldives)</option>
-    <option value="+223">🇲🇱 +223 (Mali)</option>
-    <option value="+356">🇲🇹 +356 (Malta)</option>
-    <option value="+692">🇲🇭 +692 (Marshall Islands)</option>
-    <option value="+222">🇲🇷 +222 (Mauritania)</option>
-    <option value="+230">🇲🇺 +230 (Mauritius)</option>
-    <option value="+262">🇾🇹 +262 (Mayotte)</option>
-    <option value="+52">🇲🇽 +52 (Mexico)</option>
-    <option value="+691">🇫🇲 +691 (Micronesia)</option>
-    <option value="+373">🇲🇩 +373 (Moldova)</option>
-    <option value="+377">🇲🇨 +377 (Monaco)</option>
-    <option value="+976">🇲🇳 +976 (Mongolia)</option>
-    <option value="+382">🇲🇪 +382 (Montenegro)</option>
-    <option value="+1-664">🇲🇸 +1-664 (Montserrat)</option>
-    <option value="+212">🇲🇦 +212 (Morocco)</option>
-    <option value="+258">🇲🇿 +258 (Mozambique)</option>
-    <option value="+95">🇲🇲 +95 (Myanmar)</option>
-    <option value="+264">🇳🇦 +264 (Namibia)</option>
-    <option value="+674">🇳🇷 +674 (Nauru)</option>
-    <option value="+977">🇳🇵 +977 (Nepal)</option>
-    <option value="+31">🇳🇱 +31 (Netherlands)</option>
-    <option value="+687">🇳🇨 +687 (New Caledonia)</option>
-    <option value="+64">🇳🇿 +64 (New Zealand)</option>
-    <option value="+505">🇳🇮 +505 (Nicaragua)</option>
-    <option value="+227">🇳🇪 +227 (Niger)</option>
-    <option value="+234">🇳🇬 +234 (Nigeria)</option>
-    <option value="+683">🇳🇺 +683 (Niue)</option>
-    <option value="+850">🇰🇵 +850 (North Korea)</option>
-    <option value="+1-670">🇲🇵 +1-670 (Northern Mariana Islands)</option>
-    <option value="+47">🇳🇴 +47 (Norway)</option>
-    <option value="+968">🇴🇲 +968 (Oman)</option>
-    <option value="+92">🇵🇰 +92 (Pakistan)</option>
-    <option value="+680">🇵🇼 +680 (Palau)</option>
-    <option value="+970">🇵🇸 +970 (Palestine)</option>
-    <option value="+507">🇵🇦 +507 (Panama)</option>
-    <option value="+675">🇵🇬 +675 (Papua New Guinea)</option>
-    <option value="+595">🇵🇾 +595 (Paraguay)</option>
-    <option value="+51">🇵🇪 +51 (Peru)</option>
-    <option value="+63">🇵🇭 +63 (Philippines)</option>
-    <option value="+64">🇵🇳 +64 (Pitcairn)</option>
-    <option value="+48">🇵🇱 +48 (Poland)</option>
-    <option value="+351">🇵🇹 +351 (Portugal)</option>
-    <option value="+1-787">🇵🇷 +1-787 (Puerto Rico)</option>
-    <option value="+974">🇶🇦 +974 (Qatar)</option>
-    <option value="+242">🇨🇬 +242 (Republic of the Congo)</option>
-    <option value="+262">🇷🇪 +262 (Reunion)</option>
-    <option value="+40">🇷🇴 +40 (Romania)</option>
-    <option value="+7">🇷🇺 +7 (Russia)</option>
-    <option value="+250">🇷🇼 +250 (Rwanda)</option>
-    <option value="+590">🇧🇱 +590 (Saint Barthelemy)</option>
-    <option value="+290">🇸🇭 +290 (Saint Helena)</option>
-    <option value="+1-869">🇰🇳 +1-869 (Saint Kitts and Nevis)</option>
-    <option value="+1-758">🇱🇨 +1-758 (Saint Lucia)</option>
-    <option value="+590">🇲🇫 +590 (Saint Martin)</option>
-    <option value="+508">🇵🇲 +508 (Saint Pierre and Miquelon)</option>
-    <option value="+1-784">🇻🇨 +1-784 (Saint Vincent and the Grenadines)</option>
-    <option value="+685">🇼🇸 +685 (Samoa)</option>
-    <option value="+378">🇸🇲 +378 (San Marino)</option>
-    <option value="+239">🇸🇹 +239 (Sao Tome and Principe)</option>
-    <option value="+966">🇸🇦 +966 (Saudi Arabia)</option>
-    <option value="+221">🇸🇳 +221 (Senegal)</option>
-    <option value="+381">🇷🇸 +381 (Serbia)</option>
-    <option value="+248">🇸🇨 +248 (Seychelles)</option>
-    <option value="+232">🇸🇱 +232 (Sierra Leone)</option>
-    <option value="+65">🇸🇬 +65 (Singapore)</option>
-    <option value="+1-721">🇸🇽 +1-721 (Sint Maarten)</option>
-    <option value="+421">🇸🇰 +421 (Slovakia)</option>
-    <option value="+386">🇸🇮 +386 (Slovenia)</option>
-    <option value="+677">🇸🇧 +677 (Solomon Islands)</option>
-    <option value="+252">🇸🇴 +252 (Somalia)</option>
-    <option value="+27">🇿🇦 +27 (South Africa)</option>
-    <option value="+82">🇰🇷 +82 (South Korea)</option>
-    <option value="+211">🇸🇸 +211 (South Sudan)</option>
-    <option value="+34">🇪🇸 +34 (Spain)</option>
-    <option value="+94">🇱🇰 +94 (Sri Lanka)</option>
-    <option value="+249">🇸🇩 +249 (Sudan)</option>
-    <option value="+597">🇸🇷 +597 (Suriname)</option>
-    <option value="+47">🇸🇯 +47 (Svalbard and Jan Mayen)</option>
-    <option value="+268">🇸🇿 +268 (Swaziland)</option>
-    <option value="+46">🇸🇪 +46 (Sweden)</option>
-    <option value="+41">🇨🇭 +41 (Switzerland)</option>
-    <option value="+963">🇸🇾 +963 (Syria)</option>
-    <option value="+886">🇹🇼 +886 (Taiwan)</option>
-    <option value="+992">🇹🇯 +992 (Tajikistan)</option>
-    <option value="+255">🇹🇿 +255 (Tanzania)</option>
-    <option value="+66">🇹🇭 +66 (Thailand)</option>
-    <option value="+228">🇹🇬 +228 (Togo)</option>
-    <option value="+690">🇹🇰 +690 (Tokelau)</option>
-    <option value="+676">🇹🇴 +676 (Tonga)</option>
-    <option value="+1-868">🇹🇹 +1-868 (Trinidad and Tobago)</option>
-    <option value="+216">🇹🇳 +216 (Tunisia)</option>
-    <option value="+90">🇹🇷 +90 (Turkey)</option>
-    <option value="+993">🇹🇲 +993 (Turkmenistan)</option>
-    <option value="+1-649">🇹🇨 +1-649 (Turks and Caicos Islands)</option>
-    <option value="+688">🇹🇻 +688 (Tuvalu)</option>
-    <option value="+1-340">🇻🇮 +1-340 (U.S. Virgin Islands)</option>
-    <option value="+256">🇺🇬 +256 (Uganda)</option>
-    <option value="+380">🇺🇦 +380 (Ukraine)</option>
-    <option value="+971">🇦🇪 +971 (United Arab Emirates)</option>
-    <option value="+44">🇬🇧 +44 (United Kingdom)</option>
-    <option value="+1">🇺🇸 +1 (USA)</option>
-    <option value="+598">🇺🇾 +598 (Uruguay)</option>
-    <option value="+998">🇺🇿 +998 (Uzbekistan)</option>
-    <option value="+678">🇻🇺 +678 (Vanuatu)</option>
-    <option value="+379">🇻🇦 +379 (Vatican)</option>
-    <option value="+58">🇻🇪 +58 (Venezuela)</option>
-    <option value="+84">🇻🇳 +84 (Vietnam)</option>
-    <option value="+681">🇼🇫 +681 (Wallis and Futuna)</option>
-    <option value="+212">🇪🇭 +212 (Western Sahara)</option>
-    <option value="+967">🇾🇪 +967 (Yemen)</option>
-    <option value="+260">🇿🇲 +260 (Zambia)</option>
-    <option value="+263">🇿🇼 +263 (Zimbabwe)</option>
-</select>
-                            <input type="tel" name="phone" required class="form-input flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Enter your phone number">
-                        </div>
-                    </div>
-
-                    <!-- Service Dropdown with Prices -->
-                    <div>
-                        <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Service Interested In *</label>
-                        <select name="service" required class="form-select w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition">
-                            <option value="">Select a service</option>
-                            <option value="data-analytics">Data Analytics - From $1,500</option>
-                            <option value="software-development">Software Development - From $3,000</option>
-                            <option value="mobile-apps">Mobile Apps - From $5,000</option>
-                            <option value="machine-learning">Machine Learning - From $4,000</option>
-                            <option value="data-science-consulting">Data Science Consulting - From $200/hour</option>
-                            <option value="research-analytics">Research Analytics - From $1,200</option>
-                        </select>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Preferred Date *</label>
-                            <input type="date" name="date" required class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition">
-                        </div>
-
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Preferred Time *</label>
-                            <select name="time" required class="form-select w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition">
-                                <option value="">Select time</option>
-                                <option value="09:00">9:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="13:00">1:00 PM</option>
-                                <option value="14:00">2:00 PM</option>
-                                <option value="15:00">3:00 PM</option>
-                                <option value="16:00">4:00 PM</option>
-                                <option value="17:00">5:00 PM</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Project Details</label>
-                        <textarea rows="5" name="projectDetails" class="form-input w-full px-4 py-3 bg-gray-50 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Tell us about your project requirements, timeline, and goals..."></textarea>
-                    </div>
-
-                    <!-- Terms and Conditions Checkbox -->
-                    <div class="flex items-start gap-3">
-                        <input type="checkbox" id="terms" name="terms" required class="mt-1 w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-2 focus:ring-primary-500">
-                        <label for="terms" class="text-sm text-gray-700 dark:text-gray-300">
-                            I agree to the <a href="terms-of-service.html" target="_blank" class="text-primary-600 dark:text-primary-400 hover:underline font-semibold">Terms and Conditions</a> and <a href="privacy-policy.html" target="_blank" class="text-primary-600 dark:text-primary-400 hover:underline font-semibold">Privacy Policy</a> of Bright Byte Solution L.L.C *
-                        </label>
-                    </div>
-
-                    <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold rounded-full hover:shadow-2xl transition transform hover:scale-105 animate-pulse-glow">
-                        Schedule Consultation
-                    </button>
+                    <button type="submit" class="btn-primary">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16 relative overflow-hidden">
-        <!-- Animated Background -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="ribbon" style="top: 20%; animation-delay: 0s;"></div>
-            <div class="ribbon" style="top: 60%; animation-delay: 2s;"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-4 mb-6">
-                        <img src="logo.png" alt="Bright Byte Solution" class="h-12 w-auto">
-                        <div>
-                            <div class="text-2xl font-bold">Bright Byte Solution</div>
-                            <div class="text-sm text-primary-400 font-mono">Data Analytics • Software • Mobile Apps</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 mb-6 leading-relaxed">
-                        Empowering businesses with cutting-edge data science, analytics, and software solutions. Transform your data into actionable insights.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="p-3 bg-gray-800 rounded-full hover:bg-primary-600 transition transform hover:scale-110">
-                            <i data-feather="linkedin" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="p-3 bg-gray-800 rounded-full hover:bg-primary-600 transition transform hover:scale-110">
-                            <i data-feather="twitter" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="p-3 bg-gray-800 rounded-full hover:bg-primary-600 transition transform hover:scale-110">
-                            <i data-feather="github" class="w-5 h-5"></i>
-                        </a>
-                        <a href="mailto:admin@brightbytesolution.com" class="p-3 bg-gray-800 rounded-full hover:bg-primary-600 transition transform hover:scale-110">
-                            <i data-feather="mail" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-400 hover:text-primary-400 transition">Home</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-primary-400 transition">Services</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-primary-400 transition">Projects</a></li>
-                        <li><a href="#tools" class="text-gray-400 hover:text-primary-400 transition">Tools</a></li>
-                        <li><a href="#pricing" class="text-gray-400 hover:text-primary-400 transition">Pricing</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-primary-400 transition">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Services</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#services" class="text-gray-400 hover:text-primary-400 transition">Data Analytics</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-primary-400 transition">Software Development</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-primary-400 transition">Mobile Apps</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-primary-400 transition">Machine Learning</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-primary-400 transition">Consulting</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
             </div>
-
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-gray-400 text-sm">
-                        &copy; <span id="copyright-year"></span> Bright Byte Solution L.L.C. All rights reserved.
-                    </p>
-                    <div class="flex gap-6 text-sm">
-                        <a href="/privacy-policy.html">Privacy Policy</a>
-                        <a href="/terms-of-service.html">Terms of Service</a>
-                        <a href="/">Home</a>
-                    </div>
-                </div>
-            </div>
+            <p>&copy; 2024 Bright Byte Solutions. All rights reserved.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Transforming Ideas Into Innovative Solutions</p>
         </div>
     </footer>
-
-    <script>
-        // Initialize Feather Icons
-        feather.replace();
-
-        // Dynamic Copyright Year
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
-
-        // Create Animated Particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            if (!container) return;
-            
-            for (let i = 0; i < 30; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.width = Math.random() * 10 + 5 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = Math.random() * 10 + 15 + 's';
-                container.appendChild(particle);
-            }
-        }
-
-        // Create Matrix Characters
-        function createMatrix() {
-            const container = document.getElementById('matrix');
-            if (!container) return;
-            
-            const chars = '01アイウエオカキクケコサシスセソ';
-            for (let i = 0; i < 20; i++) {
-                const char = document.createElement('div');
-                char.className = 'matrix-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 5 + 's';
-                char.style.animationDuration = Math.random() * 3 + 4 + 's';
-                container.appendChild(char);
-            }
-        }
-
-        // Initialize animations
-        createParticles();
-        createMatrix();
-
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-
-        themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const icon = themeToggle.querySelector('i');
-            icon.setAttribute('data-feather', html.classList.contains('dark') ? 'sun' : 'moon');
-            feather.replace();
-            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-        });
-
-        // Load saved theme
-        if (localStorage.getItem('theme') === 'dark') {
-            html.classList.add('dark');
-            const icon = themeToggle.querySelector('i');
-            icon.setAttribute('data-feather', 'sun');
-            feather.replace();
-        }
-
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = mobileMenuButton.querySelector('i');
-            icon.setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
-            feather.replace();
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                const icon = mobileMenuButton.querySelector('i');
-                icon.setAttribute('data-feather', 'menu');
-                feather.replace();
-            });
-        });
-
-        // Smooth scroll with offset for fixed navbar
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-lg');
-            } else {
-                nav.classList.remove('shadow-lg');
-            }
-        });
-
-        // Parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.particles-container, .orbit-container');
-            parallaxElements.forEach(el => {
-                const speed = 0.5;
-                el.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-    </script>
 </body>
 </html>
