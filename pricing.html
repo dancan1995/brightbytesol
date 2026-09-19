@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transparent project pricing from Bright Byte Solution - Starter, Professional and Enterprise packages for analytics, software and mobile work.">
+    <meta property="og:title" content="Pricing | Bright Byte Solution">
+    <meta property="og:description" content="Transparent project pricing from Bright Byte Solution - Starter, Professional and Enterprise packages for analytics, software and mobile work.">
+    <meta property="og:image" content="https://brightbytesolution.com/images/logo.png">
+    <title>Pricing | Bright Byte Solution</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        // Apply saved/system theme before first paint to avoid a flash.
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            root.setAttribute('data-theme', dark ? 'dark' : 'light');
+        })();
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar__group">
+                <a class="topbar__item" href="tel:+15173149333"><i data-feather="phone"></i>(517) 314-9333</a>
+                <a class="topbar__item" href="mailto:admin@brightbytesolution.com"><i data-feather="mail"></i>admin@brightbytesolution.com</a>
+            </div>
+            <div class="topbar__group topbar__hide-sm">
+                <span class="topbar__item"><i data-feather="map-pin"></i>Grand Rapids, Michigan</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav">
+                <a href="index.html" class="brand" aria-label="Bright Byte Solution home">
+                    <img src="images/logo.png" alt="Bright Byte Solution">
+                </a>
+
+                <nav id="nav-links" class="nav__links" aria-label="Main">
+                    <a class="nav__link" href="index.html">Home</a>
+                    <a class="nav__link" href="services.html">Services</a>
+                    <a class="nav__link" href="products.html">Products</a>
+                    <a class="nav__link" href="tools.html">Tools</a>
+                    <a class="nav__link" href="pricing.html" aria-current="page">Pricing</a>
+                    <a class="nav__link" href="contact.html">Contact</a>
+                    <a class="btn btn--accent btn--sm" href="book.html">Book Now</a>
+                    <div class="theme-row">
+                        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode"><i data-feather="moon"></i></button>
+                    </div>
+                </nav>
+
+                <button id="mobile-menu-button" class="icon-btn nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <nav class="crumbs" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a><i data-feather="chevron-right"></i><span>Pricing</span>
+                </nav>
+                <h1>Transparent pricing, <span>no surprises</span></h1>
+                <p>Choose the package that fits your project.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="grid grid--3 pricing">
+
+                    <div class="card plan reveal">
+                        <div class="plan__name">Starter</div>
+                        <div class="plan__price">$1,500</div>
+                        <div class="plan__unit">per project</div>
+                        <ul class="plan__list">
+                            <li><i data-feather="check"></i>Basic Data Analysis</li>
+                            <li><i data-feather="check"></i>Up to 3 Dashboards</li>
+                            <li><i data-feather="check"></i>2 Week Delivery</li>
+                            <li><i data-feather="check"></i>1 Revision Round</li>
+                            <li><i data-feather="check"></i>Email Support</li>
+                        </ul>
+                        <a href="book.html" class="btn btn--outline btn--block">Get Started</a>
+                    </div>
+
+                    <div class="card plan plan--featured reveal">
+                        <span class="plan__badge">Most popular</span>
+                        <div class="plan__name">Professional</div>
+                        <div class="plan__price">$3,500</div>
+                        <div class="plan__unit">per project</div>
+                        <ul class="plan__list">
+                            <li><i data-feather="check"></i>Advanced Analytics</li>
+                            <li><i data-feather="check"></i>Unlimited Dashboards</li>
+                            <li><i data-feather="check"></i>1 Week Delivery</li>
+                            <li><i data-feather="check"></i>3 Revision Rounds</li>
+                            <li><i data-feather="check"></i>Priority Support</li>
+                            <li><i data-feather="check"></i>ML Model Development</li>
+                        </ul>
+                        <a href="book.html" class="btn btn--accent btn--block">Get Started</a>
+                    </div>
+
+                    <div class="card plan reveal">
+                        <div class="plan__name">Enterprise</div>
+                        <div class="plan__price">Custom</div>
+                        <div class="plan__unit">contact us</div>
+                        <ul class="plan__list">
+                            <li><i data-feather="check"></i>Full-Stack Solutions</li>
+                            <li><i data-feather="check"></i>Custom Development</li>
+                            <li><i data-feather="check"></i>Flexible Timeline</li>
+                            <li><i data-feather="check"></i>Unlimited Revisions</li>
+                            <li><i data-feather="check"></i>24/7 Dedicated Support</li>
+                            <li><i data-feather="check"></i>Dedicated Team</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn--outline btn--block">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--tight">
+            <div class="container">
+                <div class="cta reveal">
+                    <div>
+                        <h2>Need a quote for something specific?</h2>
+                        <p>Book a consultation and we'll scope your project together.</p>
+                    </div>
+                    <div class="cta__actions">
+                        <a class="btn btn--accent" href="book.html"><i data-feather="calendar"></i> Book a Consultation</a>
+                        <a class="btn btn--ghost-light" href="tel:+15173149333"><i data-feather="phone"></i> (517) 314-9333</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="images/logo.png" alt="Bright Byte Solution">
+                    <p>Empowering businesses with data science, analytics and software solutions. Transform your data into actionable insights.</p>
+                    <div class="social">
+                        <a href="https://www.linkedin.com/company/110905887/" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                        <a href="https://github.com/dancan1995" aria-label="GitHub"><i data-feather="github"></i></a>
+                        <a href="mailto:admin@brightbytesolution.com" aria-label="Email"><i data-feather="mail"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="book.html">Book a consultation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Get in touch</h4>
+                    <ul class="footer__contact">
+                        <li><i data-feather="phone"></i><a href="tel:+15173149333">(517) 314-9333</a></li>
+                        <li><i data-feather="mail"></i><a href="mailto:admin@brightbytesolution.com">admin@brightbytesolution.com</a></li>
+                        <li><i data-feather="map-pin"></i><span>Grand Rapids, Michigan</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; <span id="copyright-year"></span> Bright Byte Solution L.L.C. All rights reserved.</p>
+                <p>Data Analytics &bull; Software &bull; Mobile Apps</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+</body>
+</html>

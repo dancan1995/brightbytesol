@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The analytics, machine learning, mobile, web, database and cloud technologies Bright Byte Solution uses to deliver reliable results.">
+    <meta property="og:title" content="Tools & Technologies | Bright Byte Solution">
+    <meta property="og:description" content="The analytics, machine learning, mobile, web, database and cloud technologies Bright Byte Solution uses to deliver reliable results.">
+    <meta property="og:image" content="https://brightbytesolution.com/images/logo.png">
+    <title>Tools & Technologies | Bright Byte Solution</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        // Apply saved/system theme before first paint to avoid a flash.
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            root.setAttribute('data-theme', dark ? 'dark' : 'light');
+        })();
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar__group">
+                <a class="topbar__item" href="tel:+15173149333"><i data-feather="phone"></i>(517) 314-9333</a>
+                <a class="topbar__item" href="mailto:admin@brightbytesolution.com"><i data-feather="mail"></i>admin@brightbytesolution.com</a>
+            </div>
+            <div class="topbar__group topbar__hide-sm">
+                <span class="topbar__item"><i data-feather="map-pin"></i>Grand Rapids, Michigan</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav">
+                <a href="index.html" class="brand" aria-label="Bright Byte Solution home">
+                    <img src="images/logo.png" alt="Bright Byte Solution">
+                </a>
+
+                <nav id="nav-links" class="nav__links" aria-label="Main">
+                    <a class="nav__link" href="index.html">Home</a>
+                    <a class="nav__link" href="services.html">Services</a>
+                    <a class="nav__link" href="products.html">Products</a>
+                    <a class="nav__link" href="tools.html" aria-current="page">Tools</a>
+                    <a class="nav__link" href="pricing.html">Pricing</a>
+                    <a class="nav__link" href="contact.html">Contact</a>
+                    <a class="btn btn--accent btn--sm" href="book.html">Book Now</a>
+                    <div class="theme-row">
+                        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode"><i data-feather="moon"></i></button>
+                    </div>
+                </nav>
+
+                <button id="mobile-menu-button" class="icon-btn nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <nav class="crumbs" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a><i data-feather="chevron-right"></i><span>Tools</span>
+                </nav>
+                <h1>A modern, <span>proven technology stack</span></h1>
+                <p>The platforms and frameworks we use to deliver reliable results.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="grid grid--3">
+
+                    <div class="card tool-card reveal">
+                        <h3><span class="icon-tile"><i data-feather="bar-chart"></i></span>Data Analytics & Visualization</h3>
+                        <div class="chips"><span class="chip">R Studio</span><span class="chip">Python (Pandas, NumPy)</span><span class="chip">SQL (MySQL, PostgreSQL)</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Microsoft Excel</span><span class="chip">SPSS</span><span class="chip">SAS</span><span class="chip">Plotly</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">ggplot2</span><span class="chip">Apache Spark</span><span class="chip">Looker</span></div>
+                    </div>
+
+                    <div class="card tool-card reveal">
+                        <h3><span class="icon-tile"><i data-feather="cpu"></i></span>Machine Learning & AI</h3>
+                        <div class="chips"><span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">Scikit-learn</span><span class="chip">Keras</span><span class="chip">XGBoost</span><span class="chip">Random Forest</span><span class="chip">OpenCV</span><span class="chip">NLTK</span><span class="chip">spaCy</span><span class="chip">Hugging Face</span></div>
+                    </div>
+
+                    <div class="card tool-card reveal">
+                        <h3><span class="icon-tile"><i data-feather="smartphone"></i></span>Mobile App Development</h3>
+                        <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Swift (iOS)</span><span class="chip">Kotlin (Android)</span><span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">Redux</span><span class="chip">Async Storage</span></div>
+                    </div>
+
+                    <div class="card tool-card reveal">
+                        <h3><span class="icon-tile"><i data-feather="globe"></i></span>Web Development</h3>
+                        <div class="chips"><span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">Vue.js</span><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">Django</span><span class="chip">Flask</span><span class="chip">HTML5/CSS3</span><span class="chip">JavaScript/TypeScript</span><span class="chip">Tailwind CSS</span><span class="chip">Bootstrap</span><span class="chip">Webpack</span></div>
+                    </div>
+
+                    <div class="card tool-card reveal">
+                        <h3><span class="icon-tile"><i data-feather="database"></i></span>Databases & Backend</h3>
+                        <div class="chips"><span class="chip">Firebase</span><span class="chip">MongoDB</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Redis</span><span class="chip">SQLite</span><span class="chip">GraphQL</span><span class="chip">REST APIs</span></div>
+                    </div>
+
+                    <div class="card tool-card reveal">
+                        <h3><span class="icon-tile"><i data-feather="cloud"></i></span>Cloud & DevOps</h3>
+                        <div class="chips"><span class="chip">AWS (EC2, S3, Lambda)</span><span class="chip">Google Cloud Platform</span><span class="chip">Microsoft Azure</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Git/GitHub</span><span class="chip">CI/CD Pipelines</span><span class="chip">Vercel</span><span class="chip">Netlify</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--tight">
+            <div class="container">
+                <div class="cta reveal">
+                    <div>
+                        <h2>Have a specific technology in mind?</h2>
+                        <p>Let us know what your team already uses and we'll work with it.</p>
+                    </div>
+                    <div class="cta__actions">
+                        <a class="btn btn--accent" href="book.html"><i data-feather="calendar"></i> Book a Consultation</a>
+                        <a class="btn btn--ghost-light" href="tel:+15173149333"><i data-feather="phone"></i> (517) 314-9333</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="images/logo.png" alt="Bright Byte Solution">
+                    <p>Empowering businesses with data science, analytics and software solutions. Transform your data into actionable insights.</p>
+                    <div class="social">
+                        <a href="https://www.linkedin.com/company/110905887/" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                        <a href="https://github.com/dancan1995" aria-label="GitHub"><i data-feather="github"></i></a>
+                        <a href="mailto:admin@brightbytesolution.com" aria-label="Email"><i data-feather="mail"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="book.html">Book a consultation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Get in touch</h4>
+                    <ul class="footer__contact">
+                        <li><i data-feather="phone"></i><a href="tel:+15173149333">(517) 314-9333</a></li>
+                        <li><i data-feather="mail"></i><a href="mailto:admin@brightbytesolution.com">admin@brightbytesolution.com</a></li>
+                        <li><i data-feather="map-pin"></i><span>Grand Rapids, Michigan</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; <span id="copyright-year"></span> Bright Byte Solution L.L.C. All rights reserved.</p>
+                <p>Data Analytics &bull; Software &bull; Mobile Apps</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+</body>
+</html>

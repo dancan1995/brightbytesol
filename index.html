@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bright Byte Solution - Data science consulting, analytics, software and mobile app development in Grand Rapids, Michigan. Creators of SurveyBonobo and MedEye-T.">
     <meta property="og:title" content="Bright Byte Solution | Data Analytics • Software • Mobile Apps">
-    <meta property="og:description" content="Data science, analytics, software and mobile apps. Creators of SurveyBonobo and MedEye-T.">
+    <meta property="og:description" content="Bright Byte Solution - Data science consulting, analytics, software and mobile app development in Grand Rapids, Michigan. Creators of SurveyBonobo and MedEye-T.">
     <meta property="og:image" content="https://brightbytesolution.com/images/logo.png">
     <title>Bright Byte Solution | Data Analytics • Software • Mobile Apps</title>
 
@@ -13,7 +13,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
     <script>
@@ -32,7 +32,6 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Top bar -->
     <div class="topbar">
         <div class="container">
             <div class="topbar__group">
@@ -45,36 +44,35 @@
         </div>
     </div>
 
-    <!-- Header -->
     <header class="site-header" id="site-header">
-        <div class="container nav">
-            <a href="/" class="brand" aria-label="Bright Byte Solution home">
-                <img src="images/logo.png" alt="Bright Byte Solution">
-            </a>
+        <div class="container">
+            <div class="nav">
+                <a href="index.html" class="brand" aria-label="Bright Byte Solution home">
+                    <img src="images/logo.png" alt="Bright Byte Solution">
+                </a>
 
-            <nav id="nav-links" class="nav__links" aria-label="Main">
-                <a class="nav__link" href="#services">Services</a>
-                <a class="nav__link" href="#products">Products</a>
-                <a class="nav__link" href="#tools">Tools</a>
-                <a class="nav__link" href="#pricing">Pricing</a>
-                <a class="nav__link" href="#contact">Contact</a>
-                <a class="btn btn--accent btn--sm" href="#appointment">Book Now</a>
-                <div class="theme-row">
-                    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode">
-                        <i data-feather="moon"></i>
-                    </button>
-                </div>
-            </nav>
+                <nav id="nav-links" class="nav__links" aria-label="Main">
+                    <a class="nav__link" href="index.html" aria-current="page">Home</a>
+                    <a class="nav__link" href="services.html">Services</a>
+                    <a class="nav__link" href="products.html">Products</a>
+                    <a class="nav__link" href="tools.html">Tools</a>
+                    <a class="nav__link" href="pricing.html">Pricing</a>
+                    <a class="nav__link" href="contact.html">Contact</a>
+                    <a class="btn btn--accent btn--sm" href="book.html">Book Now</a>
+                    <div class="theme-row">
+                        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode"><i data-feather="moon"></i></button>
+                    </div>
+                </nav>
 
-            <button id="mobile-menu-button" class="icon-btn nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-                <i data-feather="menu"></i>
-            </button>
+                <button id="mobile-menu-button" class="icon-btn nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
         </div>
     </header>
 
     <main id="main">
 
-        <!-- Hero -->
         <section id="home" class="hero">
             <div class="container hero__grid">
                 <div>
@@ -85,18 +83,13 @@
                         We turn complex challenges into dependable, well-engineered solutions.
                     </p>
                     <div class="hero__cta">
-                        <a href="#services" class="btn btn--accent">Explore Services <i data-feather="arrow-right"></i></a>
-                        <a href="#appointment" class="btn btn--ghost-light"><i data-feather="calendar"></i> Book a Consultation</a>
-                    </div>
-                    <div class="hero__products">
-                        <span>Our products:</span>
-                        <a href="https://www.surveybonobo.com" target="_blank" rel="noopener"><img src="images/surveybonobo-logo.svg" alt="">SurveyBonobo</a>
-                        <a href="#medeye-t"><i data-feather="activity"></i>MedEye-T</a>
+                        <a href="services.html" class="btn btn--accent">Explore Services <i data-feather="arrow-right"></i></a>
+                        <a href="book.html" class="btn btn--ghost-light"><i data-feather="calendar"></i> Book a Consultation</a>
                     </div>
                 </div>
 
-                <div class="hero__visual" aria-hidden="true">
-                    <div class="mock mock--a">
+                <div class="hero__visual">
+                    <a class="mock mock--a" href="products.html#surveybonobo" aria-label="SurveyBonobo - learn more">
                         <div class="mock__head">
                             <img src="images/surveybonobo-logo.svg" alt="">
                             <div>
@@ -112,9 +105,9 @@
                             <div class="mock__bar"><b style="width: 47%"></b></div>
                         </div>
                         <div class="mock__steps"><span>Build</span><span>Analyze</span><span>Present</span></div>
-                    </div>
+                    </a>
 
-                    <div class="mock mock--b">
+                    <a class="mock mock--b" href="products.html#medeye-t" aria-label="MedEye-T - learn more">
                         <div class="mock__head">
                             <div class="mock__ico"><i data-feather="activity"></i></div>
                             <div>
@@ -128,12 +121,11 @@
                             <div class="mock__row"><i data-feather="check-circle"></i>Provider review approved</div>
                             <div class="mock__row"><i data-feather="check-circle"></i>Adherence recorded</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Stats -->
         <section class="stats" aria-label="Our impact">
             <div class="container">
                 <div class="stats__grid reveal">
@@ -145,649 +137,134 @@
             </div>
         </section>
 
-        <!-- Services -->
-        <section id="services" class="section">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">What we do</span>
-                    <h2>Expert services, tailored to your needs</h2>
-                    <p>Comprehensive data, software and mobile solutions from strategy through delivery.</p>
-                </div>
+        <div class="marquee" aria-label="Technologies we work with">
+            <div class="marquee__track"><span class="marquee__item">Python</span><span class="marquee__item">R</span><span class="marquee__item">SQL</span><span class="marquee__item">TensorFlow</span><span class="marquee__item">PyTorch</span><span class="marquee__item">Tableau</span><span class="marquee__item">Power BI</span><span class="marquee__item">React Native</span><span class="marquee__item">Firebase</span><span class="marquee__item">Node.js</span><span class="marquee__item">AWS</span><span class="marquee__item">Docker</span><span class="marquee__item">Kubernetes</span><span class="marquee__item">PostgreSQL</span><span class="marquee__item">Flutter</span><span class="marquee__item">Next.js</span><span class="marquee__item" aria-hidden="true">Python</span><span class="marquee__item" aria-hidden="true">R</span><span class="marquee__item" aria-hidden="true">SQL</span><span class="marquee__item" aria-hidden="true">TensorFlow</span><span class="marquee__item" aria-hidden="true">PyTorch</span><span class="marquee__item" aria-hidden="true">Tableau</span><span class="marquee__item" aria-hidden="true">Power BI</span><span class="marquee__item" aria-hidden="true">React Native</span><span class="marquee__item" aria-hidden="true">Firebase</span><span class="marquee__item" aria-hidden="true">Node.js</span><span class="marquee__item" aria-hidden="true">AWS</span><span class="marquee__item" aria-hidden="true">Docker</span><span class="marquee__item" aria-hidden="true">Kubernetes</span><span class="marquee__item" aria-hidden="true">PostgreSQL</span><span class="marquee__item" aria-hidden="true">Flutter</span><span class="marquee__item" aria-hidden="true">Next.js</span></div>
+        </div>
 
-                <div class="grid grid--3">
-                    <article class="card service reveal">
-                        <div class="service__icon"><i data-feather="bar-chart-2"></i></div>
+        <section class="section" style="padding-top: 48px;">
+            <div class="container">
+                <div class="section-head section-head--split reveal">
+                    <div>
+                        <span class="eyebrow">What we do</span>
+                        <h2>Expert services, tailored to your needs</h2>
+                    </div>
+                    <p>Comprehensive data, software and mobile solutions from strategy through delivery. Pick a service to see what's included.</p>
+                </div>
+                <div class="bento">
+
+                    <a class="tile tile--wide tile--dark reveal" href="services.html#data-analytics">
+                        <div class="tile__top">
+                            <div class="icon-tile"><i data-feather="bar-chart-2"></i></div>
+                            <span class="tile__num">01</span>
+                        </div>
                         <h3>Data Analytics</h3>
                         <p>Transform raw data into actionable insights with advanced analytics and visualization techniques.</p>
-                        <span class="service__price">From $1,500 / project</span>
-                    </article>
+                        <div class="tile__foot">
+                            <span class="tile__price">From $1,500 / project</span>
+                            <span class="link-arrow">Learn more <i data-feather="arrow-right"></i></span>
+                        </div>
+                    </a>
 
-                    <article class="card service reveal">
-                        <div class="service__icon"><i data-feather="code"></i></div>
+                    <a class="tile  reveal" href="services.html#software-development">
+                        <div class="tile__top">
+                            <div class="icon-tile"><i data-feather="code"></i></div>
+                            <span class="tile__num">02</span>
+                        </div>
                         <h3>Software Development</h3>
                         <p>Custom software solutions built with modern technologies for scalable, secure applications.</p>
-                        <span class="service__price">From $3,000 / project</span>
-                    </article>
+                        <div class="tile__foot">
+                            <span class="tile__price">From $3,000 / project</span>
+                            <span class="link-arrow">Learn more <i data-feather="arrow-right"></i></span>
+                        </div>
+                    </a>
 
-                    <article class="card service reveal">
-                        <div class="service__icon"><i data-feather="smartphone"></i></div>
+                    <a class="tile  reveal" href="services.html#mobile-apps">
+                        <div class="tile__top">
+                            <div class="icon-tile"><i data-feather="smartphone"></i></div>
+                            <span class="tile__num">03</span>
+                        </div>
                         <h3>Mobile Apps</h3>
                         <p>Native and cross-platform mobile applications for exceptional user experiences on iOS and Android.</p>
-                        <span class="service__price">From $5,000 / project</span>
-                    </article>
+                        <div class="tile__foot">
+                            <span class="tile__price">From $5,000 / project</span>
+                            <span class="link-arrow">Learn more <i data-feather="arrow-right"></i></span>
+                        </div>
+                    </a>
 
-                    <article class="card service reveal">
-                        <div class="service__icon"><i data-feather="cpu"></i></div>
+                    <a class="tile tile--wide tile--tint reveal" href="services.html#machine-learning">
+                        <div class="tile__top">
+                            <div class="icon-tile"><i data-feather="cpu"></i></div>
+                            <span class="tile__num">04</span>
+                        </div>
                         <h3>Machine Learning</h3>
                         <p>Leverage AI and ML to automate processes, predict outcomes, and gain competitive advantages.</p>
-                        <span class="service__price">From $4,000 / project</span>
-                    </article>
+                        <div class="tile__foot">
+                            <span class="tile__price">From $4,000 / project</span>
+                            <span class="link-arrow">Learn more <i data-feather="arrow-right"></i></span>
+                        </div>
+                    </a>
 
-                    <article class="card service reveal">
-                        <div class="service__icon"><i data-feather="trending-up"></i></div>
+                    <a class="tile  reveal" href="services.html#data-science-consulting">
+                        <div class="tile__top">
+                            <div class="icon-tile"><i data-feather="trending-up"></i></div>
+                            <span class="tile__num">05</span>
+                        </div>
                         <h3>Data Science Consulting</h3>
                         <p>Expert guidance on data strategy, model development, and implementation best practices.</p>
-                        <span class="service__price">From $200 / hour</span>
-                    </article>
+                        <div class="tile__foot">
+                            <span class="tile__price">From $200 / hour</span>
+                            <span class="link-arrow">Learn more <i data-feather="arrow-right"></i></span>
+                        </div>
+                    </a>
 
-                    <article class="card service reveal">
-                        <div class="service__icon"><i data-feather="database"></i></div>
+                    <a class="tile tile--wide tile--dark reveal" href="services.html#research-analytics">
+                        <div class="tile__top">
+                            <div class="icon-tile"><i data-feather="database"></i></div>
+                            <span class="tile__num">06</span>
+                        </div>
                         <h3>Research Analytics</h3>
                         <p>Comprehensive data analysis support for academic and clinical research projects.</p>
-                        <span class="service__price">From $1,200 / project</span>
-                    </article>
+                        <div class="tile__foot">
+                            <span class="tile__price">From $1,200 / project</span>
+                            <span class="link-arrow">Learn more <i data-feather="arrow-right"></i></span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Products -->
-        <section id="products" class="section section--alt">
+        <section class="section section--dark">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="eyebrow">Our products</span>
-                    <h2>Software we design, build and run ourselves</h2>
-                    <p>Beyond client work, Bright Byte Solution develops its own applications for survey research and healthcare.</p>
+                    <span class="eyebrow">How we work</span>
+                    <h2>A clear path from idea to delivery</h2>
+                    <p>Every engagement follows the same simple rhythm, so you always know what's next.</p>
                 </div>
-
-                <div class="grid grid--2">
-                    <!-- SurveyBonobo -->
-                    <article id="surveybonobo" class="product product--bonobo reveal">
-                        <div class="product__top">
-                            <img class="product__logo" src="images/surveybonobo-logo.svg" alt="SurveyBonobo logo">
-                            <div>
-                                <h3 class="product__name">SurveyBonobo</h3>
-                                <div class="product__kind">AI Survey Platform &middot; surveybonobo.com</div>
-                            </div>
-                        </div>
-                        <p class="product__tagline">Build, Analyze, and Present Surveys with AI.</p>
-                        <p class="product__desc">
-                            SurveyBonobo is an AI-powered survey platform that takes you from questionnaire design to analysis and
-                            presentation of results, all in one place.
-                        </p>
-                        <ul class="product__list">
-                            <li><i data-feather="check-circle"></i><span>Build surveys quickly with an intuitive builder</span></li>
-                            <li><i data-feather="check-circle"></i><span>AI-assisted analysis of survey responses</span></li>
-                            <li><i data-feather="check-circle"></i><span>Present findings clearly to stakeholders</span></li>
-                        </ul>
-                        <div class="product__tags"><span>AI</span><span>Surveys</span><span>Analytics</span></div>
-                        <div class="product__cta">
-                            <a class="btn btn--bonobo" href="https://www.surveybonobo.com" target="_blank" rel="noopener">
-                                Visit surveybonobo.com <i data-feather="external-link"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- MedEye-T -->
-                    <article id="medeye-t" class="product product--medeye reveal">
-                        <div class="product__top">
-                            <div class="product__logo product__logo--icon"><i data-feather="activity"></i></div>
-                            <div>
-                                <h3 class="product__name">MedEye-T</h3>
-                                <div class="product__kind">Healthcare Mobile Application</div>
-                            </div>
-                        </div>
-                        <p class="product__tagline">Medication adherence, verified.</p>
-                        <p class="product__desc">
-                            An advanced medication adherence monitoring platform built with React Native and Firebase. Video-based
-                            intake verification, real-time provider dashboards and intelligent patient monitoring.
-                        </p>
-                        <ul class="product__list">
-                            <li><i data-feather="check-circle"></i><span>Video upload &amp; playback system</span></li>
-                            <li><i data-feather="check-circle"></i><span>Provider approval workflows</span></li>
-                            <li><i data-feather="check-circle"></i><span>Real-time patient monitoring</span></li>
-                            <li><i data-feather="check-circle"></i><span>Firebase cloud integration</span></li>
-                        </ul>
-                        <div class="product__tags"><span>React Native</span><span>Firebase</span><span>Healthcare</span></div>
-                        <div class="product__cta">
-                            <a class="btn btn--primary" href="#contact">Request a Demo <i data-feather="arrow-right"></i></a>
-                        </div>
-                    </article>
+                <div class="steps">
+                    <div class="step reveal"><div class="step__num">1</div><h3>Discover</h3><p>We start with a conversation about your goals, your data and what success looks like.</p></div>
+                    <div class="step reveal"><div class="step__num">2</div><h3>Design</h3><p>We shape the approach, timeline and deliverables so you know what to expect.</p></div>
+                    <div class="step reveal"><div class="step__num">3</div><h3>Build</h3><p>We develop, test and iterate, sharing progress with you along the way.</p></div>
+                    <div class="step reveal"><div class="step__num">4</div><h3>Support</h3><p>We hand over, document and stay available as your needs evolve.</p></div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Research collaboration -->
-                <article class="card research reveal">
-                    <div class="research__ico"><i data-feather="book-open"></i></div>
+        <section class="section section--tight">
+            <div class="container">
+                <div class="cta reveal">
                     <div>
-                        <h3>Research Analytics &amp; Health Collaboration</h3>
-                        <p>
-                            Collaborative research initiatives in healthcare analytics, predictive modeling and clinical data science,
-                            including stroke prediction models (78% accuracy), balance assessment applications and computer adaptive
-                            testing algorithms.
-                        </p>
-                        <div class="research__tags"><span class="chip">Machine Learning</span><span class="chip">R / Python</span><span class="chip">Clinical Research</span></div>
+                        <h2>Ready to turn your data into decisions?</h2>
+                        <p>Tell us about your project and we'll recommend the right approach.</p>
                     </div>
-                    <a class="btn btn--outline" href="#contact">Discuss a project</a>
-                </article>
-            </div>
-        </section>
-
-        <!-- Tools & Technologies -->
-        <section id="tools" class="section">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">Tools &amp; technologies</span>
-                    <h2>A modern, proven technology stack</h2>
-                    <p>The platforms and frameworks we use to deliver reliable results.</p>
-                </div>
-
-                <div class="grid grid--3">
-                    <div class="card tool-card reveal">
-                        <h3><i data-feather="bar-chart"></i>Data Analytics &amp; Visualization</h3>
-                        <div class="chips">
-                            <span class="chip">R Studio</span><span class="chip">Python (Pandas, NumPy)</span><span class="chip">SQL (MySQL, PostgreSQL)</span>
-                            <span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Microsoft Excel</span>
-                            <span class="chip">SPSS</span><span class="chip">SAS</span><span class="chip">Plotly</span><span class="chip">Matplotlib</span>
-                            <span class="chip">Seaborn</span><span class="chip">ggplot2</span><span class="chip">Apache Spark</span><span class="chip">Looker</span>
-                        </div>
+                    <div class="cta__actions">
+                        <a class="btn btn--accent" href="book.html"><i data-feather="calendar"></i> Book a Consultation</a>
+                        <a class="btn btn--ghost-light" href="tel:+15173149333"><i data-feather="phone"></i> (517) 314-9333</a>
                     </div>
-
-                    <div class="card tool-card reveal">
-                        <h3><i data-feather="cpu"></i>Machine Learning &amp; AI</h3>
-                        <div class="chips">
-                            <span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">Scikit-learn</span><span class="chip">Keras</span>
-                            <span class="chip">XGBoost</span><span class="chip">Random Forest</span><span class="chip">OpenCV</span><span class="chip">NLTK</span>
-                            <span class="chip">spaCy</span><span class="chip">Hugging Face</span>
-                        </div>
-                    </div>
-
-                    <div class="card tool-card reveal">
-                        <h3><i data-feather="smartphone"></i>Mobile App Development</h3>
-                        <div class="chips">
-                            <span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Swift (iOS)</span><span class="chip">Kotlin (Android)</span>
-                            <span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">Redux</span><span class="chip">Async Storage</span>
-                        </div>
-                    </div>
-
-                    <div class="card tool-card reveal">
-                        <h3><i data-feather="globe"></i>Web Development</h3>
-                        <div class="chips">
-                            <span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">Vue.js</span><span class="chip">Node.js</span>
-                            <span class="chip">Express.js</span><span class="chip">Django</span><span class="chip">Flask</span><span class="chip">HTML5/CSS3</span>
-                            <span class="chip">JavaScript/TypeScript</span><span class="chip">Tailwind CSS</span><span class="chip">Bootstrap</span><span class="chip">Webpack</span>
-                        </div>
-                    </div>
-
-                    <div class="card tool-card reveal">
-                        <h3><i data-feather="database"></i>Databases &amp; Backend</h3>
-                        <div class="chips">
-                            <span class="chip">Firebase</span><span class="chip">MongoDB</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span>
-                            <span class="chip">Redis</span><span class="chip">SQLite</span><span class="chip">GraphQL</span><span class="chip">REST APIs</span>
-                        </div>
-                    </div>
-
-                    <div class="card tool-card reveal">
-                        <h3><i data-feather="cloud"></i>Cloud &amp; DevOps</h3>
-                        <div class="chips">
-                            <span class="chip">AWS (EC2, S3, Lambda)</span><span class="chip">Google Cloud Platform</span><span class="chip">Microsoft Azure</span>
-                            <span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Git/GitHub</span><span class="chip">CI/CD Pipelines</span>
-                            <span class="chip">Vercel</span><span class="chip">Netlify</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing -->
-        <section id="pricing" class="section section--alt">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">Pricing</span>
-                    <h2>Transparent pricing, no surprises</h2>
-                    <p>Choose the package that fits your project.</p>
-                </div>
-
-                <div class="grid grid--3 pricing">
-                    <div class="card plan reveal">
-                        <div class="plan__name">Starter</div>
-                        <div class="plan__price">$1,500</div>
-                        <div class="plan__unit">per project</div>
-                        <ul class="plan__list">
-                            <li><i data-feather="check"></i>Basic Data Analysis</li>
-                            <li><i data-feather="check"></i>Up to 3 Dashboards</li>
-                            <li><i data-feather="check"></i>2 Week Delivery</li>
-                            <li><i data-feather="check"></i>1 Revision Round</li>
-                            <li><i data-feather="check"></i>Email Support</li>
-                        </ul>
-                        <a href="#appointment" class="btn btn--outline btn--block">Get Started</a>
-                    </div>
-
-                    <div class="card plan plan--featured reveal">
-                        <span class="plan__badge">Most popular</span>
-                        <div class="plan__name">Professional</div>
-                        <div class="plan__price">$3,500</div>
-                        <div class="plan__unit">per project</div>
-                        <ul class="plan__list">
-                            <li><i data-feather="check"></i>Advanced Analytics</li>
-                            <li><i data-feather="check"></i>Unlimited Dashboards</li>
-                            <li><i data-feather="check"></i>1 Week Delivery</li>
-                            <li><i data-feather="check"></i>3 Revision Rounds</li>
-                            <li><i data-feather="check"></i>Priority Support</li>
-                            <li><i data-feather="check"></i>ML Model Development</li>
-                        </ul>
-                        <a href="#appointment" class="btn btn--accent btn--block">Get Started</a>
-                    </div>
-
-                    <div class="card plan reveal">
-                        <div class="plan__name">Enterprise</div>
-                        <div class="plan__price">Custom</div>
-                        <div class="plan__unit">contact us</div>
-                        <ul class="plan__list">
-                            <li><i data-feather="check"></i>Full-Stack Solutions</li>
-                            <li><i data-feather="check"></i>Custom Development</li>
-                            <li><i data-feather="check"></i>Flexible Timeline</li>
-                            <li><i data-feather="check"></i>Unlimited Revisions</li>
-                            <li><i data-feather="check"></i>24/7 Dedicated Support</li>
-                            <li><i data-feather="check"></i>Dedicated Team</li>
-                        </ul>
-                        <a href="#contact" class="btn btn--outline btn--block">Contact Sales</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">Contact</span>
-                    <h2>Let's discuss your next project</h2>
-                    <p>Tell us what you're building and we'll get back to you promptly.</p>
-                </div>
-
-                <div class="contact-grid">
-                    <div class="contact-info reveal">
-                        <div class="contact-item">
-                            <div class="contact-item__ico"><i data-feather="map-pin"></i></div>
-                            <div><h3>Location</h3><p>Grand Rapids, Michigan, USA</p></div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item__ico"><i data-feather="mail"></i></div>
-                            <div><h3>Email</h3><a href="mailto:admin@brightbytesolution.com">admin@brightbytesolution.com</a></div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item__ico"><i data-feather="phone"></i></div>
-                            <div><h3>Phone</h3><a href="tel:+15173149333">(517) 314-9333</a></div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item__ico"><i data-feather="globe"></i></div>
-                            <div><h3>Our products</h3>
-                                <p><a href="https://www.surveybonobo.com" target="_blank" rel="noopener">www.surveybonobo.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card form-card reveal">
-                        <form action="https://formspree.io/f/xangyrbb" method="POST" class="form">
-                            <div class="field">
-                                <label for="c-name">Name</label>
-                                <input id="c-name" type="text" name="name" required placeholder="Enter your name" autocomplete="name">
-                            </div>
-                            <div class="field">
-                                <label for="c-email">Email</label>
-                                <input id="c-email" type="email" name="email" required placeholder="Enter your email address" autocomplete="email">
-                            </div>
-                            <div class="field">
-                                <label for="c-message">Message</label>
-                                <textarea id="c-message" rows="4" name="message" required placeholder="Tell us about your project..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn--accent btn--block">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Appointment -->
-        <section id="appointment" class="section section--alt">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">Book a consultation</span>
-                    <h2>Schedule a meeting with our experts</h2>
-                    <p>Pick a date and time that suits you and we'll confirm by email.</p>
-                </div>
-
-                <div class="card form-card appointment reveal">
-                    <form action="https://formspree.io/f/xangyrbb" method="POST" class="form">
-                        <div class="form__row">
-                            <div class="field">
-                                <label for="a-first">First Name *</label>
-                                <input id="a-first" type="text" name="firstName" required placeholder="Enter your first name" autocomplete="given-name">
-                            </div>
-                            <div class="field">
-                                <label for="a-last">Last Name *</label>
-                                <input id="a-last" type="text" name="lastName" required placeholder="Enter your last name" autocomplete="family-name">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label for="a-email">Email Address *</label>
-                            <input id="a-email" type="email" name="email" required placeholder="Enter your email address" autocomplete="email">
-                        </div>
-
-                        <div class="field">
-                            <label for="a-phone">Phone Number *</label>
-                            <div class="phone-group">
-                                <select name="countryCode" aria-label="Country code">
-    <option value="+93">🇦🇫 +93 (Afghanistan)</option>
-    <option value="+355">🇦🇱 +355 (Albania)</option>
-    <option value="+213">🇩🇿 +213 (Algeria)</option>
-    <option value="+1-684">🇦🇸 +1-684 (American Samoa)</option>
-    <option value="+376">🇦🇩 +376 (Andorra)</option>
-    <option value="+244">🇦🇴 +244 (Angola)</option>
-    <option value="+1-264">🇦🇮 +1-264 (Anguilla)</option>
-    <option value="+672">🇦🇶 +672 (Antarctica)</option>
-    <option value="+1-268">🇦🇬 +1-268 (Antigua and Barbuda)</option>
-    <option value="+54">🇦🇷 +54 (Argentina)</option>
-    <option value="+374">🇦🇲 +374 (Armenia)</option>
-    <option value="+297">🇦🇼 +297 (Aruba)</option>
-    <option value="+61">🇦🇺 +61 (Australia)</option>
-    <option value="+43">🇦🇹 +43 (Austria)</option>
-    <option value="+994">🇦🇿 +994 (Azerbaijan)</option>
-    <option value="+1-242">🇧🇸 +1-242 (Bahamas)</option>
-    <option value="+973">🇧🇭 +973 (Bahrain)</option>
-    <option value="+880">🇧🇩 +880 (Bangladesh)</option>
-    <option value="+1-246">🇧🇧 +1-246 (Barbados)</option>
-    <option value="+375">🇧🇾 +375 (Belarus)</option>
-    <option value="+32">🇧🇪 +32 (Belgium)</option>
-    <option value="+501">🇧🇿 +501 (Belize)</option>
-    <option value="+229">🇧🇯 +229 (Benin)</option>
-    <option value="+1-441">🇧🇲 +1-441 (Bermuda)</option>
-    <option value="+975">🇧🇹 +975 (Bhutan)</option>
-    <option value="+591">🇧🇴 +591 (Bolivia)</option>
-    <option value="+387">🇧🇦 +387 (Bosnia and Herzegovina)</option>
-    <option value="+267">🇧🇼 +267 (Botswana)</option>
-    <option value="+55">🇧🇷 +55 (Brazil)</option>
-    <option value="+246">🇮🇴 +246 (British Indian Ocean Territory)</option>
-    <option value="+1-284">🇻🇬 +1-284 (British Virgin Islands)</option>
-    <option value="+673">🇧🇳 +673 (Brunei)</option>
-    <option value="+359">🇧🇬 +359 (Bulgaria)</option>
-    <option value="+226">🇧🇫 +226 (Burkina Faso)</option>
-    <option value="+257">🇧🇮 +257 (Burundi)</option>
-    <option value="+855">🇰🇭 +855 (Cambodia)</option>
-    <option value="+237">🇨🇲 +237 (Cameroon)</option>
-    <option value="+1" selected>🇨🇦 +1 (Canada)</option>
-    <option value="+238">🇨🇻 +238 (Cape Verde)</option>
-    <option value="+1-345">🇰🇾 +1-345 (Cayman Islands)</option>
-    <option value="+236">🇨🇫 +236 (Central African Republic)</option>
-    <option value="+235">🇹🇩 +235 (Chad)</option>
-    <option value="+56">🇨🇱 +56 (Chile)</option>
-    <option value="+86">🇨🇳 +86 (China)</option>
-    <option value="+61">🇨🇽 +61 (Christmas Island)</option>
-    <option value="+61">🇨🇨 +61 (Cocos Islands)</option>
-    <option value="+57">🇨🇴 +57 (Colombia)</option>
-    <option value="+269">🇰🇲 +269 (Comoros)</option>
-    <option value="+682">🇨🇰 +682 (Cook Islands)</option>
-    <option value="+506">🇨🇷 +506 (Costa Rica)</option>
-    <option value="+385">🇭🇷 +385 (Croatia)</option>
-    <option value="+53">🇨🇺 +53 (Cuba)</option>
-    <option value="+599">🇨🇼 +599 (Curacao)</option>
-    <option value="+357">🇨🇾 +357 (Cyprus)</option>
-    <option value="+420">🇨🇿 +420 (Czech Republic)</option>
-    <option value="+243">🇨🇩 +243 (Democratic Republic of the Congo)</option>
-    <option value="+45">🇩🇰 +45 (Denmark)</option>
-    <option value="+253">🇩🇯 +253 (Djibouti)</option>
-    <option value="+1-767">🇩🇲 +1-767 (Dominica)</option>
-    <option value="+1-809">🇩🇴 +1-809 (Dominican Republic)</option>
-    <option value="+670">🇹🇱 +670 (East Timor)</option>
-    <option value="+593">🇪🇨 +593 (Ecuador)</option>
-    <option value="+20">🇪🇬 +20 (Egypt)</option>
-    <option value="+503">🇸🇻 +503 (El Salvador)</option>
-    <option value="+240">🇬🇶 +240 (Equatorial Guinea)</option>
-    <option value="+291">🇪🇷 +291 (Eritrea)</option>
-    <option value="+372">🇪🇪 +372 (Estonia)</option>
-    <option value="+251">🇪🇹 +251 (Ethiopia)</option>
-    <option value="+500">🇫🇰 +500 (Falkland Islands)</option>
-    <option value="+298">🇫🇴 +298 (Faroe Islands)</option>
-    <option value="+679">🇫🇯 +679 (Fiji)</option>
-    <option value="+358">🇫🇮 +358 (Finland)</option>
-    <option value="+33">🇫🇷 +33 (France)</option>
-    <option value="+689">🇵🇫 +689 (French Polynesia)</option>
-    <option value="+241">🇬🇦 +241 (Gabon)</option>
-    <option value="+220">🇬🇲 +220 (Gambia)</option>
-    <option value="+995">🇬🇪 +995 (Georgia)</option>
-    <option value="+49">🇩🇪 +49 (Germany)</option>
-    <option value="+233">🇬🇭 +233 (Ghana)</option>
-    <option value="+350">🇬🇮 +350 (Gibraltar)</option>
-    <option value="+30">🇬🇷 +30 (Greece)</option>
-    <option value="+299">🇬🇱 +299 (Greenland)</option>
-    <option value="+1-473">🇬🇩 +1-473 (Grenada)</option>
-    <option value="+1-671">🇬🇺 +1-671 (Guam)</option>
-    <option value="+502">🇬🇹 +502 (Guatemala)</option>
-    <option value="+44-1481">🇬🇬 +44-1481 (Guernsey)</option>
-    <option value="+224">🇬🇳 +224 (Guinea)</option>
-    <option value="+245">🇬🇼 +245 (Guinea-Bissau)</option>
-    <option value="+592">🇬🇾 +592 (Guyana)</option>
-    <option value="+509">🇭🇹 +509 (Haiti)</option>
-    <option value="+504">🇭🇳 +504 (Honduras)</option>
-    <option value="+852">🇭🇰 +852 (Hong Kong)</option>
-    <option value="+36">🇭🇺 +36 (Hungary)</option>
-    <option value="+354">🇮🇸 +354 (Iceland)</option>
-    <option value="+91">🇮🇳 +91 (India)</option>
-    <option value="+62">🇮🇩 +62 (Indonesia)</option>
-    <option value="+98">🇮🇷 +98 (Iran)</option>
-    <option value="+964">🇮🇶 +964 (Iraq)</option>
-    <option value="+353">🇮🇪 +353 (Ireland)</option>
-    <option value="+44-1624">🇮🇲 +44-1624 (Isle of Man)</option>
-    <option value="+972">🇮🇱 +972 (Israel)</option>
-    <option value="+39">🇮🇹 +39 (Italy)</option>
-    <option value="+225">🇨🇮 +225 (Ivory Coast)</option>
-    <option value="+1-876">🇯🇲 +1-876 (Jamaica)</option>
-    <option value="+81">🇯🇵 +81 (Japan)</option>
-    <option value="+44-1534">🇯🇪 +44-1534 (Jersey)</option>
-    <option value="+962">🇯🇴 +962 (Jordan)</option>
-    <option value="+7">🇰🇿 +7 (Kazakhstan)</option>
-    <option value="+254">🇰🇪 +254 (Kenya)</option>
-    <option value="+686">🇰🇮 +686 (Kiribati)</option>
-    <option value="+383">🇽🇰 +383 (Kosovo)</option>
-    <option value="+965">🇰🇼 +965 (Kuwait)</option>
-    <option value="+996">🇰🇬 +996 (Kyrgyzstan)</option>
-    <option value="+856">🇱🇦 +856 (Laos)</option>
-    <option value="+371">🇱🇻 +371 (Latvia)</option>
-    <option value="+961">🇱🇧 +961 (Lebanon)</option>
-    <option value="+266">🇱🇸 +266 (Lesotho)</option>
-    <option value="+231">🇱🇷 +231 (Liberia)</option>
-    <option value="+218">🇱🇾 +218 (Libya)</option>
-    <option value="+423">🇱🇮 +423 (Liechtenstein)</option>
-    <option value="+370">🇱🇹 +370 (Lithuania)</option>
-    <option value="+352">🇱🇺 +352 (Luxembourg)</option>
-    <option value="+853">🇲🇴 +853 (Macao)</option>
-    <option value="+389">🇲🇰 +389 (North Macedonia)</option>
-    <option value="+261">🇲🇬 +261 (Madagascar)</option>
-    <option value="+265">🇲🇼 +265 (Malawi)</option>
-    <option value="+60">🇲🇾 +60 (Malaysia)</option>
-    <option value="+960">🇲🇻 +960 (Maldives)</option>
-    <option value="+223">🇲🇱 +223 (Mali)</option>
-    <option value="+356">🇲🇹 +356 (Malta)</option>
-    <option value="+692">🇲🇭 +692 (Marshall Islands)</option>
-    <option value="+222">🇲🇷 +222 (Mauritania)</option>
-    <option value="+230">🇲🇺 +230 (Mauritius)</option>
-    <option value="+262">🇾🇹 +262 (Mayotte)</option>
-    <option value="+52">🇲🇽 +52 (Mexico)</option>
-    <option value="+691">🇫🇲 +691 (Micronesia)</option>
-    <option value="+373">🇲🇩 +373 (Moldova)</option>
-    <option value="+377">🇲🇨 +377 (Monaco)</option>
-    <option value="+976">🇲🇳 +976 (Mongolia)</option>
-    <option value="+382">🇲🇪 +382 (Montenegro)</option>
-    <option value="+1-664">🇲🇸 +1-664 (Montserrat)</option>
-    <option value="+212">🇲🇦 +212 (Morocco)</option>
-    <option value="+258">🇲🇿 +258 (Mozambique)</option>
-    <option value="+95">🇲🇲 +95 (Myanmar)</option>
-    <option value="+264">🇳🇦 +264 (Namibia)</option>
-    <option value="+674">🇳🇷 +674 (Nauru)</option>
-    <option value="+977">🇳🇵 +977 (Nepal)</option>
-    <option value="+31">🇳🇱 +31 (Netherlands)</option>
-    <option value="+687">🇳🇨 +687 (New Caledonia)</option>
-    <option value="+64">🇳🇿 +64 (New Zealand)</option>
-    <option value="+505">🇳🇮 +505 (Nicaragua)</option>
-    <option value="+227">🇳🇪 +227 (Niger)</option>
-    <option value="+234">🇳🇬 +234 (Nigeria)</option>
-    <option value="+683">🇳🇺 +683 (Niue)</option>
-    <option value="+850">🇰🇵 +850 (North Korea)</option>
-    <option value="+1-670">🇲🇵 +1-670 (Northern Mariana Islands)</option>
-    <option value="+47">🇳🇴 +47 (Norway)</option>
-    <option value="+968">🇴🇲 +968 (Oman)</option>
-    <option value="+92">🇵🇰 +92 (Pakistan)</option>
-    <option value="+680">🇵🇼 +680 (Palau)</option>
-    <option value="+970">🇵🇸 +970 (Palestine)</option>
-    <option value="+507">🇵🇦 +507 (Panama)</option>
-    <option value="+675">🇵🇬 +675 (Papua New Guinea)</option>
-    <option value="+595">🇵🇾 +595 (Paraguay)</option>
-    <option value="+51">🇵🇪 +51 (Peru)</option>
-    <option value="+63">🇵🇭 +63 (Philippines)</option>
-    <option value="+64">🇵🇳 +64 (Pitcairn)</option>
-    <option value="+48">🇵🇱 +48 (Poland)</option>
-    <option value="+351">🇵🇹 +351 (Portugal)</option>
-    <option value="+1-787">🇵🇷 +1-787 (Puerto Rico)</option>
-    <option value="+974">🇶🇦 +974 (Qatar)</option>
-    <option value="+242">🇨🇬 +242 (Republic of the Congo)</option>
-    <option value="+262">🇷🇪 +262 (Reunion)</option>
-    <option value="+40">🇷🇴 +40 (Romania)</option>
-    <option value="+7">🇷🇺 +7 (Russia)</option>
-    <option value="+250">🇷🇼 +250 (Rwanda)</option>
-    <option value="+590">🇧🇱 +590 (Saint Barthelemy)</option>
-    <option value="+290">🇸🇭 +290 (Saint Helena)</option>
-    <option value="+1-869">🇰🇳 +1-869 (Saint Kitts and Nevis)</option>
-    <option value="+1-758">🇱🇨 +1-758 (Saint Lucia)</option>
-    <option value="+590">🇲🇫 +590 (Saint Martin)</option>
-    <option value="+508">🇵🇲 +508 (Saint Pierre and Miquelon)</option>
-    <option value="+1-784">🇻🇨 +1-784 (Saint Vincent and the Grenadines)</option>
-    <option value="+685">🇼🇸 +685 (Samoa)</option>
-    <option value="+378">🇸🇲 +378 (San Marino)</option>
-    <option value="+239">🇸🇹 +239 (Sao Tome and Principe)</option>
-    <option value="+966">🇸🇦 +966 (Saudi Arabia)</option>
-    <option value="+221">🇸🇳 +221 (Senegal)</option>
-    <option value="+381">🇷🇸 +381 (Serbia)</option>
-    <option value="+248">🇸🇨 +248 (Seychelles)</option>
-    <option value="+232">🇸🇱 +232 (Sierra Leone)</option>
-    <option value="+65">🇸🇬 +65 (Singapore)</option>
-    <option value="+1-721">🇸🇽 +1-721 (Sint Maarten)</option>
-    <option value="+421">🇸🇰 +421 (Slovakia)</option>
-    <option value="+386">🇸🇮 +386 (Slovenia)</option>
-    <option value="+677">🇸🇧 +677 (Solomon Islands)</option>
-    <option value="+252">🇸🇴 +252 (Somalia)</option>
-    <option value="+27">🇿🇦 +27 (South Africa)</option>
-    <option value="+82">🇰🇷 +82 (South Korea)</option>
-    <option value="+211">🇸🇸 +211 (South Sudan)</option>
-    <option value="+34">🇪🇸 +34 (Spain)</option>
-    <option value="+94">🇱🇰 +94 (Sri Lanka)</option>
-    <option value="+249">🇸🇩 +249 (Sudan)</option>
-    <option value="+597">🇸🇷 +597 (Suriname)</option>
-    <option value="+47">🇸🇯 +47 (Svalbard and Jan Mayen)</option>
-    <option value="+268">🇸🇿 +268 (Swaziland)</option>
-    <option value="+46">🇸🇪 +46 (Sweden)</option>
-    <option value="+41">🇨🇭 +41 (Switzerland)</option>
-    <option value="+963">🇸🇾 +963 (Syria)</option>
-    <option value="+886">🇹🇼 +886 (Taiwan)</option>
-    <option value="+992">🇹🇯 +992 (Tajikistan)</option>
-    <option value="+255">🇹🇿 +255 (Tanzania)</option>
-    <option value="+66">🇹🇭 +66 (Thailand)</option>
-    <option value="+228">🇹🇬 +228 (Togo)</option>
-    <option value="+690">🇹🇰 +690 (Tokelau)</option>
-    <option value="+676">🇹🇴 +676 (Tonga)</option>
-    <option value="+1-868">🇹🇹 +1-868 (Trinidad and Tobago)</option>
-    <option value="+216">🇹🇳 +216 (Tunisia)</option>
-    <option value="+90">🇹🇷 +90 (Turkey)</option>
-    <option value="+993">🇹🇲 +993 (Turkmenistan)</option>
-    <option value="+1-649">🇹🇨 +1-649 (Turks and Caicos Islands)</option>
-    <option value="+688">🇹🇻 +688 (Tuvalu)</option>
-    <option value="+1-340">🇻🇮 +1-340 (U.S. Virgin Islands)</option>
-    <option value="+256">🇺🇬 +256 (Uganda)</option>
-    <option value="+380">🇺🇦 +380 (Ukraine)</option>
-    <option value="+971">🇦🇪 +971 (United Arab Emirates)</option>
-    <option value="+44">🇬🇧 +44 (United Kingdom)</option>
-    <option value="+1">🇺🇸 +1 (USA)</option>
-    <option value="+598">🇺🇾 +598 (Uruguay)</option>
-    <option value="+998">🇺🇿 +998 (Uzbekistan)</option>
-    <option value="+678">🇻🇺 +678 (Vanuatu)</option>
-    <option value="+379">🇻🇦 +379 (Vatican)</option>
-    <option value="+58">🇻🇪 +58 (Venezuela)</option>
-    <option value="+84">🇻🇳 +84 (Vietnam)</option>
-    <option value="+681">🇼🇫 +681 (Wallis and Futuna)</option>
-    <option value="+212">🇪🇭 +212 (Western Sahara)</option>
-    <option value="+967">🇾🇪 +967 (Yemen)</option>
-    <option value="+260">🇿🇲 +260 (Zambia)</option>
-    <option value="+263">🇿🇼 +263 (Zimbabwe)</option>
-                                </select>
-                                <input id="a-phone" type="tel" name="phone" required placeholder="Enter your phone number" autocomplete="tel-national">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label for="a-service">Service Interested In *</label>
-                            <select id="a-service" name="service" required>
-                                <option value="">Select a service</option>
-                                <option value="data-analytics">Data Analytics - From $1,500</option>
-                                <option value="software-development">Software Development - From $3,000</option>
-                                <option value="mobile-apps">Mobile Apps - From $5,000</option>
-                                <option value="machine-learning">Machine Learning - From $4,000</option>
-                                <option value="data-science-consulting">Data Science Consulting - From $200/hour</option>
-                                <option value="research-analytics">Research Analytics - From $1,200</option>
-                            </select>
-                        </div>
-
-                        <div class="form__row">
-                            <div class="field">
-                                <label for="a-date">Preferred Date *</label>
-                                <input id="a-date" type="date" name="date" required>
-                            </div>
-                            <div class="field">
-                                <label for="a-time">Preferred Time *</label>
-                                <select id="a-time" name="time" required>
-                                    <option value="">Select time</option>
-                                    <option value="09:00">9:00 AM</option>
-                                    <option value="10:00">10:00 AM</option>
-                                    <option value="11:00">11:00 AM</option>
-                                    <option value="12:00">12:00 PM</option>
-                                    <option value="13:00">1:00 PM</option>
-                                    <option value="14:00">2:00 PM</option>
-                                    <option value="15:00">3:00 PM</option>
-                                    <option value="16:00">4:00 PM</option>
-                                    <option value="17:00">5:00 PM</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label for="a-details">Project Details</label>
-                            <textarea id="a-details" rows="5" name="projectDetails" placeholder="Tell us about your project requirements, timeline, and goals..."></textarea>
-                        </div>
-
-                        <div class="check">
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <label for="terms">
-                                I agree to the <a href="terms-of-service.html" target="_blank">Terms and Conditions</a> and
-                                <a href="privacy-policy.html" target="_blank">Privacy Policy</a> of Bright Byte Solution L.L.C *
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn btn--accent btn--block">Schedule Consultation</button>
-                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -804,20 +281,22 @@
                 <div>
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#tools">Tools</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="book.html">Book a consultation</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4>Products</h4>
+                    <h4>Legal</h4>
                     <ul>
-                        <li><a class="footer__product" href="https://www.surveybonobo.com" target="_blank" rel="noopener"><img src="images/surveybonobo-logo.svg" alt="">SurveyBonobo</a></li>
-                        <li><a class="footer__product" href="#medeye-t"><i data-feather="activity" style="width:18px;height:18px"></i>MedEye-T</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
 
@@ -835,71 +314,11 @@
         <div class="footer__bottom">
             <div class="container">
                 <p>&copy; <span id="copyright-year"></span> Bright Byte Solution L.L.C. All rights reserved.</p>
-                <div class="footer__legal">
-                    <a href="/privacy-policy.html">Privacy Policy</a>
-                    <a href="/terms-of-service.html">Terms of Service</a>
-                    <a href="/cookie-policy.html">Cookie Policy</a>
-                </div>
+                <p>Data Analytics &bull; Software &bull; Mobile Apps</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        (function () {
-            var html = document.documentElement;
-            if (window.feather) feather.replace();
-
-            document.getElementById('copyright-year').textContent = new Date().getFullYear();
-
-            // Theme toggle (icon reflects the theme you would switch to)
-            var themeToggle = document.getElementById('theme-toggle');
-            function syncThemeIcon() {
-                var dark = html.getAttribute('data-theme') === 'dark';
-                themeToggle.innerHTML = '<i data-feather="' + (dark ? 'sun' : 'moon') + '"></i>';
-                if (window.feather) feather.replace();
-            }
-            syncThemeIcon();
-            themeToggle.addEventListener('click', function () {
-                var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                html.setAttribute('data-theme', next);
-                try { localStorage.setItem('theme', next); } catch (e) {}
-                syncThemeIcon();
-            });
-
-            // Mobile menu
-            var menuBtn = document.getElementById('mobile-menu-button');
-            var links = document.getElementById('nav-links');
-            function setMenu(open) {
-                links.classList.toggle('is-open', open);
-                menuBtn.setAttribute('aria-expanded', String(open));
-                menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-                menuBtn.innerHTML = '<i data-feather="' + (open ? 'x' : 'menu') + '"></i>';
-                if (window.feather) feather.replace();
-            }
-            menuBtn.addEventListener('click', function () { setMenu(!links.classList.contains('is-open')); });
-            links.querySelectorAll('a').forEach(function (a) {
-                a.addEventListener('click', function () { setMenu(false); });
-            });
-
-            // Header shadow on scroll
-            var header = document.getElementById('site-header');
-            function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
-            window.addEventListener('scroll', onScroll, { passive: true });
-            onScroll();
-
-            // Reveal on scroll
-            var items = document.querySelectorAll('.reveal');
-            if ('IntersectionObserver' in window) {
-                var io = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (e) {
-                        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
-                    });
-                }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-                items.forEach(function (el) { io.observe(el); });
-            } else {
-                items.forEach(function (el) { el.classList.add('is-visible'); });
-            }
-        })();
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>
