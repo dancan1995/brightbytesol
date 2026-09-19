@@ -276,7 +276,7 @@ async function sendConfirmationEmail(metadata) {
                                 <p style="color: #6b7280; font-size: 14px;">
                                     <strong>Questions?</strong><br>
                                     Email: admin@brightbytesolution.com<br>
-                                    Phone: (616) 240-7246
+                                    Phone: (517) 314-9333
                                 </p>
                             </div>
                         </div>

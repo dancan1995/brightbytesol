@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,16 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <script>
+        try {
+            var t = localStorage.getItem('theme') || localStorage.getItem('color-theme');
+            if (t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark');
+        } catch (e) {}
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 
@@ -19,17 +28,17 @@
                 extend: {
                     colors: {
                         primary: {
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
+                            500: '#1976d2',
+                            600: '#1565c0',
+                            700: '#0d47a1',
                         },
                         secondary: {
-                            500: '#d946ef',
-                            600: '#c026d3',
+                            500: '#0d3273',
+                            600: '#0a2350',
                         }
                     },
                     fontFamily: {
-                        sans: ['Calibri', 'Arial', 'sans-serif'],
+                        sans: ['Inter', 'Segoe UI', 'Arial', 'sans-serif'],
                     }
                 }
             }
@@ -37,10 +46,10 @@
     </script>
     <style>
         body { 
-            font-family: 'Calibri', Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 50%, #06b6d4 100%);
+            background: linear-gradient(135deg, #1976d2 0%, #00acc1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -335,7 +344,7 @@
                             <p class="text-gray-700 dark:text-gray-300">Privacy Officer</p>
                             <p class="text-gray-700 dark:text-gray-300">Grand Rapids, Michigan, USA</p>
                             <p class="text-gray-700 dark:text-gray-300">Email: <a href="mailto:admin@brightbytesolution.com" class="text-primary-600 dark:text-primary-400 hover:underline">admin@brightbytesolution.com</a></p>
-                            <p class="text-gray-700 dark:text-gray-300">Phone: <a href="tel:+16162407246" class="text-primary-600 dark:text-primary-400 hover:underline">(616) 240-7246</a></p>
+                            <p class="text-gray-700 dark:text-gray-300">Phone: <a href="tel:+15173149333" class="text-primary-600 dark:text-primary-400 hover:underline">(517) 314-9333</a></p>
                         </div>
                     </section>
 

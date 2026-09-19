@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Policy - Bright Byte Solution</title>
     <link rel="icon" type="image/png" href="logo.png">
+    <script>
+        try {
+            var t = localStorage.getItem('theme') || localStorage.getItem('color-theme');
+            if (t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark');
+        } catch (e) {}
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     
@@ -20,36 +26,36 @@
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
+                            50: '#e3f0fd',
+                            100: '#bbdefb',
+                            200: '#90caf9',
+                            300: '#64b5f6',
+                            400: '#42a5f5',
+                            500: '#1976d2',
+                            600: '#1565c0',
+                            700: '#0d47a1',
+                            800: '#0a3a85',
+                            900: '#0a2350',
                         },
                         secondary: {
-                            50: '#fdf4ff',
-                            100: '#fae8ff',
-                            200: '#f5d0fe',
-                            300: '#f0abfc',
-                            400: '#e879f9',
-                            500: '#d946ef',
-                            600: '#c026d3',
-                            700: '#a21caf',
-                            800: '#86198f',
-                            900: '#701a75',
+                            50: '#eef2fa',
+                            100: '#dbe4f3',
+                            200: '#b9c9e6',
+                            300: '#8ea6d1',
+                            400: '#5c7db8',
+                            500: '#0d3273',
+                            600: '#0a2350',
+                            700: '#082044',
+                            800: '#061630',
+                            900: '#040f22',
                         },
                         accent: {
-                            500: '#06b6d4',
-                            600: '#0891b2',
+                            500: '#00acc1',
+                            600: '#00838f',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'Segoe UI', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     }
                 }
@@ -61,7 +67,7 @@
         html { scroll-behavior: smooth; }
         
         .gradient-text {
-            background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 50%, #06b6d4 100%);
+            background: linear-gradient(135deg, #1976d2 0%, #00acc1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -402,7 +408,7 @@
                             </p>
                             <p class="flex items-center gap-2">
                                 <i data-feather="phone" class="w-4 h-4 text-primary-600"></i>
-                                <a href="tel:+16162407246" class="text-primary-600 hover:underline">(616) 240-7246</a>
+                                <a href="tel:+15173149333" class="text-primary-600 hover:underline">(517) 314-9333</a>
                             </p>
                             <p class="flex items-center gap-2">
                                 <i data-feather="clock" class="w-4 h-4 text-primary-600"></i>
@@ -442,8 +448,8 @@
         
         // Theme management
         const html = document.documentElement;
-        if (localStorage.getItem('color-theme') === 'dark' || 
-            (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if ((localStorage.getItem('theme') || localStorage.getItem('color-theme')) === 'dark' || 
+            (!(localStorage.getItem('theme') || localStorage.getItem('color-theme')) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
         } else {
             html.classList.remove('dark');

@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Confirmed! | Bright Byte Solution</title>
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        try {
+            var t = localStorage.getItem('theme') || localStorage.getItem('color-theme');
+            if (t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark');
+        } catch (e) {}
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     
@@ -14,8 +23,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: { 500: '#0ea5e9', 600: '#0284c7' },
-                        secondary: { 500: '#d946ef', 600: '#c026d3' }
+                        primary: { 50: '#e3f0fd', 100: '#bbdefb', 400: '#64b5f6', 500: '#1976d2', 600: '#1565c0', 700: '#0d47a1', 900: '#0a2350' },
+                        secondary: { 50: '#eef2fa', 500: '#0d3273', 600: '#0a2350', 900: '#040f22' }
                     }
                 }
             }
@@ -76,7 +85,7 @@
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Need to reschedule or have questions?</p>
                 <p class="font-semibold text-gray-900 dark:text-white">Contact us:</p>
                 <p class="text-primary-600 dark:text-primary-400">admin@brightbytesolution.com</p>
-                <p class="text-primary-600 dark:text-primary-400">(616) 240-7246</p>
+                <p class="text-primary-600 dark:text-primary-400">(517) 314-9333</p>
             </div>
 
             <!-- Action Buttons -->
